@@ -1,0 +1,154 @@
+main {
+  gap: 1rem;
+}
+
+.game-instructions {
+  background-color: var(--background-color);
+  padding: 3rem 1.5rem;
+  font-family: "Big Noodle Too", impact, sans-serif;
+  width: 40rem;
+  border-radius: 0.7rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.game-instructions__title {
+  font-size: 3rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.game-instructions__text {
+  font-size: 2rem;
+  color: var(--text-color-lg);
+  font-style: italic;
+}
+
+.chr-search {
+  background-color: var(--background-color);
+  width: 40rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.chr-search__form {
+  display: flex;
+}
+
+.chr-search__input {
+  background-color: var(--input-color);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.9rem;
+  font-size: 1.3rem;
+  flex-grow: 1;
+  color: var(--text-color);
+  margin-right: 0.5rem;
+}
+
+.chr-search__input::placeholder {
+  color: var(--text-color-lg);
+}
+
+.chr-search__input:focus {
+  border: none;
+  outline: none;
+}
+
+.chr-search__button {
+  border: none;
+  background: var(--background-color);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  transition: ease 0.1s;
+}
+
+.chr-search__button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+  filter: brightness(1.1);
+}
+
+.chr-search__button-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--text-color);
+}
+
+/* CLASSIC MODE */
+
+.results {
+  max-width: 50rem;
+  margin-top: 2rem;
+}
+
+.results-titles {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+  padding: 0;
+}
+
+.result-title {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-alt);
+  font-family: "Big Noodle Too", impact, sans-serif;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.results-content {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.result-info {
+  aspect-ratio: 1 / 1;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  color: var(--text-color);
+  font-size: 2rem;
+  font-family: "Big Noodle Too", impact, sans-serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-info__img {
+  max-width: 100%;
+  object-fit: cover;
+  background-color: var(--background-color);
+}
+
+.correct {
+  background-color: var(--correct-color);
+}
+
+.wrong {
+  background-color: var(--wrong-color);
+}
+
+.partial {
+  background-color: var(--partial-color);
+}
+
+.higher {
+  background: url("../imgs/arrowup.webp"), var(--wrong-color);
+  background-size: cover;
+}
+
+.lower {
+  background: url("../imgs/arrowdown.webp"), var(--wrong-color);
+  background-size: cover;
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overwatchdle - Clasico</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/games.css">
+    <link rel="icon" type="image/x-icon" href="../imgs/favicon.ico">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="header__nav">
+            <ul class="header__ul">
+                <li>
+                    <button class="settings header__button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-settings-2 settings-icon">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M19.875 6.27a2.225 2.225 0 0 1 1.125 1.948v7.284c0 .809 -.443 1.555 -1.158 1.948l-6.75 4.27a2.269 2.269 0 0 1 -2.184 0l-6.75 -4.27a2.225 2.225 0 0 1 -1.158 -1.948v-7.285c0 -.809 .443 -1.554 1.158 -1.947l6.75 -3.98a2.33 2.33 0 0 1 2.25 0l6.75 3.98h-.033z" />
+                            <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                        </svg>
+                    </button>
+                </li>
+                <li>
+                    <a href="../index.html">
+                        <img src="../imgs/overwatchdle.webp" alt="Overwatchdle" class="logo">
+                    </a>
+                </li>
+                <li>
+                    <button class="language header__button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-language language-icon">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M4 5h7" />
+                            <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+                            <path d="M5 9c0 2.144 2.952 3.908 6.7 4" />
+                            <path d="M12 20l4 -9l4 9" />
+                            <path d="M19.1 18h-6.2" />
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <nav class="gamemodes">
+            <ul class="gamemodes__ul-alt">
+                <li>
+                    <a href="classic.html" class="gamemode__icon gamemode__icon-alt gamemode__icon-selected">
+                        <img src="../imgs/classic.webp" alt="Imagen clasico">
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gamemode__icon gamemode__icon-alt">
+                        <img src="../imgs/phrase.webp" alt="Imagen frase">
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gamemode__icon gamemode__icon-alt">
+                        <img src="../imgs/ablity.webp" alt="Imagen habilidad">
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gamemode__icon gamemode__icon-alt">
+                        <img src="../imgs/emoji.webp" alt="Imagen emoji">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="game-instructions">
+            <h2 class="game-instructions__title">¡Adivina el héroe de Overwatch de hoy!</h2>
+            <p class="game-instructions__text">Escribe el nombre de un héroe para comenzar</p>
+        </section>
+
+        <section class="chr-search">
+            <form class="chr-search__form">
+                <input type="text" placeholder="Escribe el nombre del héroe" class="chr-search__input">
+                <button class="chr-search__button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-send-2 chr-search__button-icon">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M4.698 4.034l16.302 7.966l-16.302 7.966a.503 .503 0 0 1 -.546 -.124a.555 .555 0 0 1 -.12 -.568l2.468 -7.274l-2.468 -7.274a.555 .555 0 0 1 .12 -.568a.503 .503 0 0 1 .546 -.124z" />
+                        <path d="M6.5 12h14.5" />
+                    </svg>
+                </button>
+            </form>
+        </section>
+
+        <section class="results">
+            <header class="results-titles">
+                <p class="result-title"> Personaje </p>
+                <p class="result-title"> Genero </p>
+                <p class="result-title"> Clase </p>
+                <p class="result-title"> Especie </p>
+                <p class="result-title"> Origen </p>
+                <p class="result-title"> Altura </p>
+                <p class="result-title"> Año de salida </p>
+            </header>
+            <section class="results-content">
+                <div class="result-info">
+                    <img src="../imgs/characters/zarya.webp" alt="zarya" class="result-info__img">
+                </div>
+                <div class="result-info correct">
+                    <p class="result-info__text">Femenino</p>
+                </div>
+                <div class="result-info correct">
+                    <p class="result-info__text">Tanque</p>
+                </div>
+                <div class="result-info partial">
+                    <p class="result-info__text">Humano</p>
+                </div>
+                <div class="result-info wrong">
+                    <p class="result-info__text">Rusia</p>
+                </div>
+                <div class="result-info wrong lower">
+                    <p class="result-info__text">1.95 m</p>
+                </div>
+                <div class="result-info wrong higher">
+                    <p class="result-info__text">2017</p>
+                </div>
+
+                <div class="result-info">
+                    <img src="../imgs/characters/dva.webp" alt="dva" class="result-info__img">
+                </div>
+                <div class="result-info correct">
+                    <p class="result-info__text">Femenino</p>
+                </div>
+                <div class="result-info correct">
+                    <p class="result-info__text">Tanque</p>
+                </div>
+                <div class="result-info partial">
+                    <p class="result-info__text">Humano</p>
+                </div>
+                <div class="result-info wrong">
+                    <p class="result-info__text">Corea del Sur</p>
+                </div>
+                <div class="result-info wrong higher">
+                    <p class="result-info__text">1.70 m</p>
+                </div>
+                <div class="result-info wrong higher">
+                    <p class="result-info__text">2016</p>
+                </div>
+
+
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer__text">Overwatchdle - 2024</p>
+    </footer>
+
+</body>
+
+</html>
