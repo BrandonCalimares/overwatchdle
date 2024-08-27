@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap");
+
 main {
   gap: 1rem;
 }
@@ -10,12 +12,15 @@ main {
   border-radius: 0.7rem;
   text-align: center;
   margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .game-instructions__title {
   font-size: 3rem;
   color: var(--text-color);
-  margin-bottom: 0.5rem;
 }
 
 .game-instructions__text {
@@ -151,4 +156,66 @@ main {
 .lower {
   background: url("../imgs/arrowdown.webp"), var(--wrong-color);
   background-size: cover;
+}
+
+/* PHRASE */
+
+.audio__text {
+  font-size: 1.2rem;
+  color: var(--text-color-lg);
+  text-align: center;
+}
+
+.results-phrase,
+.results-ability,
+.results-emoji {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: "Big Noodle Too", impact, sans-serif;
+  border-radius: 0.5rem;
+  font-size: 5rem;
+  height: 6.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.results-phrase__img,
+.results-ability__img,
+.results-emoji__img {
+  width: 5.7rem;
+  height: 5.7rem;
+  border-radius: 0.7rem;
+  position: absolute;
+  left: 0.5rem;
+}
+
+.results-phrase__text,
+.results-ability__text,
+.results-emoji__text {
+  font-style: italic;
+  color: var(--text-color);
+}
+
+/* ABILITIES */
+
+.ability-img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.7rem;
+  background-color: var(--background-color-dark);
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* EMOJIS */
+
+.emojis {
+  font-size: 4rem;
+  font-family: "Noto Color Emoji", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  margin-top: 1.5rem;
 }
