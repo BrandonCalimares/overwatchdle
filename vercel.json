@@ -1,3 +1,11 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/html/",
+      "permanent": true
+    }
+  ]
 }
