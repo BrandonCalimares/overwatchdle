@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overwatchdle - Habilidad</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/games.css">
-    <link rel="icon" type="image/x-icon" href="../imgs/favicon.ico">
+    <title>Overwatchdle</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
 </head>
 
 <body>
@@ -29,7 +28,7 @@
                 </li>
                 <li>
                     <a href=".">
-                        <img src="../imgs/overwatchdle.webp" alt="Overwatchdle" class="logo">
+                        <img src="imgs/overwatchdle.webp" alt="Overwatchdle" class="logo">
                     </a>
                 </li>
                 <li>
@@ -61,11 +60,11 @@
                     </svg>
                 </button>
                 <button class="language-selector lang-es">
-                    <img src="../imgs/es-flag.webp" class="language-img" alt="Bandera de españa">
+                    <img src="imgs/es-flag.webp" class="language-img" alt="Bandera de españa">
                     <p class="language-text">Español</p>
                 </button>
                 <button class="language-selector lang-en">
-                    <img src="../imgs/en-flag.webp" class="language-img" alt="Bandera de reino unido">
+                    <img src="imgs/en-flag.webp" class="language-img" alt="Bandera de reino unido">
                     <p class="language-text">English</p>
                 </button>
             </section>
@@ -99,56 +98,56 @@
     </header>
 
     <main>
-        <nav class="gamemodes">
-            <ul class="gamemodes__ul-alt">
+        <h2 class="description">
+            Adivina el héroe de Overwatch
+        </h2>
+        <section class="gamemodes">
+            <ul class="gamemodes__ul">
                 <li>
-                    <a href="classic.html" class="gamemode__icon gamemode__icon-alt">
-                        <img src="../imgs/classic.webp" alt="Imagen clasico">
+                    <a href="classic.html" class="gamemode">
+                        <div class="gamemode__icon">
+                            <img src="imgs/classic.webp" alt="Imagen clasico">
+                        </div>
+                        <article class="gamemode__container">
+                            <h3 class="gamemode__title"> Clásico </h3>
+                            <p class="gamemode__description">Consigue pistas con cada intento</p>
+                        </article>
                     </a>
                 </li>
                 <li>
-                    <a href="phrase.html" class="gamemode__icon gamemode__icon-alt">
-                        <img src="../imgs/phrase.webp" alt="Imagen frase">
+                    <a href="phrase.html" class="gamemode">
+                        <div class="gamemode__icon">
+                            <img src="imgs/phrase.webp" alt="Imagen frase">
+                        </div>
+                        <article class="gamemode__container">
+                            <h3 class="gamemode__title"> Frase </h3>
+                            <p class="gamemode__description">Adivina al héroe con un audio</p>
+                        </article>
                     </a>
                 </li>
                 <li>
-                    <a href="ability.html" class="gamemode__icon gamemode__icon-alt">
-                        <img src="../imgs/ablity.webp" alt="Imagen habilidad">
+                    <a href="ability.html" class="gamemode">
+                        <div class="gamemode__icon">
+                            <img src="imgs/ablity.webp" alt="Imagen habilidad">
+                        </div>
+                        <article class="gamemode__container">
+                            <h3 class="gamemode__title"> Habilidad </h3>
+                            <p class="gamemode__description">Adivina al héroe por su habilidad</p>
+                        </article>
                     </a>
                 </li>
                 <li>
-                    <a href="emoji.html" class="gamemode__icon gamemode__icon-alt gamemode__icon-selected">
-                        <img src="../imgs/emoji.webp" alt="Imagen emoji">
+                    <a href="emoji.html" class="gamemode">
+                        <div class="gamemode__icon">
+                            <img src="imgs/emoji.webp" alt="Imagen emoji">
+                        </div>
+                        <article class="gamemode__container">
+                            <h3 class="gamemode__title"> Emoji </h3>
+                            <p class="gamemode__description">Adivina al héroe con emojis</p>
+                        </article>
                     </a>
                 </li>
             </ul>
-        </nav>
-
-        <section class="game-instructions">
-            <p class="game-instructions__title">¿Que héroe describen estos emojis?</p>
-            <p class="emojis">🍑 🕷️ ❔ ❔ ❔</p>
-        </section>
-
-        <section class="chr-search">
-            <form class="chr-search__form">
-                <input type="text" placeholder="Escribe el nombre del héroe" class="chr-search__input">
-                <button class="chr-search__button">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-send-2 chr-search__button-icon">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path
-                            d="M4.698 4.034l16.302 7.966l-16.302 7.966a.503 .503 0 0 1 -.546 -.124a.555 .555 0 0 1 -.12 -.568l2.468 -7.274l-2.468 -7.274a.555 .555 0 0 1 .12 -.568a.503 .503 0 0 1 .546 -.124z" />
-                        <path d="M6.5 12h14.5" />
-                    </svg>
-                </button>
-            </form>
-        </section>
-
-        <section class="results-emoji wrong">
-            <img src="../imgs/characters/torbjorn.webp" alt="dva" class="results-emoji__img">
-            <p class="results-emoji__text">Torbjorn</p>
-        </section>
         </section>
     </main>
 
@@ -156,7 +155,7 @@
         <p class="footer__text">Overwatchdle - 2024</p>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 

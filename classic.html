@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overwatchdle - Frase</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/games.css">
-    <link rel="icon" type="image/x-icon" href="../imgs/favicon.ico">
+    <title>Overwatchdle - Clasico</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/games.css">
+    <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
                 </li>
                 <li>
                     <a href=".">
-                        <img src="../imgs/overwatchdle.webp" alt="Overwatchdle" class="logo">
+                        <img src="imgs/overwatchdle.webp" alt="Overwatchdle" class="logo">
                     </a>
                 </li>
                 <li>
@@ -61,11 +61,11 @@
                     </svg>
                 </button>
                 <button class="language-selector lang-es">
-                    <img src="../imgs/es-flag.webp" class="language-img" alt="Bandera de españa">
+                    <img src="imgs/es-flag.webp" class="language-img" alt="Bandera de españa">
                     <p class="language-text">Español</p>
                 </button>
                 <button class="language-selector lang-en">
-                    <img src="../imgs/en-flag.webp" class="language-img" alt="Bandera de reino unido">
+                    <img src="imgs/en-flag.webp" class="language-img" alt="Bandera de reino unido">
                     <p class="language-text">English</p>
                 </button>
             </section>
@@ -102,33 +102,31 @@
         <nav class="gamemodes">
             <ul class="gamemodes__ul-alt">
                 <li>
-                    <a href="classic.html" class="gamemode__icon gamemode__icon-alt">
-                        <img src="../imgs/classic.webp" alt="Imagen clasico">
+                    <a href="classic.html" class="gamemode__icon gamemode__icon-alt gamemode__icon-selected">
+                        <img src="imgs/classic.webp" alt="Imagen clasico">
                     </a>
                 </li>
                 <li>
-                    <a href="phrase.html" class="gamemode__icon gamemode__icon-alt gamemode__icon-selected">
-                        <img src="../imgs/phrase.webp" alt="Imagen frase">
+                    <a href="phrase.html" class="gamemode__icon gamemode__icon-alt">
+                        <img src="imgs/phrase.webp" alt="Imagen frase">
                     </a>
                 </li>
                 <li>
                     <a href="ability.html" class="gamemode__icon gamemode__icon-alt">
-                        <img src="../imgs/ablity.webp" alt="Imagen habilidad">
+                        <img src="imgs/ablity.webp" alt="Imagen habilidad">
                     </a>
                 </li>
                 <li>
                     <a href="emoji.html" class="gamemode__icon gamemode__icon-alt">
-                        <img src="../imgs/emoji.webp" alt="Imagen emoji">
+                        <img src="imgs/emoji.webp" alt="Imagen emoji">
                     </a>
                 </li>
             </ul>
         </nav>
 
         <section class="game-instructions">
-            <p class="game-instructions__text">Que héroe dice</p>
-            <h2 class="game-instructions__title">" ¡El dragon y yo somos uno! "</h2>
-            <audio src="../audios/genji.ogg" controls class="audio audio-locked"></audio>
-            <p class="audio__text">Pista de audio en 3 intentos</p>
+            <h2 class="game-instructions__title">¡Adivina el héroe de Overwatch de hoy!</h2>
+            <p class="game-instructions__text">Escribe el nombre de un héroe para comenzar</p>
         </section>
 
         <section class="chr-search">
@@ -147,10 +145,63 @@
             </form>
         </section>
 
-        <section class="results-phrase wrong">
-            <img src="../imgs/characters/dva.webp" alt="dva" class="results-phrase__img">
-            <p class="results-phrase__text">D.va</p>
-        </section>
+        <section class="results">
+            <header class="results-titles">
+                <p class="result-title"> Personaje </p>
+                <p class="result-title"> Genero </p>
+                <p class="result-title"> Clase </p>
+                <p class="result-title"> Especie </p>
+                <p class="result-title"> Origen </p>
+                <p class="result-title"> Altura </p>
+                <p class="result-title"> Año de salida </p>
+            </header>
+            <section class="results-content">
+                <div class="result-info">
+                    <img src="imgs/characters/zarya.webp" alt="zarya" class="result-info__img">
+                </div>
+                <div class="result-info correct">
+                    <p class="result-info__text">Femenino</p>
+                </div>
+                <div class="result-info correct">
+                    <p class="result-info__text">Tanque</p>
+                </div>
+                <div class="result-info partial">
+                    <p class="result-info__text">Humano</p>
+                </div>
+                <div class="result-info wrong">
+                    <p class="result-info__text">Rusia</p>
+                </div>
+                <div class="result-info wrong lower">
+                    <p class="result-info__text">1.95 m</p>
+                </div>
+                <div class="result-info wrong higher">
+                    <p class="result-info__text">2017</p>
+                </div>
+
+                <div class="result-info">
+                    <img src="imgs/characters/dva.webp" alt="dva" class="result-info__img">
+                </div>
+                <div class="result-info correct">
+                    <p class="result-info__text">Femenino</p>
+                </div>
+                <div class="result-info correct">
+                    <p class="result-info__text">Tanque</p>
+                </div>
+                <div class="result-info partial">
+                    <p class="result-info__text">Humano</p>
+                </div>
+                <div class="result-info wrong">
+                    <p class="result-info__text">Corea del Sur</p>
+                </div>
+                <div class="result-info wrong higher">
+                    <p class="result-info__text">1.70 m</p>
+                </div>
+                <div class="result-info wrong higher">
+                    <p class="result-info__text">2016</p>
+                </div>
+
+
+            </section>
         </section>
     </main>
 
@@ -158,7 +209,7 @@
         <p class="footer__text">Overwatchdle - 2024</p>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 
