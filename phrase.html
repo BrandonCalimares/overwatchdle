@@ -133,7 +133,11 @@
 
         <section class="chr-search">
             <form class="chr-search__form">
-                <input type="text" placeholder="Escribe el nombre del héroe" class="chr-search__input">
+                <div class="chr-search__input-container">
+                    <input type="text" placeholder="Escribe el nombre del héroe" class="chr-search__input">
+                    <div class="search-results">
+                    </div>
+                </div>
                 <button class="chr-search__button">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
@@ -159,6 +163,7 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
 
 </body>
 
