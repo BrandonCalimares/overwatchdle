@@ -15,14 +15,14 @@
         <nav class="header__nav">
             <ul class="header__ul">
                 <li>
-                    <button class="settings header__button">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-settings-2 settings-icon">
+                    <button class="info-btn header__button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-info-circle info-icon">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M19.875 6.27a2.225 2.225 0 0 1 1.125 1.948v7.284c0 .809 -.443 1.555 -1.158 1.948l-6.75 4.27a2.269 2.269 0 0 1 -2.184 0l-6.75 -4.27a2.225 2.225 0 0 1 -1.158 -1.948v-7.285c0 -.809 .443 -1.554 1.158 -1.947l6.75 -3.98a2.33 2.33 0 0 1 2.25 0l6.75 3.98h-.033z" />
-                            <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                            <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                            <path d="M12 9h.01" />
+                            <path d="M11 12h1v4h1" />
                         </svg>
                     </button>
                 </li>
@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li>
-                    <button class="language header__button">
+                    <button class="language-btn header__button">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="icon icon-tabler icons-tabler-outline icon-tabler-language language-icon">
@@ -47,6 +47,54 @@
                 </li>
             </ul>
         </nav>
+
+        <dialog class="modal language-modal">
+            <section class="language-modal__content">
+                <button class="close-modal close-lang">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-x close-modal__img">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M18 6l-12 12" />
+                        <path d="M6 6l12 12" />
+                    </svg>
+                </button>
+                <button class="language-selector lang-es">
+                    <img src="/imgs/es-flag.webp" class="language-img" alt="Bandera de españa">
+                    <p class="language-text">Español</p>
+                </button>
+                <button class="language-selector lang-en">
+                    <img src="/imgs/en-flag.webp" class="language-img" alt="Bandera de reino unido">
+                    <p class="language-text">English</p>
+                </button>
+            </section>
+        </dialog>
+
+        <dialog class="modal info-modal">
+            <section class="info-modal__content">
+                <button class="close-modal close-info">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-x close-modal__img">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M18 6l-12 12" />
+                        <path d="M6 6l12 12" />
+                    </svg>
+                </button>
+                <h3 class="info-modal__title">Información</h3>
+                <hr class="info-hr">
+                <p class="info-modal__text">Todos los días, adivina un héroe diferente del juego Overwatch</p>
+                <p class="info-modal__text">Overwatchdle fue creado utilizando recursos que son propiedad de Blizzard
+                    Entertainment. Blizzard Entertainment no respalda ni patrocina este proyecto.</p>
+                <p class="info-modal__text">Juego inspirado en <a href="https://loldle.net" class="info-modal__link"
+                        target="_blank">Loldle</a></p>
+                <hr class="info-hr">
+                <footer class="info-modal__footer">
+                    <p class="info-modal__text">Contactame: <a href="mailto:brandoncalimares@gmail.com"
+                            class="info-modal__link">brandoncalimares@gmail.com</a></p>
+                </footer>
+            </section>
+        </dialog>
     </header>
 
     <main>
@@ -106,6 +154,8 @@
     <footer>
         <p class="footer__text">Overwatchdle - 2024</p>
     </footer>
+
+    <script src="js/main.js"></script>
 
 </body>
 
