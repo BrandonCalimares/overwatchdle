@@ -2,10 +2,7 @@ const heroes = [
     {
         name: "ana",
         gender: {
-            en: {
-                en: "female",
-                es: "femenino"
-            },
+            en: "female",
             es: "femenino"
         },
         class: {
@@ -789,7 +786,10 @@ const heroes = [
             en: "tank",
             es: "tanque"
         },
-        species: "mono",
+        species: {
+            en: "gorilla",
+            es: "gorila"
+        },
         origin: {
             en: "moon",
             es: "luna"

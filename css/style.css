@@ -9,7 +9,7 @@
   src: url("../fonts/big_noodle_titling.ttf");
 }
 
-/* COLORS */
+/* COLORES */
 
 :root {
   --background-color: #d4d9e5;
@@ -25,6 +25,30 @@
 }
 
 /* ELEMENTOS GLOBALES */
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--input-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--background-color);
+  border-radius: 2rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:active {
+  background: var(--text-color-alt);
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   display: flex;
