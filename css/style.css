@@ -30,18 +30,15 @@
   width: 1rem;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: var(--input-color);
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--background-color);
   border-radius: 2rem;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:active {
   background: var(--text-color-alt);
 }
@@ -54,8 +51,9 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
-  background: url(../imgs/background.webp) center;
+  min-height: 100dvh;
+  background: url("../imgs/background.webp") black;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -177,6 +175,17 @@ a {
   transform: scale(1.1);
 }
 
+@media (max-width: 770px) {
+  .logo {
+    width: 100%;
+  }
+  .info-icon,
+  .language-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
 /* LANGUAGE MODAL */
 
 .language-modal__content,
@@ -226,10 +235,25 @@ a {
   font-style: italic;
 }
 
+@media (max-width: 600px) {
+  .language-selector {
+    width: 17rem;
+  }
+
+  .language-img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .language-text {
+    font-size: 2rem;
+  }
+}
+
 /* INFO MODAL */
 
 .info-modal__content {
-  width: 60rem;
+  width: 50rem;
   padding: 1rem;
 }
 
@@ -262,6 +286,39 @@ a {
   border: 0.1rem solid var(--text-color-lg);
   width: 100%;
   margin: 1rem 0;
+}
+
+@media (max-width: 850px) and (min-width: 550px) {
+  .info-modal__content {
+    width: 30rem;
+  }
+
+  .info-modal__title {
+    font-size: 3rem;
+  }
+
+  .info-modal__text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .info-modal__content {
+    width: 20rem;
+  }
+
+  .info-modal__title {
+    font-size: 2rem;
+  }
+
+  .info-modal__text {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.5rem;
+  }
+
+  .info-modal__footer {
+    padding: 0.5rem;
+  }
 }
 
 /* MAIN */
@@ -354,6 +411,39 @@ a {
   font-size: 1.5rem;
   font-style: italic;
   color: var(--text-color-lg);
+}
+
+@media (max-width: 650px) {
+  .description {
+    font-size: 1.5rem;
+  }
+
+  .gamemode__icon {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .gamemodes__ul-alt {
+    gap: 0.7rem;
+  }
+
+  .gamemode__icon-alt {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .gamemode__container {
+    width: 15rem;
+    height: 5rem;
+  }
+
+  .gamemode__title {
+    font-size: 2rem;
+  }
+
+  .gamemode__description {
+    font-size: 1rem;
+  }
 }
 
 /* FOOTER */

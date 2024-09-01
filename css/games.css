@@ -2,6 +2,7 @@
 
 main {
   gap: 1rem;
+  max-width: 100%;
 }
 
 .game-instructions {
@@ -131,6 +132,28 @@ main {
   margin-left: 1rem;
 }
 
+@media (max-width: 768px) {
+  .game-instructions {
+    width: 90%;
+  }
+
+  .game-instructions__title {
+    font-size: 2.5rem;
+  }
+
+  .game-instructions__text {
+    font-size: 1.7rem;
+  }
+
+  .chr-search {
+    width: 90%;
+  }
+
+  .chr-search__input {
+    font-size: 1rem;
+  }
+}
+
 /* CLASSIC MODE */
 
 .results {
@@ -140,9 +163,10 @@ main {
 
 .results-titles {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 6.3rem);
   gap: 1rem;
   padding: 0;
+  justify-content: start;
 }
 
 .result-title {
@@ -160,9 +184,8 @@ main {
 
 .results-content {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 6.3rem);
   gap: 1rem;
-  padding: 0;
   margin-top: 1rem;
 }
 
@@ -323,6 +346,44 @@ main {
   padding: 1rem;
 }
 
+@media (max-width: 800px) {
+  .results-titles {
+    grid-template-columns: repeat(7, 5rem);
+  }
+
+  .results-content {
+    grid-template-columns: repeat(7, 5rem);
+  }
+
+  .result-title {
+    font-size: 1.2rem;
+  }
+
+  .result-info {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 660px) {
+  .results {
+    max-width: 90%;
+    overflow-x: scroll;
+    padding: 1rem;
+  }
+
+  .correct-answer {
+    width: 90%;
+  }
+
+  .correct-answer__tries {
+    font-size: 1.2rem;
+  }
+
+  .next-game {
+    width: 17rem;
+  }
+}
+
 /* PHRASE */
 
 .audio__text {
@@ -361,6 +422,15 @@ main {
 .results-emoji__text {
   font-style: italic;
   color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .results-phrase,
+  .results-ability,
+  .results-emoji {
+    width: 90%;
+    font-size: 3rem;
+  }
 }
 
 /* ABILITIES */
