@@ -807,7 +807,10 @@ const heroes = [
             en: "tank",
             es: "tanque"
         },
-        species: "hamster",
+        species: {
+            en: "hamster",
+            es: "hamster"
+        },
         origin: {
             en: "moon",
             es: "luna"
