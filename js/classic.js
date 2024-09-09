@@ -8,10 +8,10 @@ form.addEventListener('submit', (e) => {
     const searchValue = input.value.toLowerCase();
     input.value = '';
     searchResults.innerHTML = '';
-    let heroe = heroes.filter(hero => hero.name == searchValue);
-    if (heroe.length > 0) {
+    let hero = heroes.filter(hero => hero.name == searchValue);
+    if (hero.length > 0) {
         tries++;
-        showResults(heroe[0]);
+        showResults(hero[0]);
     }
 })
 

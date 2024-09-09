@@ -126,9 +126,41 @@
 
         <section class="game-instructions">
             <p class="game-instructions__text">Que héroe dice</p>
-            <h2 class="game-instructions__title">" ¡El dragon y yo somos uno! "</h2>
-            <audio src="audios/genji.ogg" controls class="audio audio-locked"></audio>
-            <p class="audio__text">Pista de audio en 3 intentos</p>
+            <h2 class="game-instructions__title"></h2>
+            <div class="audio-container">
+                <button class="audio-button audio-locked">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-volume audio-button__icon">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M15 8a5 5 0 0 1 0 8" />
+                        <path d="M17.7 5a9 9 0 0 1 0 14" />
+                        <path
+                            d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5" />
+                    </svg>
+                </button>
+                <p class="audio__text">Pista de audio en 3 intentos</p>
+                <div class="audio-player" style="display: none;">
+                    <button class="audio-player__button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="icon icon-tabler icons-tabler-filled icon-tabler-player-play audio-player__icon audio-play">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" />
+                        </svg>
+                        <svg style="display: none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor"
+                            class="icon icon-tabler icons-tabler-filled icon-tabler-player-stop audio-player__icon audio-stop">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M17 4h-10a3 3 0 0 0 -3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3 -3v-10a3 3 0 0 0 -3 -3z" />
+                        </svg>
+                    </button>
+                    <input class="volume-slider" type="range" min="0" max="100" step="any" value="100">
+                    <audio src="" class="audio"></audio>
+                </div>
+            </div>
         </section>
 
         <section class="chr-search">
@@ -151,10 +183,18 @@
             </form>
         </section>
 
-        <section class="results-phrase wrong">
-            <img src="imgs/characters/dva.webp" alt="dva" class="results-phrase__img">
-            <p class="results-phrase__text">D.va</p>
+        <section class="results-phrase-container">
         </section>
+
+        <section class="correct-answer correct-answer-hidden">
+            <hr class="correct-answer__hr">
+            <p class="next-game-title">Siguiente modo</p>
+            <a href="phrase.html">
+                <article class="next-game">
+                    <img src="imgs/ablity.webp" alt="Imagen Habilidad" class="next-game__img">
+                    <p class="next-game__text">Habilidad</p>
+                </article>
+            </a>
         </section>
     </main>
 
@@ -162,8 +202,11 @@
         <p class="footer__text">Overwatchdle - 2024</p>
     </footer>
 
+    <script src="js/heroes.js"></script>
     <script src="js/main.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/audios.js"></script>
+    <script src="js/phrase.js"></script>
 
 </body>
 
