@@ -17,7 +17,7 @@ form.addEventListener('submit', (e) => {
     const searchValue = input.value.toLowerCase();
     input.value = '';
     searchResults.innerHTML = '';
-    let hero = audios.filter(hero => hero.hero == searchValue);
+    let hero = audios.filter(hero => hero.hero.startsWith(searchValue));
     if (hero.length > 0) {
         tries++;
         showResults(hero[0]);
@@ -96,7 +96,13 @@ audioButton.addEventListener('click', () => {
 const audioPlayerButton = document.querySelector('.audio-player__button');
 
 audioPlayerButton.addEventListener('click', () => {
-    audioPlayer.play();
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+    } else {
+        audioPlayer.pause();
+        audioPlayer.currentTime = 0;
+    }
+
 })
 
 audioPlayer.addEventListener('play', () => {
@@ -106,7 +112,7 @@ audioPlayer.addEventListener('play', () => {
     audioStopIcon.style.display = 'block';
 })
 
-audioPlayer.addEventListener('ended', () => {
+audioPlayer.addEventListener('pause', () => {
     const audioPlayIcon = document.querySelector('.audio-play');
     const audioStopIcon = document.querySelector('.audio-stop');
     audioPlayIcon.style.display = 'block';

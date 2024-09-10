@@ -544,6 +544,9 @@ main {
   height: 6rem;
   border-radius: 0.7rem;
   background-color: var(--background-color-dark);
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
   padding: 0.5rem;
   margin-top: 1rem;
 }
