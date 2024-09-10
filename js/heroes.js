@@ -122,7 +122,7 @@ const heroes = [
             en: "usa",
             es: "eeuu"
         },
-        height: 1.85,
+        height: 1.86,
         year: 2016
     },
     {
@@ -542,7 +542,7 @@ const heroes = [
             en: "usa",
             es: "eeuu"
         },
-        height: 1.85,
+        height: 1.84,
         year: 2016
     },
     {

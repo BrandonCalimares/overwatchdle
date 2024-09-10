@@ -11,6 +11,8 @@ form.addEventListener('submit', (e) => {
     let hero = heroes.filter(hero => hero.name.startsWith(searchValue));
     if (hero.length > 0) {
         tries++;
+        const index = heroes.findIndex(h => h.name == hero[0].name);
+        heroes.splice(index, 1);
         showResults(hero[0]);
     }
 })

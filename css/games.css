@@ -2,7 +2,7 @@
 
 main {
   gap: 1rem;
-  max-width: 100%;
+  width: 100%;
 }
 
 .game-instructions {
@@ -151,6 +151,16 @@ main {
 
   .chr-search__input {
     font-size: 1rem;
+  }
+
+  .search-results__text {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .search-results__text {
+    font-size: 1.5rem;
   }
 }
 
@@ -487,12 +497,15 @@ main {
   cursor: pointer;
 }
 
-.results-phrase-container {
+.results-phrase-container,
+.results-ability-container,
+.results-emoji-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   width: 100%;
+  max-width: 40rem;
 }
 
 .results-phrase,
@@ -521,19 +534,27 @@ main {
   left: 0.5rem;
 }
 
-.results-phrase__text,
-.results-ability__text,
-.results-emoji__text {
-  font-style: italic;
-  color: var(--text-color);
-}
-
 @media (max-width: 768px) {
   .results-phrase,
   .results-ability,
   .results-emoji {
     width: 90%;
     font-size: 3rem;
+    justify-content: space-between;
+  }
+
+  .results-phrase__img,
+  .results-ability__img,
+  .results-emoji__img {
+    position: relative;
+  }
+
+  .results-phrase__name,
+  .results-ability__name,
+  .results-emoji__name {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -560,4 +581,17 @@ main {
   font-style: normal;
   text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
   margin-top: 1.5rem;
+}
+
+.emoji-animated {
+  animation: emoji-animation 2s ease;
+}
+
+@keyframes emoji-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

@@ -17,9 +17,11 @@ form.addEventListener('submit', (e) => {
     const searchValue = input.value.toLowerCase();
     input.value = '';
     searchResults.innerHTML = '';
-    let hero = audios.filter(hero => hero.hero.startsWith(searchValue));
+    let hero = heroes.filter(hero => hero.name.startsWith(searchValue));
     if (hero.length > 0) {
         tries++;
+        const index = heroes.findIndex(h => h.name == hero[0].name);
+        heroes.splice(index, 1);
         showResults(hero[0]);
     }
 })
@@ -38,17 +40,17 @@ const showResults = (h) => {
     let container = document.createElement('section');
 
     let image = document.createElement('img');
-    image.src = 'imgs/characters/' + h.hero + '.webp';
-    image.alt = h.hero;
+    image.src = 'imgs/characters/' + h.name + '.webp';
+    image.alt = h.name;
     image.classList.add('results-phrase__img');
     container.appendChild(image);
 
     let name = document.createElement('p');
     name.classList.add('results-phrase__name');
-    name.innerHTML = h.hero;
+    name.innerHTML = h.name;
     container.appendChild(name);
 
-    if (h.hero == randomPhrase.hero) {
+    if (h.name == randomPhrase.hero) {
         container.classList.add('correct');
 
         const input = document.querySelector('.chr-search__input');

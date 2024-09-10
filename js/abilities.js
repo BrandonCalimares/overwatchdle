@@ -50,11 +50,6 @@ const abilities = [
     // Bastion
     {
         hero: 'bastion',
-        key: 'e',
-        img: 'imgs/abilities/bastion-e.png',
-    },
-    {
-        hero: 'bastion',
         key: 'q',
         img: 'imgs/abilities/bastion-q.png',
     },

@@ -126,7 +126,13 @@
 
         <section class="game-instructions">
             <p class="game-instructions__title">¿Que héroe describen estos emojis?</p>
-            <p class="emojis">🍑 🕷️ ❔ ❔ ❔</p>
+            <p class="emojis">
+                <span class="emoji-0">❔</span>
+                <span class="emoji-1">❔</span>
+                <span class="emoji-2">❔</span>
+                <span class="emoji-3">❔</span>
+                <span class="emoji-4">❔</span>
+            </p>
         </section>
 
         <section class="chr-search">
@@ -149,10 +155,18 @@
             </form>
         </section>
 
-        <section class="results-emoji wrong">
-            <img src="imgs/characters/torbjorn.webp" alt="dva" class="results-emoji__img">
-            <p class="results-emoji__text">Torbjorn</p>
+        <section class="results-emoji-container">
         </section>
+
+        <section class="correct-answer correct-answer-hidden">
+            <hr class="correct-answer__hr">
+            <p class="next-game-title">Siguiente modo</p>
+            <a href="classic.html">
+                <article class="next-game">
+                    <img src="imgs/classic.webp" alt="Imagen Clasico" class="next-game__img">
+                    <p class="next-game__text">Clasico</p>
+                </article>
+            </a>
         </section>
     </main>
 
@@ -161,7 +175,10 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/heroes.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/emojis.js"></script>
+    <script src="js/emoji.js"></script>
 
 </body>
 
