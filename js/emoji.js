@@ -1,4 +1,8 @@
-const randomEmojis = emojis[Math.floor(Math.random() * emojis.length)];
+const currentDate = new Date();
+if (((currentDate.getUTCFullYear() * (currentDate.getUTCMonth() + 1)) % emojis.length) == 0) currentDate.setFullYear(currentDate.getUTCFullYear() + 1)
+const index = (currentDate.getUTCFullYear() * (currentDate.getUTCDate() + 1) * (currentDate.getUTCMonth() + 2)) % emojis.length
+const randomEmojis = emojis[index];
+
 const results = document.querySelector('.results-emoji-container');
 const emojisText = [
     document.querySelector('.emoji-0'),

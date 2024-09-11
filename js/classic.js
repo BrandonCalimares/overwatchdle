@@ -1,5 +1,11 @@
 const results = document.querySelector('.results-content');
-const randomHeroe = heroes[Math.floor(Math.random() * heroes.length)];
+
+const currentDate = new Date();
+if (((currentDate.getUTCFullYear() * (currentDate.getUTCMonth() + 1)) % heroes.length) == 0) currentDate.setFullYear(currentDate.getUTCFullYear() + 1)
+const index = (currentDate.getUTCFullYear() * currentDate.getUTCDate() * (currentDate.getUTCMonth() + 1)) % heroes.length
+const randomHeroe = heroes[index];
+
+
 let tries = 0;
 
 form.addEventListener('submit', (e) => {

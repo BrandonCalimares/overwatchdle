@@ -1,6 +1,11 @@
 const phraseText = document.querySelector('.game-instructions__title');
 const audioPlayer = document.querySelector('.audio');
-const randomPhrase = audios[Math.floor(Math.random() * audios.length)];
+
+const currentDate = new Date();
+if (((currentDate.getUTCFullYear() * (currentDate.getUTCMonth() + 1)) % audios.length) == 0) currentDate.setFullYear(currentDate.getUTCFullYear() + 1)
+const index = (currentDate.getUTCFullYear() * currentDate.getUTCDate() * (currentDate.getUTCMonth() + 1)) % audios.length
+const randomPhrase = audios[index];
+
 const results = document.querySelector('.results-phrase-container');
 const audioContainer = document.querySelector('.audio-player');
 const audioText = document.querySelector('.audio__text');

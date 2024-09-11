@@ -1,6 +1,11 @@
 const abilityImg = document.querySelector('.ability-img');
 const results = document.querySelector('.results-ability-container');
-const randomAbility = abilities[Math.floor(Math.random() * abilities.length)];
+
+const currentDate = new Date();
+if (((currentDate.getUTCFullYear() * (currentDate.getUTCMonth() + 1)) % abilities.length) == 0) currentDate.setFullYear(currentDate.getUTCFullYear() + 1)
+const index = (currentDate.getUTCFullYear() * currentDate.getUTCDate() * (currentDate.getUTCMonth() + 1)) % abilities.length
+const randomAbility = abilities[index];
+
 let tries = 0;
 
 abilityImg.style.backgroundImage = `url(${randomAbility.img})`;

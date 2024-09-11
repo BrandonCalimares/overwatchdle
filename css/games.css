@@ -132,6 +132,20 @@ main {
   margin-left: 1rem;
 }
 
+.timer-text {
+  font-size: 1.3rem;
+  color: var(--text-color-alt);
+  font-family: "Big Noodle Too", impact, sans-serif;
+  text-align: center;
+}
+
+.timer {
+  font-size: 3rem;
+  color: var(--text-color-alt);
+  font-family: "Big Noodle Too", impact, sans-serif;
+  margin-bottom: 1rem;
+}
+
 @media (max-width: 768px) {
   .game-instructions {
     width: 90%;
