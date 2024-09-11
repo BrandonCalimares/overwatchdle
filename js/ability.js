@@ -24,11 +24,33 @@ form.addEventListener('submit', (e) => {
 
 const showCorrectAnswer = () => {
     const container = document.querySelector('.correct-answer');
-    let content = '<p class="correct-answer__text">GG EZ</p>';
-    content += '<div class="correct-answer__hero"> <img src="imgs/characters/' + randomAbility.hero + '.webp" alt="' + randomAbility.hero + '" class="correct-answer__img"> <p class="correct-answer__name">' + randomAbility.hero + '</p> </div>';
-    content += '<p class="correct-answer__tries">Numero de intentos: ' + tries + '</p>';
+    let ggText = document.createElement('p');
+    ggText.classList.add('correct-answer__text');
+    ggText.innerHTML = 'GG EZ';
 
-    container.innerHTML = content + container.innerHTML;
+    let correctHero = document.createElement('div');
+    correctHero.classList.add('correct-answer__hero');
+
+    let heroImg = document.createElement('img');
+    heroImg.src = 'imgs/characters/' + randomAbility.hero + '.webp';
+    heroImg.alt = randomAbility.hero;
+    heroImg.classList.add('correct-answer__img');
+
+    let heroName = document.createElement('p');
+    heroName.classList.add('correct-answer__name');
+    heroName.innerHTML = randomAbility.hero;
+
+    correctHero.appendChild(heroImg);
+    correctHero.appendChild(heroName);
+
+    let triesText = document.createElement('p');
+    triesText.classList.add('correct-answer__tries');
+    triesText.innerHTML = 'Numero de intentos: ' + tries;
+
+    container.insertBefore(triesText, container.firstChild);
+    container.insertBefore(correctHero, container.firstChild);
+    container.insertBefore(ggText, container.firstChild);
+
     container.classList.remove('correct-answer-hidden');
 }
 
@@ -68,4 +90,54 @@ const showResults = (h) => {
 
     results.insertBefore(container, results.firstChild);
     container.classList.add('results-phrase');
+}
+
+const rightClickButton = document.querySelector('.right-click');
+const qButton = document.querySelector('.q');
+const eButton = document.querySelector('.e');
+const shiftButton = document.querySelector('.shift');
+
+rightClickButton.addEventListener('click', () => {
+    verifyExtra('right-click', rightClickButton);
+})
+
+qButton.addEventListener('click', () => {
+    verifyExtra('q', qButton);
+})
+
+eButton.addEventListener('click', () => {
+    verifyExtra('e', eButton);
+})
+
+shiftButton.addEventListener('click', () => {
+    verifyExtra('shift', shiftButton);
+})
+
+const verifyExtra = (option, button) => {
+    switch (randomAbility.key) {
+        case 'right-click':
+            rightClickButton.classList.add('ability-option-correct');
+            break;
+        case 'q':
+            qButton.classList.add('ability-option-correct');
+            break;
+        case 'e':
+            eButton.classList.add('ability-option-correct');
+            break;
+        case 'shift':
+            shiftButton.classList.add('ability-option-correct');
+    }
+
+    if (randomAbility.key != option) {
+        button.classList.add('ability-option-wrong');
+    }
+
+    rightClickButton.disabled = true;
+    rightClickButton.classList.add('no-hover');
+    qButton.disabled = true;
+    qButton.classList.add('no-hover');
+    eButton.disabled = true;
+    eButton.classList.add('no-hover');
+    shiftButton.disabled = true;
+    shiftButton.classList.add('no-hover');
 }
