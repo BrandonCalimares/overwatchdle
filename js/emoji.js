@@ -4,8 +4,7 @@ const emojisText = [
     document.querySelector('.emoji-0'),
     document.querySelector('.emoji-1'),
     document.querySelector('.emoji-2'),
-    document.querySelector('.emoji-3'),
-    document.querySelector('.emoji-4')
+    document.querySelector('.emoji-3')
 ]
 let tries = 0;
 
@@ -52,7 +51,7 @@ const showResults = (h) => {
         }, 500);
     } else {
         container.classList.add('wrong');
-        if (tries < 5) {
+        if (tries < 4) {
             emojisText[tries].innerHTML = randomEmojis.text[tries];
             emojisText[tries].classList.add('emoji-animated');
         }
@@ -63,7 +62,6 @@ const showResults = (h) => {
 }
 
 const showCorrectAnswer = () => {
-
     const container = document.querySelector('.correct-answer');
     let content = '<p class="correct-answer__text">GG EZ</p>';
     content += '<div class="correct-answer__hero"> <img src="imgs/characters/' + randomEmojis.hero + '.webp" alt="' + randomEmojis.hero + '" class="correct-answer__img"> <p class="correct-answer__name">' + randomEmojis.hero + '</p> </div>';
@@ -72,7 +70,6 @@ const showCorrectAnswer = () => {
     emojisText[1].innerHTML = randomEmojis.text[1];
     emojisText[2].innerHTML = randomEmojis.text[2];
     emojisText[3].innerHTML = randomEmojis.text[3];
-    emojisText[4].innerHTML = randomEmojis.text[4];
 
     container.innerHTML = content + container.innerHTML;
     container.classList.remove('correct-answer-hidden');
