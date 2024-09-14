@@ -17,7 +17,9 @@ form.addEventListener('submit', (e) => {
     let hero = heroes.filter(hero => hero.name.startsWith(searchValue));
     if (hero.length > 0) {
         tries++;
+        addToCookies(hero[0]);
         const index = heroes.findIndex(h => h.name == hero[0].name);
+        heroes[index] = null;
         heroes.splice(index, 1);
         showResults(hero[0]);
     }
@@ -108,3 +110,69 @@ const showResults = (h) => {
         }, 600);
     }, 600);
 }
+
+const addToCookies = (h) => {
+    if (document.cookie == '') {
+        document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /classic.html`;
+    }
+    const cookies = document.cookie;
+    const hGuessed = JSON.parse(cookies.split('=')[1]);
+    hGuessed.push(heroes.indexOf(h));
+    document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /classic.html`;
+}
+
+const getFromCookies = () => {
+    const cookies = document.cookie;
+    if (cookies == '') {
+        return [];
+    }
+    return JSON.parse(cookies.split('=')[1]);
+}
+
+const loadGuessedHeroes = () => {
+    const hGuessed = getFromCookies();
+    tries = hGuessed.length;
+    hGuessed.forEach(h => {
+        let answers = verifyResults(heroes[h]);
+
+        if (JSON.stringify(answers) == JSON.stringify(["correct", "correct", "correct", "correct", "correct", "correct"])) {
+            const input = document.querySelector('.chr-search__input');
+            input.disabled = true;
+            showCorrectAnswer();
+        }
+
+        let year = document.createElement('div');
+        year.classList.add('result-info', answers[5], 'non-animated');
+        results.insertBefore(year, results.firstChild);
+        let height = document.createElement('div');
+        height.classList.add('result-info', answers[4], 'non-animated');
+        results.insertBefore(height, results.firstChild);
+        let origin = document.createElement('div');
+        origin.classList.add('result-info', answers[3], 'non-animated');
+        results.insertBefore(origin, results.firstChild);
+        let species = document.createElement('div');
+        species.classList.add('result-info', answers[2], 'non-animated');
+        results.insertBefore(species, results.firstChild);
+        let class_ = document.createElement('div');
+        class_.classList.add('result-info', answers[1], 'non-animated');
+        results.insertBefore(class_, results.firstChild);
+        let gender = document.createElement('div');
+        gender.classList.add('result-info', answers[0], 'non-animated');
+        results.insertBefore(gender, results.firstChild);
+        let image = document.createElement('div');
+        image.classList.add('result-info', 'non-animated');
+        results.insertBefore(image, results.firstChild);
+
+        image.innerHTML = '<img src="imgs/characters/' + heroes[h].name + '.webp" alt="' + heroes[h].name + '" class="result-info__img">';
+        gender.innerHTML = '<p class="result-info__text">' + heroes[h].gender.es + '</p>';
+        class_.innerHTML = '<p class="result-info__text">' + heroes[h].class.es + '</p>';
+        species.innerHTML = '<p class="result-info__text">' + heroes[h].species.es + '</p>';
+        origin.innerHTML = '<p class="result-info__text">' + heroes[h].origin.es + '</p>';
+        height.innerHTML = '<p class="result-info__text">' + heroes[h].height.toFixed(2) + '</p>';
+        year.innerHTML = '<p class="result-info__text">' + heroes[h].year + '</p>';
+
+        heroes.splice(h, 1);
+    });
+}
+
+loadGuessedHeroes();

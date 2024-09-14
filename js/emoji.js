@@ -23,6 +23,7 @@ form.addEventListener('submit', (e) => {
     let hero = heroes.filter(hero => hero.name.startsWith(searchValue));
     if (hero.length > 0) {
         tries++;
+        addToCookies(hero[0]);
         const index = heroes.findIndex(h => h.name == hero[0].name);
         heroes.splice(index, 1);
         showResults(hero[0]);
@@ -78,3 +79,61 @@ const showCorrectAnswer = () => {
     container.innerHTML = content + container.innerHTML;
     container.classList.remove('correct-answer-hidden');
 }
+
+const addToCookies = (h) => {
+    if (document.cookie == '') {
+        document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /emoji.html`;
+    }
+    const cookies = document.cookie;
+    const hGuessed = JSON.parse(cookies.split('=')[1]);
+    hGuessed.push(heroes.indexOf(h));
+    document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /emoji.html`;
+}
+
+const getFromCookies = () => {
+    const cookies = document.cookie;
+    if (cookies == '') {
+        return [];
+    }
+    return JSON.parse(cookies.split('=')[1]);
+}
+
+const loadGuessedHeroes = () => {
+    const hGuessed = getFromCookies();
+    tries = hGuessed.length;
+    hGuessed.forEach(h => {
+        let container = document.createElement('section');
+
+        let image = document.createElement('img');
+        image.src = 'imgs/characters/' + heroes[h].name + '.webp';
+        image.alt = heroes[h].name;
+        image.classList.add('results-phrase__img');
+        container.appendChild(image);
+
+        let name = document.createElement('p');
+        name.classList.add('results-phrase__name');
+        name.innerHTML = heroes[h].name;
+        container.appendChild(name);
+
+        if (heroes[h].name == randomEmojis.hero) {
+            container.classList.add('correct');
+
+            const input = document.querySelector('.chr-search__input');
+            input.disabled = true;
+
+            showCorrectAnswer();
+        } else {
+            container.classList.add('wrong');
+            if (tries < 4) {
+                emojisText[tries].innerHTML = randomEmojis.text[tries];
+                emojisText[tries].classList.add('emoji-animated');
+            }
+        }
+
+        results.insertBefore(container, results.firstChild);
+        container.classList.add('results-phrase');
+        heroes.splice(h, 1);
+    })
+}
+
+loadGuessedHeroes();

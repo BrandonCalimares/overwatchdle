@@ -652,3 +652,7 @@ main {
     opacity: 1;
   }
 }
+
+.non-animated {
+  animation: none;
+}

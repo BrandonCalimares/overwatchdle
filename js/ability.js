@@ -21,6 +21,7 @@ form.addEventListener('submit', (e) => {
     let hero = heroes.filter(hero => hero.name.startsWith(searchValue));
     if (hero.length > 0) {
         tries++;
+        addToCookies(hero[0]);
         const index = heroes.findIndex(h => h.name == hero[0].name);
         heroes.splice(index, 1);
         showResults(hero[0]);
@@ -146,3 +147,62 @@ const verifyExtra = (option, button) => {
     shiftButton.disabled = true;
     shiftButton.classList.add('no-hover');
 }
+
+const addToCookies = (h) => {
+    if (document.cookie == '') {
+        document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /ability.html`;
+    }
+    const cookies = document.cookie;
+    const hGuessed = JSON.parse(cookies.split('=')[1]);
+    hGuessed.push(heroes.indexOf(h));
+    document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /ability.html`;
+}
+
+const getFromCookies = () => {
+    const cookies = document.cookie;
+    if (cookies == '') {
+        return [];
+    }
+    return JSON.parse(cookies.split('=')[1]);
+}
+
+const loadGuessedHeroes = () => {
+    const hGuessed = getFromCookies();
+    tries = hGuessed.length;
+    hGuessed.forEach(h => {
+        let container = document.createElement('section');
+
+        let image = document.createElement('img');
+        image.src = 'imgs/characters/' + heroes[h].name + '.webp';
+        image.alt = heroes[h].name;
+        image.classList.add('results-phrase__img');
+        container.appendChild(image);
+
+        let name = document.createElement('p');
+        name.classList.add('results-phrase__name');
+        name.innerHTML = heroes[h].name;
+        container.appendChild(name);
+
+        if (heroes[h].name == randomAbility.hero) {
+            abilityImg.style.backgroundSize = `80%`;
+
+            container.classList.add('correct');
+
+            const input = document.querySelector('.chr-search__input');
+            input.disabled = true;
+            showCorrectAnswer();
+        } else {
+            if (size > 80) {
+                size -= 20;
+                abilityImg.style.backgroundSize = `${size}%`;
+            }
+            container.classList.add('wrong');
+        }
+
+        results.insertBefore(container, results.firstChild);
+        container.classList.add('results-phrase', 'non-animated');
+        heroes.splice(h, 1);
+    });
+}
+
+loadGuessedHeroes();
