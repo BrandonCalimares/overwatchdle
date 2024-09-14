@@ -82,12 +82,12 @@ const showCorrectAnswer = () => {
 
 const addToCookies = (h) => {
     if (document.cookie == '') {
-        document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /emoji.html`;
+        document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /emoji`;
     }
     const cookies = document.cookie;
     const hGuessed = JSON.parse(cookies.split('=')[1]);
     hGuessed.push(heroes.indexOf(h));
-    document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /emoji.html`;
+    document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /emoji`;
 }
 
 const getFromCookies = () => {
