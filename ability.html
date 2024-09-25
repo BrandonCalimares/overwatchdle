@@ -14,62 +14,10 @@
 
     <header class="header">
         <nav class="header__nav">
-            <ul class="header__ul">
-                <li>
-                    <button class="info-btn header__button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-info-circle info-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-                            <path d="M12 9h.01" />
-                            <path d="M11 12h1v4h1" />
-                        </svg>
-                    </button>
-                </li>
-                <li>
-                    <a href=".">
-                        <img src="imgs/overwatchdle.webp" alt="Overwatchdle" class="logo">
-                    </a>
-                </li>
-                <li>
-                    <button class="language-btn header__button">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-language language-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M4 5h7" />
-                            <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
-                            <path d="M5 9c0 2.144 2.952 3.908 6.7 4" />
-                            <path d="M12 20l4 -9l4 9" />
-                            <path d="M19.1 18h-6.2" />
-                        </svg>
-                    </button>
-                </li>
-            </ul>
+            <a href=".">
+                <img src="imgs/overwatchdle.webp" alt="Overwatchdle" class="logo">
+            </a>
         </nav>
-
-        <dialog class="modal language-modal">
-            <section class="language-modal__content">
-                <button class="close-modal close-lang">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-x close-modal__img">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M18 6l-12 12" />
-                        <path d="M6 6l12 12" />
-                    </svg>
-                </button>
-                <button class="language-selector lang-es">
-                    <img src="imgs/es-flag.webp" class="language-img" alt="Bandera de españa">
-                    <p class="language-text">Español</p>
-                </button>
-                <button class="language-selector lang-en">
-                    <img src="imgs/en-flag.webp" class="language-img" alt="Bandera de reino unido">
-                    <p class="language-text">English</p>
-                </button>
-            </section>
-        </dialog>
 
         <dialog class="modal info-modal">
             <section class="info-modal__content">
@@ -195,6 +143,16 @@
     </main>
 
     <footer>
+        <button class="info-btn header__button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-info-circle info-icon">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                <path d="M12 9h.01" />
+                <path d="M11 12h1v4h1" />
+            </svg>
+        </button>
         <p class="footer__text">Overwatchdle - 2024</p>
     </footer>
 
