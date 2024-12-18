@@ -859,5 +859,26 @@ const heroes = [
         },
         height: 1.72,
         year: 2016
+    },
+    {
+        name: "hazard",
+        gender: {
+            en: "male",
+            es: "masculino"
+        },
+        class: {
+            en: "tank",
+            es: "tanque"
+        },
+        species: {
+            en: "human",
+            es: "humano"
+        },
+        origin: {
+            en: "scotland",
+            es: "Escocia"
+        },
+        height: 2.2,
+        year: 2024
     }
 ]

@@ -719,5 +719,26 @@ const abilities = [
         hero: 'zenyatta',
         key: 'shift',
         img: 'imgs/abilities/zenyatta-shift.png',
-    }
+    },
+    // Hazard
+    {
+        hero: 'hazard',
+        key: 'e',
+        img: 'imgs/abilities/hazard-e.png',
+    },
+    {
+        hero: 'hazard',
+        key: 'q',
+        img: 'imgs/abilities/hazard-q.png',
+    },
+    {
+        hero: 'hazard',
+        key: 'shift',
+        img: 'imgs/abilities/hazard-shift.png',
+    },
+    {
+        hero: 'hazard',
+        key: 'right-click',
+        img: 'imgs/abilities/hazard-rc.png',
+    },
 ]

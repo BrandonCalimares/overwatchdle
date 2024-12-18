@@ -162,5 +162,9 @@ const emojis = [
     {
         hero: "zenyatta",
         text: ["✋", "🔮", "🧘", "🩺",]
+    },
+    {
+        hero: "hazard",
+        text: ["🦔", "🟪", "🧱", "🛡️"]
     }
 ];
