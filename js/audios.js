@@ -590,7 +590,7 @@ const audios = [
     // Sigma
     {
         hero: "sigma",
-        text: "¿Por que buscar respuestas cuando no sabemos la respuesta?",
+        text: "¿Por que buscar respuestas cuando no sabemos la pregunta?",
         audio: "audios/sigma-1.mp3"
     },
     {
