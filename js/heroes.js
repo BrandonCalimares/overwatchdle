@@ -144,7 +144,7 @@ const heroes = [
             es: "nigeria"
         },
         height: 2.18,
-        year: 2016
+        year: 2017
     },
     {
         name: "dva",
@@ -396,7 +396,7 @@ const heroes = [
             es: "samoa"
         },
         height: 2.2,
-        year: 2024
+        year: 2023
     },
     {
         name: "mei",
@@ -737,8 +737,8 @@ const heroes = [
     {
         name: "venture",
         gender: {
-            en: "female",
-            es: "femenino"
+            en: "nonbinary",
+            es: "no binario"
         },
         class: {
             en: "damage",
