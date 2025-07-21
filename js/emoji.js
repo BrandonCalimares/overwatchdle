@@ -1,6 +1,8 @@
 const currentDate = new Date();
-if (((currentDate.getUTCFullYear() * (currentDate.getUTCMonth() + 1)) % emojis.length) == 0) currentDate.setFullYear(currentDate.getUTCFullYear() + 1)
-const index = (currentDate.getUTCFullYear() * (currentDate.getUTCDate() + 1) * (currentDate.getUTCMonth() + 2)) % emojis.length
+const seed = currentDate.getUTCFullYear() * 10000 + (currentDate.getUTCMonth() + 2) * 100 + currentDate.getUTCDate() + 1;
+const randomSin = Math.sin(seed) * 10000;
+const randomNormalized = randomSin - Math.floor(randomSin);
+const index = Math.floor(randomNormalized * heroes.length);
 const randomEmojis = emojis[index];
 
 const results = document.querySelector('.results-emoji-container');

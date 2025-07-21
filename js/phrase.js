@@ -2,8 +2,10 @@ const phraseText = document.querySelector('.game-instructions__title');
 const audioPlayer = document.querySelector('.audio');
 
 const currentDate = new Date();
-if (((currentDate.getUTCFullYear() * (currentDate.getUTCMonth() + 1)) % audios.length) == 0) currentDate.setFullYear(currentDate.getUTCFullYear() + 1)
-const index = (currentDate.getUTCFullYear() * currentDate.getUTCDate() * (currentDate.getUTCMonth() + 1)) % audios.length
+const seed = currentDate.getUTCFullYear() * 10000 + (currentDate.getUTCMonth() + 1) * 100 + currentDate.getUTCDate();
+const randomSin = Math.sin(seed) * 10000;
+const randomNormalized = randomSin - Math.floor(randomSin);
+const index = Math.floor(randomNormalized * heroes.length);
 const randomPhrase = audios[index];
 
 const results = document.querySelector('.results-phrase-container');

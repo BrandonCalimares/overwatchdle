@@ -2,9 +2,10 @@ const abilityImg = document.querySelector('.ability-img');
 const results = document.querySelector('.results-ability-container');
 
 const currentDate = new Date();
-if (((currentDate.getUTCFullYear() * (currentDate.getUTCMonth() + 1)) % abilities.length) == 0) currentDate.setFullYear(currentDate.getUTCFullYear() + 1)
-const index = (currentDate.getUTCFullYear() * currentDate.getUTCDate() * (currentDate.getUTCMonth() + 1)) % abilities.length
-const randomAbility = abilities[index];
+const seed = currentDate.getUTCFullYear() * 10000 + (currentDate.getUTCMonth() + 1) * 100 + currentDate.getUTCDate();
+const randomSin = Math.sin(seed) * 10000;
+const randomNormalized = randomSin - Math.floor(randomSin);
+const index = Math.floor(randomNormalized * heroes.length); const randomAbility = abilities[index];
 
 let tries = 0;
 
