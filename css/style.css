@@ -112,10 +112,11 @@ a {
 
 .header__button:hover {
   transform: scale(1.1);
-  filter: drop-shadow(0 0 0.3rem white);
+  filter: drop-shadow(0 0 0.1rem white);
 }
 
-.info-icon {
+.info-icon,
+.lang-icon {
   width: 2rem;
   height: 2rem;
   color: white;
@@ -180,13 +181,15 @@ a {
   .logo {
     width: 100%;
   }
+  .lang-icon,
   .info-icon {
     width: 1.5rem;
     height: 1.5rem;
   }
 }
 
-.info-modal__content {
+.info-modal__content,
+.lang-modal__content {
   background-color: var(--background-color);
   border: none;
   padding: 1rem 1rem 1.5rem 1rem;
@@ -198,6 +201,42 @@ a {
   box-shadow: 0 0 5rem black;
   width: 50rem;
   padding: 1rem;
+}
+
+.lang-modal__content {
+  width: 20rem;
+}
+
+.lang-option {
+  background-color: var(--text-color-alt);
+  font-family: "Big Noodle Too", impact, sans-serif;
+  font-size: 2rem;
+  color: var(--text-color);
+  text-align: center;
+  border: none;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+  transition: ease 0.1s;
+}
+
+.lang-option:hover {
+  filter: brightness(1.1);
+}
+
+.lang-option > p {
+  width: 100%;
+}
+
+.lang-flag {
+  width: 5rem;
+  height: 3rem;
+  border-radius: 0.5rem;
 }
 
 .info-modal__title {

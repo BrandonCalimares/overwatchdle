@@ -9,3 +9,15 @@ infoBtn.addEventListener('click', () => {
 closeInfo.addEventListener('click', () => {
     infoModal.close();
 })
+
+const langModal = document.querySelector('.lang-modal');
+const langBtn = document.querySelector('.lang-btn');
+const closeLang = document.querySelector('.close-lang');
+
+langBtn.addEventListener('click', () => {
+    langModal.showModal();
+})
+
+closeLang.addEventListener('click', () => {
+    langModal.close();
+})
