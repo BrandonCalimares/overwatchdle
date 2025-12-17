@@ -21,3 +21,27 @@ langBtn.addEventListener('click', () => {
 closeLang.addEventListener('click', () => {
     langModal.close();
 })
+
+let currentLang = localStorage.getItem('lang');
+
+if (currentLang == null) {
+    currentLang = navigator.language || navigator.userLanguage;
+    if (!currentLang.startsWith('es') && !currentLang.startsWith('en'))
+        currentLang = 'en';
+    localStorage.setItem('lang', currentLang);
+}
+
+if (currentLang.startsWith('es') && window.location.pathname.startsWith('/en')) {
+    window.location.href = '/index.html';
+} else if (currentLang.startsWith('en') && !window.location.pathname.startsWith('/en')) {
+    window.location.href = '/en.html';
+}
+
+const langOptions = document.querySelectorAll('.lang-option');
+
+langOptions.forEach(option => {
+    option.addEventListener('click', () => {
+        let lang = option.getAttribute('data-lang');
+        localStorage.setItem('lang', lang);
+    });
+});
