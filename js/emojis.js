@@ -161,10 +161,22 @@ const emojis = [
     },
     {
         hero: "zenyatta",
-        text: ["✋", "🔮", "🧘", "🩺",]
+        text: ["✋", "🔮", "🧘", "🩺"]
     },
     {
         hero: "hazard",
         text: ["🦔", "🟪", "🧱", "🛡️"]
+    },
+    {
+        hero: "freja",
+        text: ["❄️", "🏹", "🐺", "🎯"]
+    },
+    {
+        hero: "wuyang",
+        text: ["🌊", "🍜", "🌀", "🩺"]
+    },
+    {
+        hero: "vendetta",
+        text: ["🗡️", "🌪️", "🏟️", "🤌🏽"]
     }
 ];

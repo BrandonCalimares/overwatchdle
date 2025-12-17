@@ -741,4 +741,67 @@ const abilities = [
         key: 'right-click',
         img: 'imgs/abilities/hazard-rc.png',
     },
-]
+    // Freja
+    {
+        hero: 'freja',
+        key: 'e',
+        img: 'imgs/abilities/freja-e.png',
+    },
+    {
+        hero: 'freja',
+        key: 'q',
+        img: 'imgs/abilities/freja-q.png',
+    },
+    {
+        hero: 'freja',
+        key: 'shift',
+        img: 'imgs/abilities/freja-shift.png',
+    },
+    {
+        hero: 'freja',
+        key: 'right-click',
+        img: 'imgs/abilities/freja-rc.png',
+    },
+    // Wuyang
+    {
+        hero: 'wuyang',
+        key: 'e',
+        img: 'imgs/abilities/wuyang-e.png',
+    },
+    {
+        hero: 'wuyang',
+        key: 'q',
+        img: 'imgs/abilities/wuyang-q.png',
+    },
+    {
+        hero: 'wuyang',
+        key: 'shift',
+        img: 'imgs/abilities/wuyang-shift.png',
+    },
+    {
+        hero: 'wuyang',
+        key: 'right-click',
+        img: 'imgs/abilities/wuyang-rc.png',
+    },
+    // Vendetta
+    {
+        hero: 'vendetta',
+        key: 'e',
+        img: 'imgs/abilities/vendetta-e.png',
+    },
+    {
+        hero: 'vendetta',
+        key: 'q',
+        img: 'imgs/abilities/vendetta-q.png',
+    },
+    {
+        hero: 'vendetta',
+        key: 'shift',
+        img: 'imgs/abilities/vendetta-shift.png',
+    },
+    {
+        hero: 'vendetta',
+        key: 'right-click',
+        img: 'imgs/abilities/vendetta-rc.png',
+    }
+];

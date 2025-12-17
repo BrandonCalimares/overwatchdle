@@ -876,9 +876,72 @@ const heroes = [
         },
         origin: {
             en: "scotland",
-            es: "Escocia"
+            es: "escocia"
         },
         height: 2.2,
         year: 2024
+    },
+    {
+        name: "freja",
+        gender: {
+            en: "female",
+            es: "femenino"
+        },
+        class: {
+            en: "damage",
+            es: "daño"
+        },
+        species: {
+            en: "human",
+            es: "humano"
+        },
+        origin: {
+            en: "denmark",
+            es: "dinamarca"
+        },
+        height: 1.74,
+        year: 2025
+    },
+    {
+        name: "wuyang",
+        gender: {
+            en: "male",
+            es: "masculino"
+        },
+        class: {
+            en: "support",
+            es: "soporte"
+        },
+        species: {
+            en: "human",
+            es: "humano"
+        },
+        origin: {
+            en: "china",
+            es: "china"
+        },
+        height: 1.68,
+        year: 2025
+    },
+    {
+        name: "vendetta",
+        gender: {
+            en: "female",
+            es: "femenino"
+        },
+        class: {
+            en: "damage",
+            es: "daño"
+        },
+        species: {
+            en: "human",
+            es: "humano"
+        },
+        origin: {
+            en: "Italy",
+            es: "Italia"
+        },
+        height: 1.72,
+        year: 2025
     }
 ]
