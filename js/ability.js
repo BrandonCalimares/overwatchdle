@@ -7,9 +7,11 @@ const randomSin = Math.sin(seed) * 10000;
 const randomNormalized = randomSin - Math.floor(randomSin);
 const index = Math.floor(randomNormalized * heroes.length); const randomAbility = abilities[index];
 
+const lang = window.location.pathname.startsWith("/en") ? "en" : "es";
+
 let tries = 0;
 
-abilityImg.style.backgroundImage = `url(${randomAbility.img})`;
+abilityImg.style.backgroundImage = `url(/${randomAbility.img})`;
 let size = 200;
 abilityImg.style.backgroundSize = `${size}%`;
 
@@ -39,7 +41,7 @@ const showCorrectAnswer = () => {
     correctHero.classList.add('correct-answer__hero');
 
     let heroImg = document.createElement('img');
-    heroImg.src = 'imgs/characters/' + randomAbility.hero + '.webp';
+    heroImg.src = '/imgs/characters/' + randomAbility.hero + '.webp';
     heroImg.alt = randomAbility.hero;
     heroImg.classList.add('correct-answer__img');
 
@@ -52,7 +54,10 @@ const showCorrectAnswer = () => {
 
     let triesText = document.createElement('p');
     triesText.classList.add('correct-answer__tries');
-    triesText.innerHTML = 'Numero de intentos: ' + tries;
+    if (lang == 'es')
+        triesText.innerHTML = 'Número de intentos: ' + tries;
+    else
+        triesText.innerHTML = 'Number of attempts: ' + tries;
 
     container.insertBefore(triesText, container.firstChild);
     container.insertBefore(correctHero, container.firstChild);
@@ -65,7 +70,7 @@ const showResults = (h) => {
     let container = document.createElement('section');
 
     let image = document.createElement('img');
-    image.src = 'imgs/characters/' + h.name + '.webp';
+    image.src = '/imgs/characters/' + h.name + '.webp';
     image.alt = h.name;
     image.classList.add('results-phrase__img');
     container.appendChild(image);
@@ -152,11 +157,13 @@ const verifyExtra = (option, button) => {
 const addToCookies = (h) => {
     if (document.cookie == '') {
         document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /ability`;
+        document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/ability`;
     }
     const cookies = document.cookie;
     const hGuessed = JSON.parse(cookies.split('=')[1]);
     hGuessed.push(heroes.indexOf(h));
     document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /ability`;
+    document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/ability`;
 }
 
 const getFromCookies = () => {
@@ -174,7 +181,7 @@ const loadGuessedHeroes = () => {
         let container = document.createElement('section');
 
         let image = document.createElement('img');
-        image.src = 'imgs/characters/' + heroes[h].name + '.webp';
+        image.src = '/imgs/characters/' + heroes[h].name + '.webp';
         image.alt = heroes[h].name;
         image.classList.add('results-phrase__img');
         container.appendChild(image);

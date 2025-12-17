@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overwatchdle</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
+    <meta lang="es">
+    <meta name="description" content="Guess the Overwatch hero daily">
+    <meta name="keywords" content="Overwatch, Heroes, Game, Guess, Overwatchdle, Overwatchle">
+    <meta name="author" content="Brandon Calimares">
+    <meta name="robots" content="index">
+    <meta name="theme-color" content="#2c3e50">
+    <meta property="og:url" content="https://overwatchdle.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Overwatchdle">
+    <meta property="og:description" content="Guess the Overwatch hero daily">
+    <meta property="og:image"
+        content="https://opengraph.b-cdn.net/production/images/b442eb5e-f487-420f-9268-bc2868ab2fb2.png?token=4YWrnx5p-k3IwiF_DsbuWEoRLsvJvr--hO75PtTx2Vo&height=675&width=1200&expires=33274026065">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="overwatchdle.vercel.app">
+    <meta property="twitter:url" content="https://overwatchdle.vercel.app">
+    <meta name="twitter:title" content="Overwatchdle">
+    <meta name="twitter:description" content="Guess the Overwatch hero daily">
+    <meta name="twitter:image"
+        content="https://opengraph.b-cdn.net/production/images/b442eb5e-f487-420f-9268-bc2868ab2fb2.png?token=4YWrnx5p-k3IwiF_DsbuWEoRLsvJvr--hO75PtTx2Vo&height=675&width=1200&expires=33274026065">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="header__nav">
+            <ul class="header__ul">
+                <li>
+                    <button class="lang-btn header__button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-language lang-icon">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M9 6.371c0 4.418 -2.239 6.629 -5 6.629" />
+                            <path d="M4 6.371h7" />
+                            <path d="M5 9c0 2.144 2.252 3.908 6 4" />
+                            <path d="M12 20l4 -9l4 9" />
+                            <path d="M19.1 18h-6.2" />
+                            <path d="M6.694 3l.793 .582" />
+                        </svg>
+                    </button>
+                </li>
+                <li>
+                    <a href="en.html">
+                        <img src="imgs/overwatchdle.webp" alt="Overwatchdle" class="logo">
+                    </a>
+                </li>
+                <li>
+                    <button class="info-btn header__button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-info-circle info-icon">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                            <path d="M12 9h.01" />
+                            <path d="M11 12h1v4h1" />
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <dialog class="modal info-modal">
+            <section class="info-modal__content">
+                <button class="close-modal close-info">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-x close-modal__img">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M18 6l-12 12" />
+                        <path d="M6 6l12 12" />
+                    </svg>
+                </button>
+                <h3 class="info-modal__title">Information</h3>
+                <hr class="info-hr">
+                <p class="info-modal__text">Everyday, guess a different hero from the Overwatch game</p>
+                <p class="info-modal__text">Overwatchdle was created using resources owned by Blizzard Entertainment.
+                    Blizzard Entertainment does not endorse or sponsor this project.</p>
+                <p class="info-modal__text">Game inspired by <a href="https://loldle.net" class="info-modal__link"
+                        target="_blank">Loldle</a></p>
+                <hr class="info-hr">
+                <footer class="info-modal__footer">
+                    <p class="info-modal__text">Contact me: <a href="mailto:brandoncalimares@gmail.com"
+                            class="info-modal__link">brandoncalimares@gmail.com</a></p>
+                </footer>
+            </section>
+        </dialog>
+
+        <dialog class="modal lang-modal">
+            <section class="lang-modal__content">
+                <button class="close-modal close-lang">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-x close-modal__img">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M18 6l-12 12" />
+                        <path d="M6 6l12 12" />
+                    </svg>
+                </button>
+                <a href="." class="lang-option" data-lang="es">
+                    <img src="imgs/spanish.webp" alt="Español" class="lang-flag">
+                    <p>
+                        Español
+                    </p>
+                </a>
+                <a href="en.html" class="lang-option" data-lang="en">
+                    <img src="imgs/english.webp" alt="English" class="lang-flag">
+                    <p>
+                        English
+                    </p>
+                </a>
+            </section>
+        </dialog>
+    </header>
+
+    <main>
+        <h2 class="description">
+            Guess the Overwatch hero
+        </h2>
+        <section class="gamemodes">
+            <ul class="gamemodes__ul">
+                <li>
+                    <a href="en/classic.html" class="gamemode">
+                        <div class="gamemode__icon">
+                            <img src="imgs/classic.webp" alt="Classic image">
+                        </div>
+                        <article class="gamemode__container">
+                            <h3 class="gamemode__title"> Classic </h3>
+                            <p class="gamemode__description">Get clues with each attempt</p>
+                        </article>
+                    </a>
+                </li>
+                <li>
+                    <a href="en/phrase.html" class="gamemode">
+                        <div class="gamemode__icon">
+                            <img src="imgs/phrase.webp" alt="Phrase image">
+                        </div>
+                        <article class="gamemode__container">
+                            <h3 class="gamemode__title"> Phrase </h3>
+                            <p class="gamemode__description">Guess the hero with an audio</p>
+                        </article>
+                    </a>
+                </li>
+                <li>
+                    <a href="en/ability.html" class="gamemode">
+                        <div class="gamemode__icon">
+                            <img src="imgs/ablity.webp" alt="Ability image">
+                        </div>
+                        <article class="gamemode__container">
+                            <h3 class="gamemode__title"> Ability </h3>
+                            <p class="gamemode__description">Guess the hero by their ability</p>
+                        </article>
+                    </a>
+                </li>
+                <li>
+                    <a href="en/emoji.html" class="gamemode">
+                        <div class="gamemode__icon">
+                            <img src="imgs/emoji.webp" alt="Emoji image">
+                        </div>
+                        <article class="gamemode__container">
+                            <h3 class="gamemode__title"> Emoji </h3>
+                            <p class="gamemode__description">Guess the hero with emojis</p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer__text">Overwatchdle - 2025</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

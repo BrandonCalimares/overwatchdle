@@ -7,6 +7,8 @@ const randomNormalized = randomSin - Math.floor(randomSin);
 const index = Math.floor(randomNormalized * heroes.length);
 const randomHeroe = heroes[index];
 
+const lang = window.location.pathname.startsWith("/en") ? "en" : "es";
+
 let tries = 0;
 
 form.addEventListener('submit', (e) => {
@@ -44,8 +46,11 @@ const verifyResults = (h) => {
 const showCorrectAnswer = () => {
     const container = document.querySelector('.correct-answer');
     let content = '<p class="correct-answer__text">GG EZ</p>';
-    content += '<div class="correct-answer__hero"> <img src="imgs/characters/' + randomHeroe.name + '.webp" alt="' + randomHeroe.name + '" class="correct-answer__img"> <p class="correct-answer__name">' + randomHeroe.name + '</p> </div>';
-    content += '<p class="correct-answer__tries">Numero de intentos: ' + tries + '</p>';
+    content += '<div class="correct-answer__hero"> <img src="/imgs/characters/' + randomHeroe.name + '.webp" alt="' + randomHeroe.name + '" class="correct-answer__img"> <p class="correct-answer__name">' + randomHeroe.name + '</p> </div>';
+    if (lang == 'es')
+        content += '<p class="correct-answer__tries">Número de intentos: ' + tries + '</p>';
+    else
+        content += '<p class="correct-answer__tries">Number of attempts: ' + tries + '</p>';
 
     container.innerHTML = content + container.innerHTML;
     container.classList.remove('correct-answer-hidden');
@@ -79,24 +84,22 @@ const showResults = (h) => {
     results.insertBefore(image, results.firstChild);
 
     image.classList.add('result-info');
-    image.innerHTML = '<img src="imgs/characters/' + h.name + '.webp" alt="' + h.name + '" class="result-info__img">';
+    image.innerHTML = '<img src="/imgs/characters/' + h.name + '.webp" alt="' + h.name + '" class="result-info__img">';
 
     setTimeout(() => {
         gender.classList.add('result-info', answers[0]);
-        gender.innerHTML = '<p class="result-info__text">' + h.gender.es + '</p>';
+        gender.innerHTML = '<p class="result-info__text">' + h.gender[lang] + '</p>';
 
         setTimeout(() => {
             class_.classList.add('result-info', answers[1]);
-            class_.innerHTML = '<p class="result-info__text">' + h.class.es + '</p>';
-
+            class_.innerHTML = '<p class="result-info__text">' + h.class[lang] + '</p>';
             setTimeout(() => {
                 species.classList.add('result-info', answers[2]);
-                species.innerHTML = '<p class="result-info__text">' + h.species.es + '</p>';
+                species.innerHTML = '<p class="result-info__text">' + h.species[lang] + '</p>';
 
                 setTimeout(() => {
                     origin.classList.add('result-info', answers[3]);
-                    origin.innerHTML = '<p class="result-info__text">' + h.origin.es + '</p>';
-
+                    origin.innerHTML = '<p class="result-info__text">' + h.origin[lang] + '</p>';
                     setTimeout(() => {
                         height.classList.add('result-info', answers[4]);
                         height.innerHTML = '<p class="result-info__text">' + h.height.toFixed(2) + '</p>';
@@ -115,11 +118,13 @@ const showResults = (h) => {
 const addToCookies = (h) => {
     if (document.cookie == '') {
         document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /classic`;
+        document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/classic`;
     }
     const cookies = document.cookie;
     const hGuessed = JSON.parse(cookies.split('=')[1]);
     hGuessed.push(heroes.indexOf(h));
     document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /classic`;
+    document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/classic`;
 }
 
 const getFromCookies = () => {
@@ -164,11 +169,11 @@ const loadGuessedHeroes = () => {
         image.classList.add('result-info', 'non-animated');
         results.insertBefore(image, results.firstChild);
 
-        image.innerHTML = '<img src="imgs/characters/' + heroes[h].name + '.webp" alt="' + heroes[h].name + '" class="result-info__img">';
-        gender.innerHTML = '<p class="result-info__text">' + heroes[h].gender.es + '</p>';
-        class_.innerHTML = '<p class="result-info__text">' + heroes[h].class.es + '</p>';
-        species.innerHTML = '<p class="result-info__text">' + heroes[h].species.es + '</p>';
-        origin.innerHTML = '<p class="result-info__text">' + heroes[h].origin.es + '</p>';
+        image.innerHTML = '<img src="/imgs/characters/' + heroes[h].name + '.webp" alt="' + heroes[h].name + '" class="result-info__img">';
+        gender.innerHTML = '<p class="result-info__text">' + heroes[h].gender[lang] + '</p>';
+        class_.innerHTML = '<p class="result-info__text">' + heroes[h].class[lang] + '</p>';
+        species.innerHTML = '<p class="result-info__text">' + heroes[h].species[lang] + '</p>';
+        origin.innerHTML = '<p class="result-info__text">' + heroes[h].origin[lang] + '</p>';
         height.innerHTML = '<p class="result-info__text">' + heroes[h].height.toFixed(2) + '</p>';
         year.innerHTML = '<p class="result-info__text">' + heroes[h].year + '</p>';
 

@@ -12,6 +12,9 @@ const emojisText = [
     document.querySelector('.emoji-2'),
     document.querySelector('.emoji-3')
 ]
+
+const lang = window.location.pathname.startsWith("/en") ? "en" : "es";
+
 let tries = 0;
 
 emojisText[0].innerHTML = randomEmojis.text[0];
@@ -36,7 +39,7 @@ const showResults = (h) => {
     let container = document.createElement('section');
 
     let image = document.createElement('img');
-    image.src = 'imgs/characters/' + h.name + '.webp';
+    image.src = '/imgs/characters/' + h.name + '.webp';
     image.alt = h.name;
     image.classList.add('results-phrase__img');
     container.appendChild(image);
@@ -71,8 +74,11 @@ const showResults = (h) => {
 const showCorrectAnswer = () => {
     const container = document.querySelector('.correct-answer');
     let content = '<p class="correct-answer__text">GG EZ</p>';
-    content += '<div class="correct-answer__hero"> <img src="imgs/characters/' + randomEmojis.hero + '.webp" alt="' + randomEmojis.hero + '" class="correct-answer__img"> <p class="correct-answer__name">' + randomEmojis.hero + '</p> </div>';
-    content += '<p class="correct-answer__tries">Numero de intentos: ' + tries + '</p>';
+    content += '<div class="correct-answer__hero"> <img src="/imgs/characters/' + randomEmojis.hero + '.webp" alt="' + randomEmojis.hero + '" class="correct-answer__img"> <p class="correct-answer__name">' + randomEmojis.hero + '</p> </div>';
+    if (lang == 'es')
+        content += '<p class="correct-answer__tries">Número de intentos: ' + tries + '</p>';
+    else
+        content += '<p class="correct-answer__tries">Number of tries: ' + tries + '</p>';
 
     emojisText[1].innerHTML = randomEmojis.text[1];
     emojisText[2].innerHTML = randomEmojis.text[2];
@@ -85,11 +91,13 @@ const showCorrectAnswer = () => {
 const addToCookies = (h) => {
     if (document.cookie == '') {
         document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /emoji`;
+        document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/emoji`;
     }
     const cookies = document.cookie;
     const hGuessed = JSON.parse(cookies.split('=')[1]);
     hGuessed.push(heroes.indexOf(h));
     document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /emoji`;
+    document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/emoji`;
 }
 
 const getFromCookies = () => {
@@ -107,7 +115,7 @@ const loadGuessedHeroes = () => {
         let container = document.createElement('section');
 
         let image = document.createElement('img');
-        image.src = 'imgs/characters/' + heroes[h].name + '.webp';
+        image.src = '/imgs/characters/' + heroes[h].name + '.webp';
         image.alt = heroes[h].name;
         image.classList.add('results-phrase__img');
         container.appendChild(image);

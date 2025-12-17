@@ -13,10 +13,12 @@ const audioContainer = document.querySelector('.audio-player');
 const audioText = document.querySelector('.audio__text');
 const audioButton = document.querySelector('.audio-button');
 
+const lang = window.location.pathname.startsWith("/en") ? "en" : "es";
+
 let tries = 0;
 
-phraseText.innerHTML = `"${randomPhrase.text}"`;
-audioPlayer.src = randomPhrase.audio;
+phraseText.innerHTML = `"${randomPhrase.text[lang]}"`;
+audioPlayer.src = `/${randomPhrase.audio[lang]}`;
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -37,8 +39,11 @@ form.addEventListener('submit', (e) => {
 const showCorrectAnswer = () => {
     const container = document.querySelector('.correct-answer');
     let content = '<p class="correct-answer__text">GG EZ</p>';
-    content += '<div class="correct-answer__hero"> <img src="imgs/characters/' + randomPhrase.hero + '.webp" alt="' + randomPhrase.hero + '" class="correct-answer__img"> <p class="correct-answer__name">' + randomPhrase.hero + '</p> </div>';
-    content += '<p class="correct-answer__tries">Numero de intentos: ' + tries + '</p>';
+    content += '<div class="correct-answer__hero"> <img src="/imgs/characters/' + randomPhrase.hero + '.webp" alt="' + randomPhrase.hero + '" class="correct-answer__img"> <p class="correct-answer__name">' + randomPhrase.hero + '</p> </div>';
+    if (lang == 'es')
+        content += '<p class="correct-answer__tries">Numero de intentos: ' + tries + '</p>';
+    else
+        content += '<p class="correct-answer__tries">Number of attempts: ' + tries + '</p>';
 
     container.innerHTML = content + container.innerHTML;
     container.classList.remove('correct-answer-hidden');
@@ -48,7 +53,7 @@ const showResults = (h) => {
     let container = document.createElement('section');
 
     let image = document.createElement('img');
-    image.src = 'imgs/characters/' + h.name + '.webp';
+    image.src = '/imgs/characters/' + h.name + '.webp';
     image.alt = h.name;
     image.classList.add('results-phrase__img');
     container.appendChild(image);
@@ -66,7 +71,10 @@ const showResults = (h) => {
         setTimeout(() => {
             showCorrectAnswer();
             window.scrollTo(0, document.body.scrollHeight);
-            audioText.innerHTML = 'pista de audio';
+            if (lang == 'es')
+                audioText.innerHTML = 'pista de audio';
+            else
+                audioText.innerHTML = 'audio hint';
             audioContainer.style.display = 'flex';
             audioButton.classList.remove('audio-locked');
         }, 500);
@@ -85,13 +93,22 @@ const updateCounter = () => {
     let triesLeft = 3 - tries;
     switch (triesLeft) {
         case 2:
-            audioText.innerHTML = 'pista de audio en 2 intentos';
+            if (lang == 'es')
+                audioText.innerHTML = 'pista de audio en 2 intentos';
+            else
+                audioText.innerHTML = 'audio hint in 2 attempts';
             break;
         case 1:
-            audioText.innerHTML = 'pista de audio en 1 intento';
+            if (lang == 'es')
+                audioText.innerHTML = 'pista de audio en 1 intento';
+            else
+                audioText.innerHTML = 'audio hint in 1 attempt';
             break;
         case 0:
-            audioText.innerHTML = 'pista de audio';
+            if (lang == 'es')
+                audioText.innerHTML = 'pista de audio';
+            else
+                audioText.innerHTML = 'audio hint';
             audioButton.classList.remove('audio-locked');
             break;
     }
@@ -138,11 +155,13 @@ volumeSlider.addEventListener('input', () => {
 const addToCookies = (h) => {
     if (document.cookie == '') {
         document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /phrase`;
+        document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/phrase`;
     }
     const cookies = document.cookie;
     const hGuessed = JSON.parse(cookies.split('=')[1]);
     hGuessed.push(heroes.indexOf(h));
     document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /phrase`;
+    document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/phrase`;
 }
 
 const getFromCookies = () => {
@@ -160,7 +179,7 @@ const loadGuessedHeroes = () => {
         let container = document.createElement('section');
 
         let image = document.createElement('img');
-        image.src = 'imgs/characters/' + heroes[h].name + '.webp';
+        image.src = '/imgs/characters/' + heroes[h].name + '.webp';
         image.alt = heroes[h].name;
         image.classList.add('results-phrase__img');
         container.appendChild(image);
@@ -176,7 +195,10 @@ const loadGuessedHeroes = () => {
             const input = document.querySelector('.chr-search__input');
             input.disabled = true;
             showCorrectAnswer();
-            audioText.innerHTML = 'pista de audio';
+            if (lang == 'es')
+                audioText.innerHTML = 'pista de audio';
+            else
+                audioText.innerHTML = 'audio hint';
             audioContainer.style.display = 'flex';
             audioButton.classList.remove('audio-locked');
         } else {

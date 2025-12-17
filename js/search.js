@@ -3,7 +3,7 @@ const searchBar = document.querySelector('.chr-search__input');
 const form = document.querySelector('.chr-search__form');
 
 const displayResult = (result) => {
-    let content = result.map((res) => "<li onclick='selectInput(this)'> <img src='imgs/characters/" + res.name + ".webp' class='search-results__img'>" + "<p class='search-results__text'>" + res.name + "</p>" + "</li>");
+    let content = result.map((res) => "<li onclick='selectInput(this)'> <img src='/imgs/characters/" + res.name + ".webp' class='search-results__img'>" + "<p class='search-results__text'>" + res.name + "</p>" + "</li>");
     searchResults.innerHTML = "<ul>" + content.join('') + "</ul>";
 };
 
