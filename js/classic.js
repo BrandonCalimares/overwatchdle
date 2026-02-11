@@ -70,7 +70,7 @@ const showResults = (h) => {
         setTimeout(() => {
             showCorrectAnswer();
             window.scrollTo(0, document.body.scrollHeight);
-        }, 3800);
+        }, 4700);
     }
 
     let year = document.createElement('div');
@@ -99,6 +99,8 @@ const showResults = (h) => {
 
         setTimeout(() => {
             role.classList.add('result-info', answers[1]);
+            role.style.background = `url("../imgs/${h.role.en}.svg"), var(--${answers[1]}-color)`;
+            role.style.backgroundSize = 'cover';
             role.innerHTML = '<p class="result-info__text">' + h.role[lang] + '</p>';
 
             setTimeout(() => {
@@ -111,8 +113,10 @@ const showResults = (h) => {
                     species.innerHTML = '<p class="result-info__text">' + h.species[lang] + '</p>';
 
                     setTimeout(() => {
+                        if (h.origin[lang].length > 10 & !h.origin[lang].includes(' ')) origin.classList.add('small-info');
                         origin.classList.add('result-info', answers[4]);
                         origin.innerHTML = '<p class="result-info__text">' + h.origin[lang] + '</p>';
+
                         setTimeout(() => {
                             age.classList.add('result-info', answers[5]);
                             age.innerHTML = '<p class="result-info__text">' + h.age + '</p>';
@@ -169,6 +173,7 @@ const loadGuessedHeroes = () => {
         results.insertBefore(age, results.firstChild);
         let origin = document.createElement('div');
         origin.classList.add('result-info', answers[4], 'non-animated');
+        if (heroes[h].origin[lang].length > 10 & !heroes[h].origin[lang].includes(' ')) origin.classList.add('small-info');
         results.insertBefore(origin, results.firstChild);
         let species = document.createElement('div');
         species.classList.add('result-info', answers[3], 'non-animated');
@@ -179,6 +184,8 @@ const loadGuessedHeroes = () => {
         results.insertBefore(subRole, results.firstChild);
         let role = document.createElement('div');
         role.classList.add('result-info', answers[1], 'non-animated');
+        role.style.background = `url("../imgs/${heroes[h].role.en}.svg"), var(--${answers[1]}-color)`;
+        role.style.backgroundSize = 'cover';
         results.insertBefore(role, results.firstChild);
         let gender = document.createElement('div');
         gender.classList.add('result-info', answers[0], 'non-animated');
