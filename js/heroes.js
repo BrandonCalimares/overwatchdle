@@ -1123,5 +1123,130 @@ const heroes = [
         },
         age: 29,
         year: 2025
+    },
+    {
+        name: "anran",
+        gender: {
+            en: "female",
+            es: "femenino"
+        },
+        role: {
+            en: "damage",
+            es: "daño"
+        },
+        subRole: {
+            en: "flanker",
+            es: "flanqueador"
+        },
+        species: {
+            en: "human",
+            es: "humano"
+        },
+        origin: {
+            en: "china",
+            es: "china"
+        },
+        age: 22,
+        year: 2026
+    },
+    {
+        name: "domina",
+        gender: {
+            en: "female",
+            es: "femenino"
+        },
+        role: {
+            en: "tank",
+            es: "tanque"
+        },
+        subRole: {
+            en: "stalwart",
+            es: "inquebrantable"
+        },
+        species: {
+            en: "human",
+            es: "humano"
+        },
+        origin: {
+            en: "india",
+            es: "india"
+        },
+        age: 32,
+        year: 2026
+    },
+    {
+        name: "emre",
+        gender: {
+            en: "male",
+            es: "masculino"
+        },
+        role: {
+            en: "damage",
+            es: "daño"
+        },
+        subRole: {
+            en: "specialist",
+            es: "especialista"
+        },
+        species: {
+            en: "human",
+            es: "humano"
+        },
+        origin: {
+            en: "turkey",
+            es: "turquía"
+        },
+        age: 44,
+        year: 2026
+    },
+    {
+        name: "jetpack cat",
+        gender: {
+            en: "female",
+            es: "femenino"
+        },
+        role: {
+            en: "support",
+            es: "soporte"
+        },
+        subRole: {
+            en: "tactician",
+            es: "estratega"
+        },
+        species: {
+            en: "cat",
+            es: "gato"
+        },
+        origin: {
+            en: "unknown",
+            es: "desconocido"
+        },
+        age: 5,
+        year: 2026
+    },
+    {
+        name: "mizuki",
+        gender: {
+            en: "male",
+            es: "masculino"
+        },
+        role: {
+            en: "support",
+            es: "soporte"
+        },
+        subRole: {
+            en: "survivor",
+            es: "sobreviviente"
+        },
+        species: {
+            en: "human",
+            es: "humano"
+        },
+        origin: {
+            en: "japan",
+            es: "japón"
+        },
+        age: 22,
+        year: 2026
     }
 ]

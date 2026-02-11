@@ -803,5 +803,100 @@ const abilities = [
         hero: 'vendetta',
         key: 'right-click',
         img: 'imgs/abilities/vendetta-rc.png',
+    },
+    // Anran
+    {
+        hero: 'anran',
+        key: 'e',
+        img: 'imgs/abilities/anran-e.png',
+    },
+    {
+        hero: 'anran',
+        key: 'q',
+        img: 'imgs/abilities/anran-q.png',
+    },
+    {
+        hero: 'anran',
+        key: 'shift',
+        img: 'imgs/abilities/anran-shift.png',
+    },
+    {
+        hero: 'anran',
+        key: 'right-click',
+        img: 'imgs/abilities/anran-rc.png',
+    },
+    // Domina
+    {
+        hero: 'domina',
+        key: 'e',
+        img: 'imgs/abilities/domina-e.png',
+    },
+    {
+        hero: 'domina',
+        key: 'q',
+        img: 'imgs/abilities/domina-q.png',
+    },
+    {
+        hero: 'domina',
+        key: 'shift',
+        img: 'imgs/abilities/domina-shift.png',
+    },
+    {
+        hero: 'domina',
+        key: 'right-click',
+        img: 'imgs/abilities/domina-rc.png',
+    },
+    // Emre
+    {
+        hero: 'emre',
+        key: 'e',
+        img: 'imgs/abilities/emre-e.png',
+    },
+    {
+        hero: 'emre',
+        key: 'q',
+        img: 'imgs/abilities/emre-q.png',
+    },
+    // Jetpack cat
+    {
+        hero: 'jetpack cat',
+        key: 'e',
+        img: 'imgs/abilities/jetpackcat-e.png',
+    },
+    {
+        hero: 'jetpack cat',
+        key: 'q',
+        img: 'imgs/abilities/jetpackcat-q.png',
+    },
+    {
+        hero: 'jetpack cat',
+        key: 'shift',
+        img: 'imgs/abilities/jetpackcat-shift.png',
+    },
+    {
+        hero: 'jetpack cat',
+        key: 'right-click',
+        img: 'imgs/abilities/jetpackcat-rc.png',
+    },
+    // Mizuki
+    {
+        hero: 'mizuki',
+        key: 'e',
+        img: 'imgs/abilities/mizuki-e.png',
+    },
+    {
+        hero: 'mizuki',
+        key: 'q',
+        img: 'imgs/abilities/mizuki-q.png',
+    },
+    {
+        hero: 'mizuki',
+        key: 'shift',
+        img: 'imgs/abilities/mizuki-shift.png',
+    },
+    {
+        hero: 'mizuki',
+        key: 'right-click',
+        img: 'imgs/abilities/mizuki-rc.png',
     }
 ];

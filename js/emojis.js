@@ -178,5 +178,25 @@ const emojis = [
     {
         hero: "vendetta",
         text: ["🗡️", "🌪️", "🏟️", "🤌🏽"]
+    },
+    {
+        hero: "anra",
+        text: ["🪭", "🔥", "🗡️", "🍜"]
+    },
+    {
+        hero: "domina",
+        text: ["🁬", "🦾", "🛡️", "🕌"]
+    },
+    {
+        hero: "emre",
+        text: ["👁️", "🟥", "🇹🇷", "💣"]
+    },
+    {
+        hero: "jetpack cat",
+        text: ["🐾", "🚀", "🐱", "🚁"]
+    },
+    {
+        hero: "mizuki",
+        text: ["👒", "🥷", "👘", "🟢"]
     }
 ];
