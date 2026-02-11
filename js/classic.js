@@ -30,20 +30,21 @@ form.addEventListener('submit', (e) => {
 
 const verifyResults = (h) => {
     if (h.name == randomHeroe.name) {
-        return ["correct", "correct", "correct", "correct", "correct", "correct", "correct"];
+        return ["correct", "correct", "correct", "correct", "correct", "correct", "correct", "correct"];
     }
 
-    let correctAnswers = ["wrong", "wrong", "wrong", "wrong", "wrong", "wrong", "wrong"];
+    let correctAnswers = ["wrong", "wrong", "wrong", "wrong", "wrong", "wrong", "wrong", "wrong"];
     if (h.gender.es == randomHeroe.gender.es) correctAnswers[0] = "correct";
-    if (h.class.es == randomHeroe.class.es) correctAnswers[1] = "correct";
-    if (h.species.es == randomHeroe.species.es) correctAnswers[2] = "correct";
-    if (h.origin.es == randomHeroe.origin.es) correctAnswers[3] = "correct";
-    if (h.age > randomHeroe.age) correctAnswers[4] = "lower";
-    else if (h.age < randomHeroe.age) correctAnswers[4] = "higher";
-    else correctAnswers[4] = "correct";
-    if (h.year > randomHeroe.year) correctAnswers[5] = "lower";
-    else if (h.year < randomHeroe.year) correctAnswers[5] = "higher";
+    if (h.role.es == randomHeroe.role.es) correctAnswers[1] = "correct";
+    if (h.subRole.es == randomHeroe.subRole.es) correctAnswers[2] = "correct";
+    if (h.species.es == randomHeroe.species.es) correctAnswers[3] = "correct";
+    if (h.origin.es == randomHeroe.origin.es) correctAnswers[4] = "correct";
+    if (h.age > randomHeroe.age) correctAnswers[5] = "lower";
+    else if (h.age < randomHeroe.age) correctAnswers[5] = "higher";
     else correctAnswers[5] = "correct";
+    if (h.year > randomHeroe.year) correctAnswers[6] = "lower";
+    else if (h.year < randomHeroe.year) correctAnswers[6] = "higher";
+    else correctAnswers[6] = "correct";
     return correctAnswers;
 }
 
@@ -63,7 +64,7 @@ const showCorrectAnswer = () => {
 const showResults = (h) => {
     let answers = verifyResults(h);
 
-    if (JSON.stringify(answers) == JSON.stringify(["correct", "correct", "correct", "correct", "correct", "correct", "correct"])) {
+    if (JSON.stringify(answers) == JSON.stringify(["correct", "correct", "correct", "correct", "correct", "correct", "correct", "correct"])) {
         const input = document.querySelector('.chr-search__input');
         input.disabled = true;
         setTimeout(() => {
@@ -80,8 +81,10 @@ const showResults = (h) => {
     results.insertBefore(origin, results.firstChild);
     let species = document.createElement('div');
     results.insertBefore(species, results.firstChild);
-    let class_ = document.createElement('div');
-    results.insertBefore(class_, results.firstChild);
+    let subRole = document.createElement('div');
+    results.insertBefore(subRole, results.firstChild);
+    let role = document.createElement('div');
+    results.insertBefore(role, results.firstChild);
     let gender = document.createElement('div');
     results.insertBefore(gender, results.firstChild);
     let image = document.createElement('div');
@@ -95,22 +98,29 @@ const showResults = (h) => {
         gender.innerHTML = '<p class="result-info__text">' + h.gender[lang] + '</p>';
 
         setTimeout(() => {
-            class_.classList.add('result-info', answers[1]);
-            class_.innerHTML = '<p class="result-info__text">' + h.class[lang] + '</p>';
+            role.classList.add('result-info', answers[1]);
+            role.innerHTML = '<p class="result-info__text">' + h.role[lang] + '</p>';
+
             setTimeout(() => {
-                species.classList.add('result-info', answers[2]);
-                species.innerHTML = '<p class="result-info__text">' + h.species[lang] + '</p>';
+                if (h.subRole[lang].length > 10 & !h.subRole[lang].includes(' ')) subRole.classList.add('small-info');
+                subRole.classList.add('result-info', answers[2]);
+                subRole.innerHTML = '<p class="result-info__text">' + h.subRole[lang] + '</p>';
 
                 setTimeout(() => {
-                    origin.classList.add('result-info', answers[3]);
-                    origin.innerHTML = '<p class="result-info__text">' + h.origin[lang] + '</p>';
-                    setTimeout(() => {
-                        age.classList.add('result-info', answers[4]);
-                        age.innerHTML = '<p class="result-info__text">' + h.age + '</p>';
+                    species.classList.add('result-info', answers[3]);
+                    species.innerHTML = '<p class="result-info__text">' + h.species[lang] + '</p>';
 
+                    setTimeout(() => {
+                        origin.classList.add('result-info', answers[4]);
+                        origin.innerHTML = '<p class="result-info__text">' + h.origin[lang] + '</p>';
                         setTimeout(() => {
-                            year.classList.add('result-info', answers[5]);
-                            year.innerHTML = '<p class="result-info__text">' + h.year + '</p>';
+                            age.classList.add('result-info', answers[5]);
+                            age.innerHTML = '<p class="result-info__text">' + h.age + '</p>';
+
+                            setTimeout(() => {
+                                year.classList.add('result-info', answers[6]);
+                                year.innerHTML = '<p class="result-info__text">' + h.year + '</p>';
+                            }, 600);
                         }, 600);
                     }, 600);
                 }, 600);
@@ -145,27 +155,31 @@ const loadGuessedHeroes = () => {
     hGuessed.forEach(h => {
         let answers = verifyResults(heroes[h]);
 
-        if (JSON.stringify(answers) == JSON.stringify(["correct", "correct", "correct", "correct", "correct", "correct", "correct"])) {
+        if (JSON.stringify(answers) == JSON.stringify(["correct", "correct", "correct", "correct", "correct", "correct", "correct", "correct"])) {
             const input = document.querySelector('.chr-search__input');
             input.disabled = true;
             showCorrectAnswer();
         }
 
         let year = document.createElement('div');
-        year.classList.add('result-info', answers[5], 'non-animated');
+        year.classList.add('result-info', answers[6], 'non-animated');
         results.insertBefore(year, results.firstChild);
         let age = document.createElement('div');
-        age.classList.add('result-info', answers[4], 'non-animated');
+        age.classList.add('result-info', answers[5], 'non-animated');
         results.insertBefore(age, results.firstChild);
         let origin = document.createElement('div');
-        origin.classList.add('result-info', answers[3], 'non-animated');
+        origin.classList.add('result-info', answers[4], 'non-animated');
         results.insertBefore(origin, results.firstChild);
         let species = document.createElement('div');
-        species.classList.add('result-info', answers[2], 'non-animated');
+        species.classList.add('result-info', answers[3], 'non-animated');
         results.insertBefore(species, results.firstChild);
-        let class_ = document.createElement('div');
-        class_.classList.add('result-info', answers[1], 'non-animated');
-        results.insertBefore(class_, results.firstChild);
+        let subRole = document.createElement('div');
+        subRole.classList.add('result-info', answers[2], 'non-animated');
+        if (heroes[h].subRole[lang].length > 10 & !heroes[h].subRole[lang].includes(' ')) subRole.classList.add('small-info');
+        results.insertBefore(subRole, results.firstChild);
+        let role = document.createElement('div');
+        role.classList.add('result-info', answers[1], 'non-animated');
+        results.insertBefore(role, results.firstChild);
         let gender = document.createElement('div');
         gender.classList.add('result-info', answers[0], 'non-animated');
         results.insertBefore(gender, results.firstChild);
@@ -175,7 +189,8 @@ const loadGuessedHeroes = () => {
 
         image.innerHTML = '<img src="/imgs/characters/' + heroes[h].name + '.webp" alt="' + heroes[h].name + '" class="result-info__img">';
         gender.innerHTML = '<p class="result-info__text">' + heroes[h].gender[lang] + '</p>';
-        class_.innerHTML = '<p class="result-info__text">' + heroes[h].class[lang] + '</p>';
+        role.innerHTML = '<p class="result-info__text">' + heroes[h].role[lang] + '</p>';
+        subRole.innerHTML = '<p class="result-info__text">' + heroes[h].subRole[lang] + '</p>';
         species.innerHTML = '<p class="result-info__text">' + heroes[h].species[lang] + '</p>';
         origin.innerHTML = '<p class="result-info__text">' + heroes[h].origin[lang] + '</p>';
         age.innerHTML = '<p class="result-info__text">' + heroes[h].age + '</p>';

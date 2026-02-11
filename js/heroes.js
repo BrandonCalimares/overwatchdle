@@ -5,9 +5,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "support",
             es: "soporte"
+        },
+        subRole: {
+            en: "tactician",
+            es: "estratega"
         },
         species: {
             en: "human",
@@ -26,9 +30,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "sharp shooter",
+            es: "ojo de águila"
         },
         species: {
             en: "human",
@@ -47,9 +55,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "support",
             es: "soporte"
+        },
+        subRole: {
+            en: "tactician",
+            es: "estratega"
         },
         species: {
             en: "human",
@@ -68,9 +80,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "specialist",
+            es: "especialista"
         },
         species: {
             en: "omnic",
@@ -89,9 +105,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "support",
             es: "soporte"
+        },
+        subRole: {
+            en: "survivor",
+            es: "sobreviviente"
         },
         species: {
             en: "human",
@@ -110,9 +130,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "sharp shooter",
+            es: "ojo de águila"
         },
         species: {
             en: "human",
@@ -131,9 +155,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "tank",
             es: "tanque"
+        },
+        subRole: {
+            en: "initiator",
+            es: "iniciador"
         },
         species: {
             en: "human",
@@ -152,9 +180,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "tank",
             es: "tanque"
+        },
+        subRole: {
+            en: "initiator",
+            es: "iniciador"
         },
         species: {
             en: "human",
@@ -173,9 +205,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "recon",
+            es: "reconocimiento"
         },
         species: {
             en: "robot",
@@ -194,9 +230,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "flanker",
+            es: "flanqueador"
         },
         species: {
             en: "human",
@@ -215,9 +255,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "sharp shooter",
+            es: "ojo de águila"
         },
         species: {
             en: "human",
@@ -236,9 +280,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "support",
             es: "soporte"
+        },
+        subRole: {
+            en: "survivor",
+            es: "sobreviviente"
         },
         species: {
             en: "human",
@@ -257,9 +305,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "tank",
             es: "tanque"
+        },
+        subRole: {
+            en: "stalwart",
+            es: "inquebrantable"
         },
         species: {
             en: "human",
@@ -278,9 +330,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "specialist",
+            es: "especialista"
         },
         species: {
             en: "human",
@@ -299,9 +355,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "support",
             es: "soporte"
+        },
+        subRole: {
+            en: "survivor",
+            es: "sobreviviente"
         },
         species: {
             en: "human",
@@ -320,9 +380,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "support",
             es: "soporte"
+        },
+        subRole: {
+            en: "medic",
+            es: "médico"
         },
         species: {
             en: "human",
@@ -341,9 +405,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "support",
             es: "soporte"
+        },
+        subRole: {
+            en: "medic",
+            es: "médico"
         },
         species: {
             en: "human",
@@ -362,9 +430,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "support",
             es: "soporte"
+        },
+        subRole: {
+            en: "tactician",
+            es: "estratega"
         },
         species: {
             en: "human",
@@ -383,9 +455,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "tank",
             es: "tanque"
+        },
+        subRole: {
+            en: "bruiser",
+            es: "matón"
         },
         species: {
             en: "human",
@@ -404,9 +480,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "specialist",
+            es: "especialista"
         },
         species: {
             en: "human",
@@ -425,9 +505,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "support",
             es: "soporte"
+        },
+        subRole: {
+            en: "medic",
+            es: "médico"
         },
         species: {
             en: "human",
@@ -446,9 +530,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "support",
             es: "soporte"
+        },
+        subRole: {
+            en: "medic",
+            es: "médico"
         },
         species: {
             en: "human",
@@ -467,9 +555,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "tank",
             es: "tanque"
+        },
+        subRole: {
+            en: "bruiser",
+            es: "matón"
         },
         species: {
             en: "robot",
@@ -488,9 +580,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "recon",
+            es: "reconocimiento"
         },
         species: {
             en: "human",
@@ -509,9 +605,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "tank",
             es: "tanque"
+        },
+        subRole: {
+            en: "stalwart",
+            es: "inquebrantable"
         },
         species: {
             en: "omnic",
@@ -530,9 +630,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "flanker",
+            es: "flanqueador"
         },
         species: {
             en: "human",
@@ -551,9 +655,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "tank",
             es: "tanque"
+        },
+        subRole: {
+            en: "stalwart",
+            es: "inquebrantable"
         },
         species: {
             en: "human",
@@ -572,9 +680,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "tank",
             es: "tanque"
+        },
+        subRole: {
+            en: "bruiser",
+            es: "matón"
         },
         species: {
             en: "human",
@@ -593,9 +705,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "tank",
             es: "tanque"
+        },
+        subRole: {
+            en: "stalwart",
+            es: "inquebrantable"
         },
         species: {
             en: "human",
@@ -614,9 +730,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "sharp shooter",
+            es: "ojo de águila"
         },
         species: {
             en: "human",
@@ -635,9 +755,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "specialist",
+            es: "especialista"
         },
         species: {
             en: "human",
@@ -656,9 +780,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "recon",
+            es: "reconocimiento"
         },
         species: {
             en: "human",
@@ -677,9 +805,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "specialist",
+            es: "especialista"
         },
         species: {
             en: "human",
@@ -698,9 +830,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "specialist",
+            es: "especialista"
         },
         species: {
             en: "human",
@@ -719,9 +855,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "flanker",
+            es: "flanqueador"
         },
         species: {
             en: "human",
@@ -740,9 +880,13 @@ const heroes = [
             en: "nonbinary",
             es: "no binario"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "flanker",
+            es: "flanqueador"
         },
         species: {
             en: "human",
@@ -761,9 +905,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "sharp shooter",
+            es: "ojo de águila"
         },
         species: {
             en: "human",
@@ -782,9 +930,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "tank",
             es: "tanque"
+        },
+        subRole: {
+            en: "initiator",
+            es: "iniciador"
         },
         species: {
             en: "gorilla",
@@ -803,9 +955,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "tank",
             es: "tanque"
+        },
+        subRole: {
+            en: "initiator",
+            es: "iniciador"
         },
         species: {
             en: "hamster",
@@ -824,9 +980,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "tank",
             es: "tanque"
+        },
+        subRole: {
+            en: "bruiser",
+            es: "matón"
         },
         species: {
             en: "human",
@@ -845,9 +1005,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "support",
             es: "soporte"
+        },
+        subRole: {
+            en: "tactician",
+            es: "estratega"
         },
         species: {
             en: "omnic",
@@ -866,9 +1030,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "tank",
             es: "tanque"
+        },
+        subRole: {
+            en: "stalwart",
+            es: "inquebrantable"
         },
         species: {
             en: "human",
@@ -887,9 +1055,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "recon",
+            es: "reconocimiento"
         },
         species: {
             en: "human",
@@ -908,9 +1080,13 @@ const heroes = [
             en: "male",
             es: "masculino"
         },
-        class: {
+        role: {
             en: "support",
             es: "soporte"
+        },
+        subRole: {
+            en: "survivor",
+            es: "sobreviviente"
         },
         species: {
             en: "human",
@@ -929,9 +1105,13 @@ const heroes = [
             en: "female",
             es: "femenino"
         },
-        class: {
+        role: {
             en: "damage",
             es: "daño"
+        },
+        subRole: {
+            en: "flanker",
+            es: "flanqueador"
         },
         species: {
             en: "human",
