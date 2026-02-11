@@ -29,13 +29,17 @@ form.addEventListener('submit', (e) => {
 })
 
 const verifyResults = (h) => {
-    let correctAnswers = ["wrong", "wrong", "wrong", "wrong", "wrong", "wrong"];
+    if (h.name == randomHeroe.name) {
+        return ["correct", "correct", "correct", "correct", "correct", "correct", "correct"];
+    }
+
+    let correctAnswers = ["wrong", "wrong", "wrong", "wrong", "wrong", "wrong", "wrong"];
     if (h.gender.es == randomHeroe.gender.es) correctAnswers[0] = "correct";
     if (h.class.es == randomHeroe.class.es) correctAnswers[1] = "correct";
     if (h.species.es == randomHeroe.species.es) correctAnswers[2] = "correct";
     if (h.origin.es == randomHeroe.origin.es) correctAnswers[3] = "correct";
-    if (h.height > randomHeroe.height) correctAnswers[4] = "lower";
-    else if (h.height < randomHeroe.height) correctAnswers[4] = "higher";
+    if (h.age > randomHeroe.age) correctAnswers[4] = "lower";
+    else if (h.age < randomHeroe.age) correctAnswers[4] = "higher";
     else correctAnswers[4] = "correct";
     if (h.year > randomHeroe.year) correctAnswers[5] = "lower";
     else if (h.year < randomHeroe.year) correctAnswers[5] = "higher";
@@ -59,7 +63,7 @@ const showCorrectAnswer = () => {
 const showResults = (h) => {
     let answers = verifyResults(h);
 
-    if (JSON.stringify(answers) == JSON.stringify(["correct", "correct", "correct", "correct", "correct", "correct"])) {
+    if (JSON.stringify(answers) == JSON.stringify(["correct", "correct", "correct", "correct", "correct", "correct", "correct"])) {
         const input = document.querySelector('.chr-search__input');
         input.disabled = true;
         setTimeout(() => {
@@ -70,8 +74,8 @@ const showResults = (h) => {
 
     let year = document.createElement('div');
     results.insertBefore(year, results.firstChild);
-    let height = document.createElement('div');
-    results.insertBefore(height, results.firstChild);
+    let age = document.createElement('div');
+    results.insertBefore(age, results.firstChild);
     let origin = document.createElement('div');
     results.insertBefore(origin, results.firstChild);
     let species = document.createElement('div');
@@ -101,8 +105,8 @@ const showResults = (h) => {
                     origin.classList.add('result-info', answers[3]);
                     origin.innerHTML = '<p class="result-info__text">' + h.origin[lang] + '</p>';
                     setTimeout(() => {
-                        height.classList.add('result-info', answers[4]);
-                        height.innerHTML = '<p class="result-info__text">' + h.height.toFixed(2) + '</p>';
+                        age.classList.add('result-info', answers[4]);
+                        age.innerHTML = '<p class="result-info__text">' + h.age + '</p>';
 
                         setTimeout(() => {
                             year.classList.add('result-info', answers[5]);
@@ -141,7 +145,7 @@ const loadGuessedHeroes = () => {
     hGuessed.forEach(h => {
         let answers = verifyResults(heroes[h]);
 
-        if (JSON.stringify(answers) == JSON.stringify(["correct", "correct", "correct", "correct", "correct", "correct"])) {
+        if (JSON.stringify(answers) == JSON.stringify(["correct", "correct", "correct", "correct", "correct", "correct", "correct"])) {
             const input = document.querySelector('.chr-search__input');
             input.disabled = true;
             showCorrectAnswer();
@@ -150,9 +154,9 @@ const loadGuessedHeroes = () => {
         let year = document.createElement('div');
         year.classList.add('result-info', answers[5], 'non-animated');
         results.insertBefore(year, results.firstChild);
-        let height = document.createElement('div');
-        height.classList.add('result-info', answers[4], 'non-animated');
-        results.insertBefore(height, results.firstChild);
+        let age = document.createElement('div');
+        age.classList.add('result-info', answers[4], 'non-animated');
+        results.insertBefore(age, results.firstChild);
         let origin = document.createElement('div');
         origin.classList.add('result-info', answers[3], 'non-animated');
         results.insertBefore(origin, results.firstChild);
@@ -174,7 +178,7 @@ const loadGuessedHeroes = () => {
         class_.innerHTML = '<p class="result-info__text">' + heroes[h].class[lang] + '</p>';
         species.innerHTML = '<p class="result-info__text">' + heroes[h].species[lang] + '</p>';
         origin.innerHTML = '<p class="result-info__text">' + heroes[h].origin[lang] + '</p>';
-        height.innerHTML = '<p class="result-info__text">' + heroes[h].height.toFixed(2) + '</p>';
+        age.innerHTML = '<p class="result-info__text">' + heroes[h].age + '</p>';
         year.innerHTML = '<p class="result-info__text">' + heroes[h].year + '</p>';
 
         heroes.splice(h, 1);

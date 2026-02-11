@@ -17,7 +17,7 @@ const heroes = [
             en: "egypt",
             es: "egipto"
         },
-        height: 1.82,
+        age: 62,
         year: 2016
     },
     {
@@ -38,7 +38,7 @@ const heroes = [
             en: "usa",
             es: "eeuu"
         },
-        height: 1.67,
+        age: 41,
         year: 2018
     },
     {
@@ -59,7 +59,7 @@ const heroes = [
             en: "haiti",
             es: "haiti"
         },
-        height: 1.89,
+        age: 38,
         year: 2019
     },
     {
@@ -80,7 +80,7 @@ const heroes = [
             en: "sweden",
             es: "suecia"
         },
-        height: 2.2,
+        age: 32,
         year: 2016
     },
     {
@@ -101,7 +101,7 @@ const heroes = [
             en: "sweden",
             es: "suecia"
         },
-        height: 1.91,
+        age: 25,
         year: 2018
     },
     {
@@ -122,7 +122,7 @@ const heroes = [
             en: "usa",
             es: "eeuu"
         },
-        height: 1.86,
+        age: 39,
         year: 2016
     },
     {
@@ -143,7 +143,7 @@ const heroes = [
             en: "nigeria",
             es: "nigeria"
         },
-        height: 2.18,
+        age: 47,
         year: 2017
     },
     {
@@ -164,7 +164,7 @@ const heroes = [
             en: "south korea",
             es: "corea del sur"
         },
-        height: 1.66,
+        age: 21,
         year: 2016
     },
     {
@@ -185,7 +185,7 @@ const heroes = [
             en: "switzerland",
             es: "suiza"
         },
-        height: 1.82,
+        age: 14,
         year: 2020
     },
     {
@@ -206,7 +206,7 @@ const heroes = [
             en: "japan",
             es: "japón"
         },
-        height: 1.7,
+        age: 37,
         year: 2016
     },
     {
@@ -227,7 +227,7 @@ const heroes = [
             en: "japan",
             es: "japón"
         },
-        height: 1.73,
+        age: 40,
         year: 2016
     },
     {
@@ -248,7 +248,7 @@ const heroes = [
             en: "peru",
             es: "perú"
         },
-        height: 1.75,
+        age: 18,
         year: 2023
     },
     {
@@ -269,7 +269,7 @@ const heroes = [
             en: "australia",
             es: "australia"
         },
-        height: 2.13,
+        age: 31,
         year: 2022
     },
     {
@@ -290,7 +290,7 @@ const heroes = [
             en: "australia",
             es: "australia"
         },
-        height: 1.96,
+        age: 27,
         year: 2016
     },
     {
@@ -311,7 +311,7 @@ const heroes = [
             en: "mars",
             es: "marte"
         },
-        height: 1.7,
+        age: 19,
         year: 2024
     },
     {
@@ -332,7 +332,7 @@ const heroes = [
             en: "japan",
             es: "japón"
         },
-        height: 1.7,
+        age: 21,
         year: 2022
     },
     {
@@ -353,7 +353,7 @@ const heroes = [
             en: "thailand",
             es: "tailandia"
         },
-        height: 2.13,
+        age: 31,
         year: 2023
     },
     {
@@ -374,7 +374,7 @@ const heroes = [
             en: "brasil",
             es: "brasil"
         },
-        height: 1.6,
+        age: 28,
         year: 2016
     },
     {
@@ -395,7 +395,7 @@ const heroes = [
             en: "samoa",
             es: "samoa"
         },
-        height: 2.2,
+        age: 37,
         year: 2023
     },
     {
@@ -416,7 +416,7 @@ const heroes = [
             en: "china",
             es: "china"
         },
-        height: 1.6,
+        age: 33,
         year: 2016
     },
     {
@@ -437,7 +437,7 @@ const heroes = [
             en: "switzerland",
             es: "suiza"
         },
-        height: 1.7,
+        age: 39,
         year: 2016
     },
     {
@@ -458,7 +458,7 @@ const heroes = [
             en: "ireland",
             es: "irlanda"
         },
-        height: 1.95,
+        age: 50,
         year: 2017
     },
     {
@@ -479,7 +479,7 @@ const heroes = [
             en: "numbani",
             es: "numbani"
         },
-        height: 2.23,
+        age: 1,
         year: 2017
     },
     {
@@ -500,7 +500,7 @@ const heroes = [
             en: "egypt",
             es: "egipto"
         },
-        height: 1.8,
+        age: 34,
         year: 2016
     },
     {
@@ -521,7 +521,7 @@ const heroes = [
             en: "nepal",
             es: "nepal"
         },
-        height: 1.93,
+        age: 28,
         year: 2022
     },
     {
@@ -542,7 +542,7 @@ const heroes = [
             en: "usa",
             es: "eeuu"
         },
-        height: 1.84,
+        age: 60,
         year: 2016
     },
     {
@@ -563,7 +563,7 @@ const heroes = [
             en: "germany",
             es: "alemania"
         },
-        height: 2.23,
+        age: 63,
         year: 2016
     },
     {
@@ -584,7 +584,7 @@ const heroes = [
             en: "australia",
             es: "australia"
         },
-        height: 2.2,
+        age: 50,
         year: 2016
     },
     {
@@ -605,7 +605,7 @@ const heroes = [
             en: "netherlands",
             es: "holanda"
         },
-        height: 2.43,
+        age: 64,
         year: 2019
     },
     {
@@ -626,7 +626,7 @@ const heroes = [
             en: "canada",
             es: "canadá"
         },
-        height: 1.8,
+        age: 51,
         year: 2022
     },
     {
@@ -647,7 +647,7 @@ const heroes = [
             en: "usa",
             es: "eeuu"
         },
-        height: 1.85,
+        age: 58,
         year: 2016
     },
     {
@@ -668,7 +668,7 @@ const heroes = [
             en: "mexico",
             es: "méxico"
         },
-        height: 1.62,
+        age: 32,
         year: 2016
     },
     {
@@ -689,7 +689,7 @@ const heroes = [
             en: "india",
             es: "india"
         },
-        height: 1.7,
+        age: 30,
         year: 2016
     },
     {
@@ -710,7 +710,7 @@ const heroes = [
             en: "sweden",
             es: "suecia"
         },
-        height: 1.4,
+        age: 59,
         year: 2016
     },
     {
@@ -731,7 +731,7 @@ const heroes = [
             en: "united kingdom",
             es: "reino unido"
         },
-        height: 1.62,
+        age: 28,
         year: 2016
     },
     {
@@ -752,7 +752,7 @@ const heroes = [
             en: "canada",
             es: "canadá"
         },
-        height: 1.73,
+        age: 26,
         year: 2024
     },
     {
@@ -773,7 +773,7 @@ const heroes = [
             en: "french",
             es: "francia"
         },
-        height: 1.75,
+        age: 35,
         year: 2016
     },
     {
@@ -794,7 +794,7 @@ const heroes = [
             en: "moon",
             es: "luna"
         },
-        height: 2.2,
+        age: 31,
         year: 2016
     },
     {
@@ -815,7 +815,7 @@ const heroes = [
             en: "moon",
             es: "luna"
         },
-        height: 0.4,
+        age: 16,
         year: 2018
     },
     {
@@ -836,7 +836,7 @@ const heroes = [
             en: "russia",
             es: "rusia"
         },
-        height: 1.95,
+        age: 30,
         year: 2016
     },
     {
@@ -857,7 +857,7 @@ const heroes = [
             en: "nepal",
             es: "nepal"
         },
-        height: 1.72,
+        age: 33,
         year: 2016
     },
     {
@@ -878,7 +878,7 @@ const heroes = [
             en: "scotland",
             es: "escocia"
         },
-        height: 2.2,
+        age: 24,
         year: 2024
     },
     {
@@ -899,7 +899,7 @@ const heroes = [
             en: "denmark",
             es: "dinamarca"
         },
-        height: 1.74,
+        age: 34,
         year: 2025
     },
     {
@@ -920,7 +920,7 @@ const heroes = [
             en: "china",
             es: "china"
         },
-        height: 1.68,
+        age: 19,
         year: 2025
     },
     {
@@ -938,10 +938,10 @@ const heroes = [
             es: "humano"
         },
         origin: {
-            en: "Italy",
-            es: "Italia"
+            en: "italy",
+            es: "italia"
         },
-        height: 1.72,
+        age: 29,
         year: 2025
     }
 ]
