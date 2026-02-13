@@ -93,9 +93,9 @@ const showCorrectAnswer = () => {
     const shareText = document.querySelector('.share-text');
     const share = document.querySelector('.share');
     if (lang == 'es') {
-        shareText.textContent = `Encontré al héroe de #Overwatchdle en el modo clásico en ${tries} intentos.\n${resultsShare} ${tries > 5 ? `\n+ ${tries - 5} más\n` : ''} \nhttps://overwatchdle.vercel.app`;
+        shareText.textContent = `Encontré al héroe de #Overwatchdle en el modo clásico en ${tries} intento${tries == 1 ? '' : 's'}.\n${resultsShare} ${tries > 5 ? `\n+ ${tries - 5} más\n` : ''} \nhttps://overwatchdle.vercel.app`;
     } else {
-        shareText.textContent = `I found the #Overwatchdle hero in classic mode in ${tries} attempts.\n${resultsShare} ${tries > 5 ? `\n+ ${tries - 5} more\n` : ''} \nhttps://overwatchdle.vercel.app`;
+        shareText.textContent = `I found the #Overwatchdle hero in classic mode in ${tries} attempt${tries == 1 ? '' : 's'}.\n${resultsShare} ${tries > 5 ? `\n+ ${tries - 5} more\n` : ''} \nhttps://overwatchdle.vercel.app`;
     }
 
     container.classList.remove('correct-answer-hidden');

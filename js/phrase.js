@@ -49,9 +49,9 @@ const showCorrectAnswer = () => {
     const share = document.querySelector('.share');
     const shareText = document.querySelector('.share-text');
     if (lang == 'es') {
-        shareText.textContent = `Encontré al héroe de #Overwatchdle en el modo frase en ${tries} intentos.\n\nhttps://overwatchdle.vercel.app`;
+        shareText.textContent = `Encontré al héroe de #Overwatchdle en el modo frase en ${tries} intento${tries == 1 ? '' : 's'}.\n\nhttps://overwatchdle.vercel.app`;
     } else {
-        shareText.textContent = `I found the #Overwatchdle hero in phrase mode in ${tries} attempts.\n\nhttps://overwatchdle.vercel.app`;
+        shareText.textContent = `I found the #Overwatchdle hero in phrase mode in ${tries} attempt${tries == 1 ? '' : 's'}.\n\nhttps://overwatchdle.vercel.app`;
     }
     container.classList.remove('correct-answer-hidden');
     share.classList.remove('share-hidden');
