@@ -57,7 +57,8 @@ const showResults = (h) => {
 
         setTimeout(() => {
             showCorrectAnswer();
-            window.scrollTo(0, document.body.scrollHeight);
+            const correctAnswers = document.querySelector('.correct-answer');
+            correctAnswers.scrollIntoView({ behavior: 'smooth', block: "start" });
         }, 500);
     } else {
         container.classList.add('wrong');

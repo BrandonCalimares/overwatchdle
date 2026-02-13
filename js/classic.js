@@ -70,7 +70,7 @@ const verifyResults = (h) => {
     newRow += "\n";
     resultsShare = newRow + resultsShare;
 
-    if (tries >= 5) {
+    if (resultsShare.split("\n").length > 5) {
         let lines = resultsShare.split("\n");
         lines.pop();
         resultsShare = lines.join("\n");
@@ -111,7 +111,8 @@ const showResults = (h) => {
         input.disabled = true;
         setTimeout(() => {
             showCorrectAnswer();
-            window.scrollTo(0, document.body.scrollHeight);
+            const correctAnswers = document.querySelector('.correct-answer');
+            correctAnswers.scrollIntoView({ behavior: 'smooth', block: "start" });
         }, 4700);
     }
 

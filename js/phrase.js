@@ -78,7 +78,8 @@ const showResults = (h) => {
         input.disabled = true;
         setTimeout(() => {
             showCorrectAnswer();
-            window.scrollTo(0, document.body.scrollHeight);
+            const correctAnswers = document.querySelector('.correct-answer');
+            correctAnswers.scrollIntoView({ behavior: 'smooth', block: "start" });
             if (lang == 'es')
                 audioText.innerHTML = 'pista de audio';
             else
