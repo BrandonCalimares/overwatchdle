@@ -426,8 +426,19 @@ main {
   border: 0.15rem solid white;
 }
 
+@media (max-width: 450px) {
+  .share-btn {
+    width: 8.5rem;
+    font-size: 1.5rem;
+  }
+}
+
 .copy-btn {
   color: var(--text-color);
+}
+
+.copied {
+  color: var(--input-color);
 }
 
 .twitter-btn {

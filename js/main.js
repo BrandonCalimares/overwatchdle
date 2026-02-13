@@ -50,15 +50,18 @@ const shareText = document.querySelector('.share-text');
 
 const copyText = () => {
     navigator.clipboard.writeText(shareText.textContent).then(() => {
-        alert('Texto copiado al portapapeles');
+        const copyBtn = document.querySelector('.copy-btn');
+        const copyBtnText = copyBtn.querySelector('.share-btn__text');
+        copyBtnText.innerHTML = currentLang.startsWith('es') ? 'Copiado' : 'Copied';
+        copyBtn.classList.add('copied');
+
     }).catch(err => {
-        alert('Error al copiar el texto: ', err);
+        alert('Error: ' + err);
     });
 }
 
-const twitterBtn = document.querySelector('.twitter-btn');
-twitterBtn.addEventListener('click', () => {
+const shareTwitter = () => {
     const text = shareText.textContent;
     const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
     window.open(twitterUrl, '_blank');
-});
+};
