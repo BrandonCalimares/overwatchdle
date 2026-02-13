@@ -65,3 +65,11 @@ const shareTwitter = () => {
     const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
     window.open(twitterUrl, '_blank');
 };
+
+const genDailyIndex = (offset, array, date) => {
+    const seed = date.getUTCFullYear() * 10000 + (date.getUTCMonth() + offset) * 100 + date.getUTCDate();
+    const randomSin = Math.sin(seed) * 10000;
+    const randomNormalized = randomSin - Math.floor(randomSin);
+    const index = Math.floor(randomNormalized * array.length);
+    return index;
+};

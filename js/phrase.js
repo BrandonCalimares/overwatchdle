@@ -2,11 +2,7 @@ const phraseText = document.querySelector('.game-instructions__title');
 const audioPlayer = document.querySelector('.audio');
 
 const currentDate = new Date();
-const seed = currentDate.getUTCFullYear() * 10000 + (currentDate.getUTCMonth() + 3) * 100 + currentDate.getUTCDate();
-const randomSin = Math.sin(seed) * 10000;
-const randomNormalized = randomSin - Math.floor(randomSin);
-const index = Math.floor(randomNormalized * heroes.length);
-const randomPhrase = audios[index];
+const randomPhrase = audios[genDailyIndex(3, audios, currentDate)];
 
 const results = document.querySelector('.results-phrase-container');
 const audioContainer = document.querySelector('.audio-player');
@@ -16,6 +12,12 @@ const audioButton = document.querySelector('.audio-button');
 const lang = window.location.pathname.startsWith("/en") ? "en" : "es";
 
 let tries = 0;
+
+const prevDate = new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() - 1));
+const prevHero = audios[genDailyIndex(3, audios, prevDate)];
+
+const prevHeroText = document.querySelector('.previousHero');
+prevHeroText.innerHTML = prevHero.hero;
 
 phraseText.innerHTML = `"${randomPhrase.text[lang]}"`;
 audioPlayer.src = `/${randomPhrase.audio[lang]}`;

@@ -1,9 +1,5 @@
 const currentDate = new Date();
-const seed = currentDate.getUTCFullYear() * 10000 + (currentDate.getUTCMonth() + 2) * 100 + currentDate.getUTCDate() + 1;
-const randomSin = Math.sin(seed) * 10000;
-const randomNormalized = randomSin - Math.floor(randomSin);
-const index = Math.floor(randomNormalized * heroes.length);
-const randomEmojis = emojis[index];
+const randomEmojis = emojis[genDailyIndex(2, emojis, currentDate)];
 
 const results = document.querySelector('.results-emoji-container');
 const emojisText = [
@@ -16,6 +12,12 @@ const emojisText = [
 const lang = window.location.pathname.startsWith("/en") ? "en" : "es";
 
 let tries = 0;
+
+const prevDate = new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() - 1));
+const prevHero = emojis[genDailyIndex(2, emojis, prevDate)];
+
+const prevHeroText = document.querySelector('.previousHero');
+prevHeroText.innerHTML = prevHero.hero;
 
 emojisText[0].innerHTML = randomEmojis.text[0];
 
@@ -122,7 +124,7 @@ const getFromCookies = () => {
 const loadGuessedHeroes = () => {
     const hGuessed = getFromCookies();
     tries = hGuessed.length;
-    hGuessed.forEach(h => {
+    hGuessed.forEach((h, index) => {
         let container = document.createElement('section');
 
         let image = document.createElement('img');
@@ -145,9 +147,9 @@ const loadGuessedHeroes = () => {
             showCorrectAnswer();
         } else {
             container.classList.add('wrong');
-            if (tries < 4) {
-                emojisText[tries].innerHTML = randomEmojis.text[tries];
-                emojisText[tries].classList.add('emoji-animated');
+            if (index < 4) {
+                emojisText[index + 1].innerHTML = randomEmojis.text[index + 1];
+                emojisText[index + 1].classList.add('emoji-animated');
             }
         }
 

@@ -254,10 +254,6 @@ main {
   background-color: var(--wrong-color);
 }
 
-.partial {
-  background-color: var(--partial-color);
-}
-
 .higher {
   background: url("../imgs/arrowup.webp"), var(--wrong-color);
   background-size: cover;
@@ -512,6 +508,20 @@ main {
   .next-game {
     width: 17rem;
   }
+}
+
+.previousHero-text {
+  font-size: 1.7rem;
+  color: var(--text-color-alt);
+  font-family: "Big Noodle Too", impact, sans-serif;
+  text-align: center;
+  margin-block: 2rem;
+}
+
+.previousHero {
+  color: var(--selected-color);
+  font-size: 2rem;
+  margin-left: 0.3rem;
 }
 
 /* PHRASE */

@@ -2,14 +2,17 @@ const abilityImg = document.querySelector('.ability-img');
 const results = document.querySelector('.results-ability-container');
 
 const currentDate = new Date();
-const seed = currentDate.getUTCFullYear() * 10000 + (currentDate.getUTCMonth() + 5) * 100 + currentDate.getUTCDate();
-const randomSin = Math.sin(seed) * 10000;
-const randomNormalized = randomSin - Math.floor(randomSin);
-const index = Math.floor(randomNormalized * heroes.length); const randomAbility = abilities[index];
+const randomAbility = abilities[genDailyIndex(5, abilities, currentDate)];
 
 const lang = window.location.pathname.startsWith("/en") ? "en" : "es";
 
 let tries = 0;
+
+const prevDate = new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() - 1));
+const prevHero = abilities[genDailyIndex(5, abilities, prevDate)];
+
+const prevHeroText = document.querySelector('.previousHero');
+prevHeroText.innerHTML = prevHero.hero;
 
 abilityImg.style.backgroundImage = `url(/${randomAbility.img})`;
 let size = 200;

@@ -1,17 +1,18 @@
 const results = document.querySelector('.results-content');
-
 const currentDate = new Date();
-const seed = currentDate.getUTCFullYear() * 10000 + (currentDate.getUTCMonth() + 1) * 100 + currentDate.getUTCDate();
-const randomSin = Math.sin(seed) * 10000;
-const randomNormalized = randomSin - Math.floor(randomSin);
-const index = Math.floor(randomNormalized * heroes.length);
-const randomHeroe = heroes[index];
+const randomHeroe = heroes[genDailyIndex(1, heroes, currentDate)];
 
 const lang = window.location.pathname.startsWith("/en") ? "en" : "es";
 
 let resultsShare = '';
 
 let tries = 0;
+
+const prevDate = new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() - 1));
+const prevHero = heroes[genDailyIndex(1, heroes, prevDate)];
+
+const prevHeroText = document.querySelector('.previousHero');
+prevHeroText.innerHTML = prevHero.name;
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
