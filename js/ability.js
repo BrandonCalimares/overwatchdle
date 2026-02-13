@@ -2,7 +2,7 @@ const abilityImg = document.querySelector('.ability-img');
 const results = document.querySelector('.results-ability-container');
 
 const currentDate = new Date();
-const seed = currentDate.getUTCFullYear() * 10000 + (currentDate.getUTCMonth() + 1) * 100 + currentDate.getUTCDate();
+const seed = currentDate.getUTCFullYear() * 10000 + (currentDate.getUTCMonth() + 5) * 100 + currentDate.getUTCDate();
 const randomSin = Math.sin(seed) * 10000;
 const randomNormalized = randomSin - Math.floor(randomSin);
 const index = Math.floor(randomNormalized * heroes.length); const randomAbility = abilities[index];
@@ -63,7 +63,16 @@ const showCorrectAnswer = () => {
     container.insertBefore(correctHero, container.firstChild);
     container.insertBefore(ggText, container.firstChild);
 
+    const share = document.querySelector('.share');
+    const shareText = document.querySelector('.share-text');
+    if (lang == 'es') {
+        shareText.textContent = `Encontré al héroe de #Overwatchdle en el modo habilidad en ${tries} intentos.\n\nhttps://overwatchdle.vercel.app`;
+    } else {
+        shareText.textContent = `I found the #Overwatchdle hero in ability mode in ${tries} attempts.\n\nhttps://overwatchdle.vercel.app`;
+    }
+
     container.classList.remove('correct-answer-hidden');
+    share.classList.remove('share-hidden');
 }
 
 const showResults = (h) => {

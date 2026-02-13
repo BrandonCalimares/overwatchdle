@@ -2,7 +2,7 @@ const phraseText = document.querySelector('.game-instructions__title');
 const audioPlayer = document.querySelector('.audio');
 
 const currentDate = new Date();
-const seed = currentDate.getUTCFullYear() * 10000 + (currentDate.getUTCMonth() + 1) * 100 + currentDate.getUTCDate();
+const seed = currentDate.getUTCFullYear() * 10000 + (currentDate.getUTCMonth() + 3) * 100 + currentDate.getUTCDate();
 const randomSin = Math.sin(seed) * 10000;
 const randomNormalized = randomSin - Math.floor(randomSin);
 const index = Math.floor(randomNormalized * heroes.length);
@@ -44,9 +44,17 @@ const showCorrectAnswer = () => {
         content += '<p class="correct-answer__tries">Numero de intentos: ' + tries + '</p>';
     else
         content += '<p class="correct-answer__tries">Number of attempts: ' + tries + '</p>';
-
     container.innerHTML = content + container.innerHTML;
+
+    const share = document.querySelector('.share');
+    const shareText = document.querySelector('.share-text');
+    if (lang == 'es') {
+        shareText.textContent = `Encontré al héroe de #Overwatchdle en el modo frase en ${tries} intentos.\n\nhttps://overwatchdle.vercel.app`;
+    } else {
+        shareText.textContent = `I found the #Overwatchdle hero in phrase mode in ${tries} attempts.\n\nhttps://overwatchdle.vercel.app`;
+    }
     container.classList.remove('correct-answer-hidden');
+    share.classList.remove('share-hidden');
 }
 
 const showResults = (h) => {

@@ -85,7 +85,17 @@ const showCorrectAnswer = () => {
     emojisText[3].innerHTML = randomEmojis.text[3];
 
     container.innerHTML = content + container.innerHTML;
+
+    const share = document.querySelector('.share');
+    const shareText = document.querySelector('.share-text');
+    if (lang == 'es') {
+        shareText.textContent = `Encontré al héroe de #Overwatchdle en el modo emoji en ${tries} intentos.\n\nhttps://overwatchdle.vercel.app`;
+    } else {
+        shareText.textContent = `I found the #Overwatchdle hero in emoji mode in ${tries} attempts.\n\nhttps://overwatchdle.vercel.app`;
+    }
+
     container.classList.remove('correct-answer-hidden');
+    share.classList.remove('share-hidden');
 }
 
 const addToCookies = (h) => {

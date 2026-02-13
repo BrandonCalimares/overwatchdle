@@ -45,3 +45,20 @@ langOptions.forEach(option => {
         localStorage.setItem('lang', lang);
     });
 });
+
+const shareText = document.querySelector('.share-text');
+
+const copyText = () => {
+    navigator.clipboard.writeText(shareText.textContent).then(() => {
+        alert('Texto copiado al portapapeles');
+    }).catch(err => {
+        alert('Error al copiar el texto: ', err);
+    });
+}
+
+const twitterBtn = document.querySelector('.twitter-btn');
+twitterBtn.addEventListener('click', () => {
+    const text = shareText.textContent;
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+    window.open(twitterUrl, '_blank');
+});

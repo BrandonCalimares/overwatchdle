@@ -9,6 +9,8 @@ const randomHeroe = heroes[index];
 
 const lang = window.location.pathname.startsWith("/en") ? "en" : "es";
 
+let resultsShare = '';
+
 let tries = 0;
 
 form.addEventListener('submit', (e) => {
@@ -30,6 +32,12 @@ form.addEventListener('submit', (e) => {
 
 const verifyResults = (h) => {
     if (h.name == randomHeroe.name) {
+        resultsShare = "🟩🟩🟩🟩🟩🟩🟩\n" + resultsShare
+        if (tries >= 5) {
+            let lines = resultsShare.split("\n");
+            lines.pop();
+            resultsShare = lines.join("\n");
+        }
         return ["correct", "correct", "correct", "correct", "correct", "correct", "correct", "correct"];
     }
 
@@ -45,6 +53,29 @@ const verifyResults = (h) => {
     if (h.year > randomHeroe.year) correctAnswers[6] = "lower";
     else if (h.year < randomHeroe.year) correctAnswers[6] = "higher";
     else correctAnswers[6] = "correct";
+
+    let newRow = '';
+    correctAnswers.forEach((answer, index) => {
+        if (index == 7) return;
+        if (answer == "correct") {
+            newRow += "🟩";
+        } else if (answer == "wrong") {
+            newRow += "🟥";
+        } else if (answer == "higher") {
+            newRow += "⬆️";
+        } else {
+            newRow += "⬇️";
+        }
+    });
+    newRow += "\n";
+    resultsShare = newRow + resultsShare;
+
+    if (tries >= 5) {
+        let lines = resultsShare.split("\n");
+        lines.pop();
+        resultsShare = lines.join("\n");
+    }
+
     return correctAnswers;
 }
 
@@ -58,7 +89,18 @@ const showCorrectAnswer = () => {
         content += '<p class="correct-answer__tries">Number of attempts: ' + tries + '</p>';
 
     container.innerHTML = content + container.innerHTML;
+
+    const shareText = document.querySelector('.share-text');
+    const share = document.querySelector('.share');
+    if (lang == 'es') {
+        shareText.textContent = `Encontré al héroe de #Overwatchdle en el modo clásico en ${tries} intentos.\n${resultsShare} ${tries > 5 ? `\n+ ${tries - 5} más\n` : ''} \nhttps://overwatchdle.vercel.app`;
+    } else {
+        shareText.textContent = `I found the #Overwatchdle hero in classic mode in ${tries} attempts.\n${resultsShare} ${tries > 5 ? `\n+ ${tries - 5} more\n` : ''} \nhttps://overwatchdle.vercel.app`;
+    }
+
     container.classList.remove('correct-answer-hidden');
+    share.classList.remove('share-hidden');
+
 }
 
 const showResults = (h) => {
