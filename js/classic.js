@@ -32,8 +32,8 @@ form.addEventListener('submit', (e) => {
 
 const verifyResults = (h) => {
     if (h.name == randomHeroe.name) {
-        resultsShare = "🟩🟩🟩🟩🟩🟩🟩\n" + resultsShare
-        if (tries >= 5) {
+        resultsShare = "🟩🟩🟩🟩🟩🟩🟩" + resultsShare
+        if (resultsShare.split("\n").length > 5) {
             let lines = resultsShare.split("\n");
             lines.pop();
             resultsShare = lines.join("\n");
@@ -67,9 +67,8 @@ const verifyResults = (h) => {
             newRow += "⬇️";
         }
     });
-    newRow += "\n";
+    newRow = "\n" + newRow;
     resultsShare = newRow + resultsShare;
-
     if (resultsShare.split("\n").length > 5) {
         let lines = resultsShare.split("\n");
         lines.pop();
@@ -93,9 +92,9 @@ const showCorrectAnswer = () => {
     const shareText = document.querySelector('.share-text');
     const share = document.querySelector('.share');
     if (lang == 'es') {
-        shareText.textContent = `Encontré al héroe de #Overwatchdle en el modo clásico en ${tries} intento${tries == 1 ? '' : 's'}.\n${resultsShare} ${tries > 5 ? `\n+ ${tries - 5} más\n` : ''} \nhttps://overwatchdle.vercel.app`;
+        shareText.textContent = `Encontré al héroe de #Overwatchdle en el modo clásico en ${tries} intento${tries == 1 ? '' : 's'}.\n${resultsShare} ${tries > 5 ? `\n+ ${tries - 5} más\n` : '\n'} \nhttps://overwatchdle.vercel.app`;
     } else {
-        shareText.textContent = `I found the #Overwatchdle hero in classic mode in ${tries} attempt${tries == 1 ? '' : 's'}.\n${resultsShare} ${tries > 5 ? `\n+ ${tries - 5} more\n` : ''} \nhttps://overwatchdle.vercel.app`;
+        shareText.textContent = `I found the #Overwatchdle hero in classic mode in ${tries} attempt${tries == 1 ? '' : 's'}.\n${resultsShare} ${tries > 5 ? `\n+ ${tries - 5} more\n` : '\n'} \nhttps://overwatchdle.vercel.app`;
     }
 
     container.classList.remove('correct-answer-hidden');
@@ -178,14 +177,14 @@ const showResults = (h) => {
 
 const addToCookies = (h) => {
     if (document.cookie == '') {
-        document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /classic`;
-        document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/classic`;
+        document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /classic.html`;
+        document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/classic.html`;
     }
     const cookies = document.cookie;
     const hGuessed = JSON.parse(cookies.split('=')[1]);
     hGuessed.push(heroes.indexOf(h));
-    document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /classic`;
-    document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/classic`;
+    document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /classic.html`;
+    document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/classic.html`;
 }
 
 const getFromCookies = () => {
