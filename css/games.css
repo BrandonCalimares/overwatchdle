@@ -12,11 +12,12 @@ main {
   width: 40rem;
   border-radius: 0.7rem;
   text-align: center;
-  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
+  position: relative;
 }
 
 .game-instructions__title {
@@ -28,6 +29,52 @@ main {
   font-size: 2rem;
   color: var(--text-color-lg);
   font-style: italic;
+}
+
+.winStreak {
+  font-size: 2rem;
+  background-color: var(--background-color-dark);
+  padding: 0.5rem;
+  font-family: "Big Noodle Too", impact, sans-serif;
+  color: var(--text-color-alt);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40rem;
+  margin-top: 2rem;
+  border-radius: 0.7rem;
+  border: #3e3e70 2px solid;
+}
+
+.winStreak_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-left: 0.5rem;
+}
+
+.winStreak_container img {
+  width: 2.7rem;
+  height: 2.7rem;
+  filter: drop-shadow(0 0 0.2rem var(--selected-color));
+}
+
+.winStreak_container span {
+  color: var(--text-color);
+  filter: drop-shadow(0 0 0.2rem var(--selected-color));
+  position: absolute;
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.noWinStreak img {
+  filter: grayscale();
+}
+
+.noWinStreak span {
+  color: var(--text-color);
+  filter: drop-shadow(0 0 0.1rem white);
 }
 
 .chr-search {
@@ -147,7 +194,8 @@ main {
 }
 
 @media (max-width: 768px) {
-  .game-instructions {
+  .game-instructions,
+  .winStreak {
     width: 90%;
   }
 

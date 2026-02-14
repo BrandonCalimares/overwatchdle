@@ -8,7 +8,8 @@ const lang = window.location.pathname.startsWith("/en") ? "en" : "es";
 
 let tries = 0;
 
-const prevDate = new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() - 1));
+const prevDate = new Date(currentDate);
+prevDate.setUTCDate(prevDate.getUTCDate() - 1);
 const prevHero = abilities[genDailyIndex(5, abilities, prevDate)];
 
 const prevHeroText = document.querySelector('.previousHero');
@@ -101,6 +102,7 @@ const showResults = (h) => {
         input.disabled = true;
 
         setTimeout(() => {
+            addWinStreak();
             showCorrectAnswer();
             const correctAnswers = document.querySelector('.correct-answer');
             correctAnswers.scrollIntoView({ behavior: 'smooth', block: "start" });
@@ -225,5 +227,36 @@ const loadGuessedHeroes = () => {
         heroes.splice(h, 1);
     });
 }
+
+let winStreak = localStorage.getItem('winStreakAbility');
+
+if (winStreak === null) {
+    winStreak = [0, null];
+    localStorage.setItem('winStreakAbility', JSON.stringify(winStreak));
+} else {
+    winStreak = JSON.parse(winStreak);
+}
+
+const winStreakNumber = document.querySelector('.winStreak_number');
+const winStreakContainer = document.querySelector('.winStreak_container');
+if (winStreak[1] == prevDate.toDateString() || winStreak[1] == currentDate.toDateString()) {
+    winStreakNumber.textContent = winStreak[0];
+    winStreakContainer.classList.remove('noWinStreak');
+} else {
+    winStreakContainer.classList.add('noWinStreak');
+    winStreak[0] = 0;
+    winStreak[1] = null;
+    winStreakNumber.textContent = winStreak[0];
+    localStorage.setItem('winStreakAbility', JSON.stringify(winStreak));
+}
+
+addWinStreak = () => {
+    winStreak[0]++;
+    winStreak[1] = currentDate.toDateString();
+    localStorage.setItem('winStreakAbility', JSON.stringify(winStreak));
+    const winStreakNumber = document.querySelector('.winStreak_number');
+    winStreakNumber.textContent = winStreak[0];
+    winStreakContainer.classList.remove('noWinStreak');
+};
 
 loadGuessedHeroes();

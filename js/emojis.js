@@ -185,7 +185,7 @@ const emojis = [
     },
     {
         hero: "domina",
-        text: ["🁬", "🦾", "🛡️", "🕌"]
+        text: ["🥂", "🦾", "🛡️", "🕌"]
     },
     {
         hero: "emre",
