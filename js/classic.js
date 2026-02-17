@@ -151,6 +151,8 @@ const showResults = (h) => {
             setTimeout(() => {
                 if (h.subRole[lang].length > 10 & !h.subRole[lang].includes(' ')) subRole.classList.add('small-info');
                 subRole.classList.add('result-info', answers[2]);
+                subRole.style.background = `url("../imgs/sub-roles/${h.subRole.en}.svg"), var(--${answers[2]}-color)`;
+                subRole.style.backgroundSize = 'cover';
                 subRole.innerHTML = '<p class="result-info__text">' + h.subRole[lang] + '</p>';
 
                 setTimeout(() => {
@@ -225,6 +227,8 @@ const loadGuessedHeroes = () => {
         results.insertBefore(species, results.firstChild);
         let subRole = document.createElement('div');
         subRole.classList.add('result-info', answers[2], 'non-animated');
+        subRole.style.background = `url("../imgs/sub-roles/${heroes[h].subRole.en}.svg"), var(--${answers[2]}-color)`;
+        subRole.style.backgroundSize = 'cover';
         if (heroes[h].subRole[lang].length > 10 & !heroes[h].subRole[lang].includes(' ')) subRole.classList.add('small-info');
         results.insertBefore(subRole, results.firstChild);
         let role = document.createElement('div');
