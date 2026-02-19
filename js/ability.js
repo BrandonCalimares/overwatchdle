@@ -44,10 +44,8 @@ const showCorrectAnswer = () => {
     let correctHero = document.createElement('div');
     correctHero.classList.add('correct-answer__hero');
 
-    let heroImg = document.createElement('img');
-    heroImg.src = '/imgs/characters/' + randomAbility.hero + '.webp';
-    heroImg.alt = randomAbility.hero;
-    heroImg.classList.add('correct-answer__img');
+    let heroImg = document.createElement('div');
+    heroImg.classList.add('correct-answer__img', 'bg-' + randomAbility.hero.toLowerCase());
 
     let heroName = document.createElement('p');
     heroName.classList.add('correct-answer__name');
@@ -82,14 +80,12 @@ const showCorrectAnswer = () => {
 const showResults = (h) => {
     let container = document.createElement('section');
 
-    let image = document.createElement('img');
-    image.src = '/imgs/characters/' + h.name + '.webp';
-    image.alt = h.name;
-    image.classList.add('results-phrase__img');
+    let image = document.createElement('div');
+    image.classList.add('results-ability__img', 'bg-' + h.name.toLowerCase());
     container.appendChild(image);
 
     let name = document.createElement('p');
-    name.classList.add('results-phrase__name');
+    name.classList.add('results-ability__name');
     name.innerHTML = h.name;
     container.appendChild(name);
 
@@ -116,7 +112,7 @@ const showResults = (h) => {
     }
 
     results.insertBefore(container, results.firstChild);
-    container.classList.add('results-phrase');
+    container.classList.add('results-ability');
 }
 
 const rightClickButton = document.querySelector('.right-click');
@@ -195,10 +191,8 @@ const loadGuessedHeroes = () => {
     hGuessed.forEach(h => {
         let container = document.createElement('section');
 
-        let image = document.createElement('img');
-        image.src = '/imgs/characters/' + heroes[h].name + '.webp';
-        image.alt = heroes[h].name;
-        image.classList.add('results-phrase__img');
+        let image = document.createElement('div');
+        image.classList.add('results-ability__img', 'bg-' + heroes[h].name.toLowerCase());
         container.appendChild(image);
 
         let name = document.createElement('p');

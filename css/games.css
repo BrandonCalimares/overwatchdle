@@ -176,6 +176,8 @@ main {
 .search-results__img {
   width: 5rem;
   height: 5rem;
+  background-size: 5000% 100%;
+  background-image: url("../imgs/heroes.webp");
 }
 
 .search-results__text {
@@ -291,9 +293,12 @@ main {
 }
 
 .result-info__img {
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   background-color: var(--background-color);
+  background-size: 5000% 100%;
+  background-image: url("../imgs/heroes.webp");
 }
 
 .small-info {
@@ -370,6 +375,8 @@ main {
   height: 5rem;
   border-radius: 0.7rem;
   border: var(--text-color-alt) 0.2rem solid;
+  background-size: 5000% 100%;
+  background-image: url("../imgs/heroes.webp");
 }
 
 .correct-answer__tries {
@@ -716,6 +723,8 @@ main {
   border-radius: 0.7rem;
   position: absolute;
   left: 0.5rem;
+  background-size: 5000% 100%;
+  background-image: url("../imgs/heroes.webp");
 }
 
 @media (max-width: 768px) {
@@ -824,4 +833,206 @@ main {
 
 .non-animated {
   animation: none;
+}
+
+/* HEROES */
+
+.bg-anran {
+  background-position: 0 0;
+}
+
+.bg-moira {
+  background-position: -100% 0;
+}
+
+.bg-illari {
+  background-position: -200% 0;
+}
+
+.bg-mizuki {
+  background-position: -300% 0;
+}
+
+.bg-wuyang {
+  background-position: -400% 0;
+}
+
+.bg-soldier76 {
+  background-position: -500% 0;
+}
+
+.bg-symmetra {
+  background-position: -600% 0;
+}
+
+.bg-domina {
+  background-position: -700% 0;
+}
+
+.bg-sigma {
+  background-position: -800% 0;
+}
+
+.bg-mercy {
+  background-position: -900% 0;
+}
+
+.bg-junkrat {
+  background-position: -1000% 0;
+}
+
+.bg-orisa {
+  background-position: -1100% 0;
+}
+
+.bg-mei {
+  background-position: -1200% 0;
+}
+
+.bg-jetpack_cat {
+  background-position: -1300% 0;
+}
+
+.bg-freja {
+  background-position: -1400% 0;
+}
+
+.bg-ramattra {
+  background-position: -1500% 0;
+}
+
+.bg-reinhardt {
+  background-position: -1600% 0;
+}
+
+.bg-reaper {
+  background-position: -1700% 0;
+}
+
+.bg-vendetta {
+  background-position: -1800% 0;
+}
+
+.bg-doomfist {
+  background-position: -1900% 0;
+}
+
+.bg-ana {
+  background-position: -2000% 0;
+}
+
+.bg-sombra {
+  background-position: -2100% 0;
+}
+
+.bg-baptiste {
+  background-position: -2200% 0;
+}
+
+.bg-emre {
+  background-position: -2300% 0;
+}
+
+.bg-bastion {
+  background-position: -2400% 0;
+}
+
+.bg-roadhog {
+  background-position: -2500% 0;
+}
+
+.bg-echo {
+  background-position: -2600% 0;
+}
+
+.bg-wreckingball {
+  background-position: -2700% 0;
+}
+
+.bg-lifeweaver {
+  background-position: -2800% 0;
+}
+
+.bg-ashe {
+  background-position: -2900% 0;
+}
+
+.bg-lucio {
+  background-position: -3000% 0;
+}
+
+.bg-pharah {
+  background-position: -3100% 0;
+}
+
+.bg-junkerqueen {
+  background-position: -3200% 0;
+}
+
+.bg-kiriko {
+  background-position: -3300% 0;
+}
+
+.bg-zenyatta {
+  background-position: -3400% 0;
+}
+
+.bg-hanzo {
+  background-position: -3500% 0;
+}
+
+.bg-torbjorn {
+  background-position: -3600% 0;
+}
+
+.bg-juno {
+  background-position: -3700% 0;
+}
+
+.bg-cassidy {
+  background-position: -3800% 0;
+}
+
+.bg-brigitte {
+  background-position: -3900% 0;
+}
+
+.bg-genji {
+  background-position: -4000% 0;
+}
+
+.bg-mauga {
+  background-position: -4100% 0;
+}
+
+.bg-tracer {
+  background-position: -4200% 0;
+}
+
+.bg-winston {
+  background-position: -4300% 0;
+}
+
+.bg-sojourn {
+  background-position: -4400% 0;
+}
+
+.bg-dva {
+  background-position: -4500% 0;
+}
+
+.bg-hazard {
+  background-position: -4600% 0;
+}
+
+.bg-zarya {
+  background-position: -4700% 0;
+}
+
+.bg-venture {
+  background-position: -4800% 0;
+}
+
+.bg-widowmaker {
+  background-position: -4900% 0;
 }

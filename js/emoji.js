@@ -41,14 +41,12 @@ form.addEventListener('submit', (e) => {
 const showResults = (h) => {
     let container = document.createElement('section');
 
-    let image = document.createElement('img');
-    image.src = '/imgs/characters/' + h.name + '.webp';
-    image.alt = h.name;
-    image.classList.add('results-phrase__img');
+    let image = document.createElement('div');
+    image.classList.add('results-emoji__img', 'bg-' + h.name.toLowerCase());
     container.appendChild(image);
 
     let name = document.createElement('p');
-    name.classList.add('results-phrase__name');
+    name.classList.add('results-emoji__name');
     name.innerHTML = h.name;
     container.appendChild(name);
 
@@ -73,13 +71,13 @@ const showResults = (h) => {
     }
 
     results.insertBefore(container, results.firstChild);
-    container.classList.add('results-phrase');
+    container.classList.add('results-emoji');
 }
 
 const showCorrectAnswer = () => {
     const container = document.querySelector('.correct-answer');
     let content = '<p class="correct-answer__text">GG EZ</p>';
-    content += '<div class="correct-answer__hero"> <img src="/imgs/characters/' + randomEmojis.hero + '.webp" alt="' + randomEmojis.hero + '" class="correct-answer__img"> <p class="correct-answer__name">' + randomEmojis.hero + '</p> </div>';
+    content += '<div class="correct-answer__hero"> <div class="correct-answer__img bg-' + randomEmojis.hero.toLowerCase() + '"></div> <p class="correct-answer__name">' + randomEmojis.hero + '</p> </div>';
     if (lang == 'es')
         content += '<p class="correct-answer__tries">Número de intentos: ' + tries + '</p>';
     else
@@ -129,14 +127,12 @@ const loadGuessedHeroes = () => {
     hGuessed.forEach((h, index) => {
         let container = document.createElement('section');
 
-        let image = document.createElement('img');
-        image.src = '/imgs/characters/' + heroes[h].name + '.webp';
-        image.alt = heroes[h].name;
-        image.classList.add('results-phrase__img');
+        let image = document.createElement('div');
+        image.classList.add('results-emoji__img', 'bg-' + heroes[h].name.toLowerCase());
         container.appendChild(image);
 
         let name = document.createElement('p');
-        name.classList.add('results-phrase__name');
+        name.classList.add('results-emoji__name');
         name.innerHTML = heroes[h].name;
         container.appendChild(name);
 

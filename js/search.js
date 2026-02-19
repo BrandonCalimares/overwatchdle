@@ -5,7 +5,7 @@ let selectedLi = -1;
 
 const displayResult = (result) => {
     selectedLi = -1;
-    let content = result.map((res) => "<li onclick='selectInput(this)'> <img src='/imgs/characters/" + res.name + ".webp' class='search-results__img'>" + "<p class='search-results__text'>" + res.name + "</p>" + "</li>");
+    let content = result.map((res) => "<li onclick='selectInput(this)'> <div class='search-results__img bg-" + res.name.toLowerCase() + "'></div><p class='search-results__text'>" + res.name + "</p></li>");
     searchResults.innerHTML = "<ul>" + content.join('') + "</ul>";
 };
 
