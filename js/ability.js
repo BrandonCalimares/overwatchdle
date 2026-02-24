@@ -166,27 +166,22 @@ const verifyExtra = (option, button) => {
 }
 
 const addToCookies = (h) => {
-    if (document.cookie == '') {
-        document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /ability`;
-        document.cookie = `heroesGuessed = []; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/ability`;
+    let hGuessed = getCookie('heroesGuessed');
+    if (hGuessed == null) {
+        hGuessed = [];
+    } else {
+        hGuessed = JSON.parse(hGuessed);
     }
-    const cookies = document.cookie;
-    const hGuessed = JSON.parse(cookies.split('=')[1]);
     hGuessed.push(heroes.indexOf(h));
+
     document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /ability`;
     document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/ability`;
 }
 
-const getFromCookies = () => {
-    const cookies = document.cookie;
-    if (cookies == '') {
-        return [];
-    }
-    return JSON.parse(cookies.split('=')[1]);
-}
-
 const loadGuessedHeroes = () => {
-    const hGuessed = getFromCookies();
+    let hGuessed = getCookie('heroesGuessed');
+    if (hGuessed == null) hGuessed = [];
+    else hGuessed = JSON.parse(hGuessed);
     tries = hGuessed.length;
     hGuessed.forEach(h => {
         let container = document.createElement('section');

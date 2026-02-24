@@ -73,3 +73,14 @@ const genDailyIndex = (offset, array, date) => {
     const index = Math.floor(randomNormalized * array.length);
     return index;
 };
+
+const getCookie = (name) => {
+    const cookies = document.cookie.split("; ");
+    for (let cookie of cookies) {
+        const [key, value] = cookie.split("=");
+        if (key === name) {
+            return value;
+        }
+    }
+    return null;
+}
