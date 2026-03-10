@@ -180,7 +180,7 @@ const emojis = [
         text: ["🗡️", "🌪️", "🏟️", "🤌🏽"]
     },
     {
-        hero: "anra",
+        hero: "anran",
         text: ["🪭", "🔥", "🗡️", "🍜"]
     },
     {
