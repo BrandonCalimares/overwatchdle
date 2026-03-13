@@ -83,7 +83,7 @@ const verifyResults = (h) => {
 const showCorrectAnswer = () => {
     const container = document.querySelector('.correct-answer');
     let content = '<p class="correct-answer__text">GG EZ</p>';
-    content += '<div class="correct-answer__hero"> <div class="correct-answer__img bg-' + randomHeroe.name.toLowerCase() + '"></div> <p class="correct-answer__name">' + randomHeroe.name + '</p> </div>';
+    content += '<div class="correct-answer__hero"> <div class="correct-answer__img bg-' + randomHeroe.name.toLowerCase().replaceAll(' ', '_') + '"></div> <p class="correct-answer__name">' + randomHeroe.name + '</p> </div>';
     if (lang == 'es')
         content += '<p class="correct-answer__tries">Número de intentos: ' + tries + '</p>';
     else
@@ -136,7 +136,7 @@ const showResults = (h) => {
     results.insertBefore(image, results.firstChild);
 
     image.classList.add('result-info');
-    image.innerHTML = '<div class="result-info__img bg-' + h.name.toLowerCase() + '"></div>';
+    image.innerHTML = '<div class="result-info__img bg-' + h.name.toLowerCase().replaceAll(' ', '_') + '"></div>';
 
     setTimeout(() => {
         gender.classList.add('result-info', answers[0]);
@@ -238,7 +238,7 @@ const loadGuessedHeroes = () => {
         image.classList.add('result-info', 'non-animated');
         results.insertBefore(image, results.firstChild);
 
-        image.innerHTML = '<div class="result-info__img bg-' + heroes[h].name.toLowerCase() + '"></div>';
+        image.innerHTML = '<div class="result-info__img bg-' + heroes[h].name.toLowerCase().replaceAll(' ', '_') + '"></div>';
         gender.innerHTML = '<p class="result-info__text">' + heroes[h].gender[lang] + '</p>';
         role.innerHTML = '<p class="result-info__text">' + heroes[h].role[lang] + '</p>';
         subRole.innerHTML = '<p class="result-info__text">' + heroes[h].subRole[lang] + '</p>';

@@ -45,7 +45,7 @@ const showCorrectAnswer = () => {
     correctHero.classList.add('correct-answer__hero');
 
     let heroImg = document.createElement('div');
-    heroImg.classList.add('correct-answer__img', 'bg-' + randomAbility.hero.toLowerCase());
+    heroImg.classList.add('correct-answer__img', 'bg-' + randomAbility.hero.toLowerCase().replaceAll(' ', '_'));
 
     let heroName = document.createElement('p');
     heroName.classList.add('correct-answer__name');
@@ -81,7 +81,7 @@ const showResults = (h) => {
     let container = document.createElement('section');
 
     let image = document.createElement('div');
-    image.classList.add('results-ability__img', 'bg-' + h.name.toLowerCase());
+    image.classList.add('results-ability__img', 'bg-' + h.name.toLowerCase().replaceAll(' ', '_'));
     container.appendChild(image);
 
     let name = document.createElement('p');
@@ -187,7 +187,7 @@ const loadGuessedHeroes = () => {
         let container = document.createElement('section');
 
         let image = document.createElement('div');
-        image.classList.add('results-ability__img', 'bg-' + heroes[h].name.toLowerCase());
+        image.classList.add('results-ability__img', 'bg-' + heroes[h].name.toLowerCase().replaceAll(' ', '_'));
         container.appendChild(image);
 
         let name = document.createElement('p');

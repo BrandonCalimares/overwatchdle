@@ -42,7 +42,7 @@ form.addEventListener('submit', (e) => {
 const showCorrectAnswer = () => {
     const container = document.querySelector('.correct-answer');
     let content = '<p class="correct-answer__text">GG EZ</p>';
-    content += '<div class="correct-answer__hero"> <div class="correct-answer__img bg-' + randomPhrase.hero.toLowerCase() + '"></div> <p class="correct-answer__name">' + randomPhrase.hero + '</p> </div>';
+    content += '<div class="correct-answer__hero"> <div class="correct-answer__img bg-' + randomPhrase.hero.toLowerCase().replaceAll(' ', '_') + '"></div> <p class="correct-answer__name">' + randomPhrase.hero + '</p> </div>';
     if (lang == 'es')
         content += '<p class="correct-answer__tries">Numero de intentos: ' + tries + '</p>';
     else
@@ -64,7 +64,7 @@ const showResults = (h) => {
     let container = document.createElement('section');
 
     let image = document.createElement('div');
-    image.classList.add('results-phrase__img', 'bg-' + h.name.toLowerCase());
+    image.classList.add('results-phrase__img', 'bg-' + h.name.toLowerCase().replaceAll(' ', '_'));
     container.appendChild(image);
 
     let name = document.createElement('p');
@@ -185,7 +185,7 @@ const loadGuessedHeroes = () => {
         let container = document.createElement('section');
 
         let image = document.createElement('div');
-        image.classList.add('results-phrase__img', 'bg-' + heroes[h].name.toLowerCase());
+        image.classList.add('results-phrase__img', 'bg-' + heroes[h].name.toLowerCase().replaceAll(' ', '_'));
         container.appendChild(image);
 
         let name = document.createElement('p');
