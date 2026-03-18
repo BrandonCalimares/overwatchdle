@@ -25,6 +25,7 @@ form.addEventListener('submit', (e) => {
     const searchValue = input.value.toLowerCase();
     input.value = '';
     searchResults.innerHTML = '';
+    if (searchValue.length == 0) return;
     let hero = heroes.filter(hero => hero.name.startsWith(searchValue));
     if (hero.length > 0) {
         tries++;
