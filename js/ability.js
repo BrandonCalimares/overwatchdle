@@ -122,38 +122,30 @@ const eButton = document.querySelector('.e');
 const shiftButton = document.querySelector('.shift');
 
 rightClickButton.addEventListener('click', () => {
-    verifyExtra('right-click', rightClickButton);
+    addToCookiesExtra('right-click');
+    verifyExtra('right-click');
 })
 
 qButton.addEventListener('click', () => {
-    verifyExtra('q', qButton);
+    addToCookiesExtra('q');
+    verifyExtra('q');
 })
 
 eButton.addEventListener('click', () => {
-    verifyExtra('e', eButton);
+    addToCookiesExtra('e');
+    verifyExtra('e');
 })
 
 shiftButton.addEventListener('click', () => {
-    verifyExtra('shift', shiftButton);
+    addToCookiesExtra('shift');
+    verifyExtra('shift');
 })
 
-const verifyExtra = (option, button) => {
-    switch (randomAbility.key) {
-        case 'right-click':
-            rightClickButton.classList.add('ability-option-correct');
-            break;
-        case 'q':
-            qButton.classList.add('ability-option-correct');
-            break;
-        case 'e':
-            eButton.classList.add('ability-option-correct');
-            break;
-        case 'shift':
-            shiftButton.classList.add('ability-option-correct');
-    }
+const verifyExtra = (option) => {
+    document.querySelector(`.${randomAbility.key}`).classList.add('ability-option-correct');
 
     if (randomAbility.key != option) {
-        button.classList.add('ability-option-wrong');
+        document.querySelector(`.${option}`).classList.add('ability-option-wrong');
     }
 
     rightClickButton.disabled = true;
@@ -177,6 +169,11 @@ const addToCookies = (h) => {
 
     document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /ability`;
     document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/ability`;
+}
+
+const addToCookiesExtra = (key) => {
+    document.cookie = `keyGuessed = ${key}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /ability`;
+    document.cookie = `keyGuessed = ${key}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/ability`;
 }
 
 const loadGuessedHeroes = () => {
@@ -204,6 +201,10 @@ const loadGuessedHeroes = () => {
             const input = document.querySelector('.chr-search__input');
             input.disabled = true;
             showCorrectAnswer();
+            keyGuessed = getCookie('keyGuessed');
+            if (keyGuessed != null) {
+                verifyExtra(keyGuessed);
+            }
         } else {
             if (size > 80) {
                 size -= 20;
