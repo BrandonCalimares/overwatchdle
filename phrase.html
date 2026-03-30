@@ -189,7 +189,7 @@
         </section>
 
         <section class="chr-search">
-            <form class="chr-search__form">
+            <form class="chr-search__form" onsubmit="this.querySelector('input').blur(); return false;">
                 <div class="chr-search__input-container">
                     <input type="text" placeholder="Escribe el nombre del héroe" class="chr-search__input">
                     <div class="search-results">
