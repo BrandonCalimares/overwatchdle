@@ -77,6 +77,18 @@ main {
   filter: drop-shadow(0 0 0.1rem white);
 }
 
+.winStreaks-infinite {
+  width: 40rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.winStreaks-infinite > .winStreak {
+  width: 50%;
+}
+
 .chr-search {
   background-color: var(--background-color);
   width: 40rem;
@@ -203,8 +215,22 @@ main {
 
 @media (max-width: 768px) {
   .game-instructions,
-  .winStreak {
+  .winStreak,
+  .winStreaks-infinite {
     width: 90%;
+  }
+
+  .winStreaks-infinite > .winStreak {
+    font-size: 1.7rem;
+  }
+
+  .winStreaks-infinite > .winStreak .winStreak_container img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .winStreaks-infinite > .winStreak .winStreak_container span {
+    font-size: 1.2rem;
   }
 
   .game-instructions__title {
@@ -225,6 +251,19 @@ main {
 
   .search-results__text {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .winStreaks-infinite {
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 0.5rem;
+  }
+
+  .winStreaks-infinite > .winStreak {
+    width: 100%;
+    margin: 0;
   }
 }
 

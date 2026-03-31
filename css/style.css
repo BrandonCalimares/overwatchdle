@@ -352,8 +352,8 @@ a {
 
 .gamemode__icon {
   background-color: var(--background-color-dark);
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 7rem;
+  height: 7rem;
   border-radius: 0.7rem 0 0 0.7rem;
   display: flex;
   justify-content: center;
@@ -387,7 +387,7 @@ a {
   padding: 1rem;
   border-radius: 0 0.7rem 0.7rem 0;
   width: 25rem;
-  height: 7.5rem;
+  height: 7rem;
   transition: ease 0.15s;
 }
 
