@@ -874,6 +874,33 @@ main {
   animation: none;
 }
 
+/* INFINITE */
+
+.lifes-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.heart {
+  width: 2.5rem;
+  height: 2.5rem;
+  filter: drop-shadow(0 0 0.5rem rgba(255, 21, 21, 0.3));
+}
+
+.heart-lost {
+  filter: grayscale(100%);
+}
+
+@keyframes lost {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
 /* HEROES */
 
 .bg-anran {
