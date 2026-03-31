@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overwatchdle - Frase</title>
+    <title>Overwatchdle - Infinito</title>
     <link rel="stylesheet" href="css/style.css?v=2">
     <link rel="stylesheet" href="css/games.css?v=5">
     <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
     <meta lang="es">
-    <meta name="description" content="Adivina el héroe de Overwatch segun la frase">
-    <meta name="keywords" content="Overwatch, Héroes, Juego, Adivinar, Overwatchdle, Overwatchle, Frase">
+    <meta name="description" content="Adivina el héroe de Overwatch segun sus características">
+    <meta name="keywords" content="Overwatch, Héroes, Juego, Adivinar, Overwatchdle, Overwatchle, Clasico">
     <meta name="author" content="Brandon Calimares">
     <meta name="robots" content="noindex">
     <meta name="theme-color" content="#2c3e50">
-    <link rel="alternate" hreflang="es" href="https://overwatchdle.tech/phrase">
-    <link rel="alternate" hreflang="en" href="https://overwatchdle.tech/en/phrase">
-    <link rel="canonical" href="https://overwatchdle.tech/phrase">
+    <link rel="alternate" hreflang="es" href="https://overwatchdle.tech/infinite">
+    <link rel="alternate" hreflang="en" href="https://overwatchdle.tech/en/infinite">
+    <link rel="canonical" href="https://overwatchdle.tech/infinite">
 </head>
 
 <body>
@@ -99,13 +99,13 @@
                         <path d="M6 6l12 12" />
                     </svg>
                 </button>
-                <a href="phrase.html" class="lang-option" data-lang="es">
+                <a href="infinite.html" class="lang-option" data-lang="es">
                     <img src="imgs/spanish.webp" alt="Español" class="lang-flag">
                     <p>
                         Español
                     </p>
                 </a>
-                <a href="en/phrase.html" class="lang-option" data-lang="en">
+                <a href="en/infinite.html" class="lang-option" data-lang="en">
                     <img src="imgs/english.webp" alt="English" class="lang-flag">
                     <p>
                         English
@@ -124,7 +124,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="phrase.html" class="gamemode__icon gamemode__icon-alt gamemode__icon-selected">
+                    <a href="phrase.html" class="gamemode__icon gamemode__icon-alt">
                         <img src="imgs/phrase.webp" alt="Imagen frase">
                     </a>
                 </li>
@@ -139,7 +139,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="infinite.html" class="gamemode__icon gamemode__icon-alt">
+                    <a href="infinite.html" class="gamemode__icon gamemode__icon-alt gamemode__icon-selected">
                         <img src="imgs/infinite.webp" alt="Imagen infinito">
                     </a>
                 </li>
@@ -155,42 +155,8 @@
         </section>
 
         <section class="game-instructions">
-            <p class="game-instructions__text">Que héroe dice</p>
-            <h2 class="game-instructions__title"></h2>
-            <div class="audio-container">
-                <button class="audio-button audio-locked">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-volume audio-button__icon">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M15 8a5 5 0 0 1 0 8" />
-                        <path d="M17.7 5a9 9 0 0 1 0 14" />
-                        <path
-                            d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5" />
-                    </svg>
-                </button>
-                <p class="audio__text">Pista de audio en 3 intentos</p>
-                <div class="audio-player" style="display: none;">
-                    <button class="audio-player__button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="currentColor"
-                            class="icon icon-tabler icons-tabler-filled icon-tabler-player-play audio-player__icon audio-play">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" />
-                        </svg>
-                        <svg style="display: none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="currentColor"
-                            class="icon icon-tabler icons-tabler-filled icon-tabler-player-stop audio-player__icon audio-stop">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M17 4h-10a3 3 0 0 0 -3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3 -3v-10a3 3 0 0 0 -3 -3z" />
-                        </svg>
-                    </button>
-                    <input class="volume-slider" type="range" min="0" max="100" step="any" value="100">
-                    <audio src="" class="audio"></audio>
-                </div>
-            </div>
+            <h2 class="game-instructions__title">¡Adivina el héroe de Overwatch de hoy!</h2>
+            <p class="game-instructions__text">Escribe el nombre de un héroe para comenzar</p>
         </section>
 
         <section class="chr-search">
@@ -210,21 +176,33 @@
                         <path d="M6.5 12h14.5" />
                     </svg>
                 </button>
+
             </form>
         </section>
 
-        <section class="results-phrase-container">
+        <section class="results">
+            <header class="results-titles">
+                <p class="result-title"> Personaje </p>
+                <p class="result-title"> Genero </p>
+                <p class="result-title"> Rol </p>
+                <p class="result-title"> Subrol </p>
+                <p class="result-title"> Especie </p>
+                <p class="result-title"> Origen </p>
+                <p class="result-title"> Edad </p>
+                <p class="result-title"> Año de salida </p>
+            </header>
+            <section class="results-content">
+            </section>
         </section>
-
         <section class="correct-answer correct-answer-hidden">
             <p class="timer-text"> Proximo heroe en</p>
             <p class="timer"></p>
             <hr class="correct-answer__hr">
             <p class="next-game-title">Siguiente modo</p>
-            <a href="ability.html">
+            <a href="classic.html">
                 <article class="next-game">
-                    <img src="imgs/ablity.webp" alt="Imagen Habilidad" class="next-game__img">
-                    <p class="next-game__text">Habilidad</p>
+                    <img src="imgs/classic.webp" alt="Imagen Clasico" class="next-game__img">
+                    <p class="next-game__text">Clasico</p>
                 </article>
             </a>
         </section>
@@ -259,13 +237,11 @@
         </a>
     </footer>
 
-    <script src=" js/heroes.js?v=2"></script>
-            <script src="js/main.js?v=2"></script>
-            <script src=" js/search.js?v=5"></script>
-            <script src="js/audios.js?v=2"></script>
-            <script src=" js/phrase.js?v=6"></script>
+    <script src=" js/main.js?v=2"></script>
+            <script src="js/heroes.js?v=2"></script>
+            <script src="js/search.js?v=5"></script>
+            <script src="js/classic.js?v=7"></script>
             <script src="js/updateDate.js?v=2"></script>
-
 </body>
 
 </html>

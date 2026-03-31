@@ -8,6 +8,7 @@ Juego inspirado en Loldle; el objetivo es adivinar el personaje de Overwatch del
 - Frase: Frase dicha por el personaje en el juego.
 - Habilidad: Icono de alguna habilidad del personaje.
 - Emoji: 5 emojis que representan al personaje.
+- Infinito: Modo clásico pero puedes jugar sin limite mientras no cometas muchos errores seguidos.
 
 ## Idiomas
 
