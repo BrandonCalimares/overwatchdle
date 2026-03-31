@@ -343,6 +343,23 @@ a {
   display: flex;
   transition: ease 0.15s;
   border-radius: 0.7rem;
+  position: relative;
+}
+
+.gamemode-new::after {
+  content: attr(data-label);
+  display: block;
+  position: absolute;
+  padding: 0.2rem 1rem 0.2rem 0.7rem;
+  background-color: var(--selected-color);
+  color: var(--text-color);
+  font-size: 2rem;
+  font-family: "Big Noodle Too", impact, sans-serif;
+  font-style: italic;
+  text-align: center;
+  right: 0;
+  border-radius: 0 0.7rem 0 0.7rem;
+  box-shadow: 0 0 1rem #fde08a;
 }
 
 .gamemode:hover {
@@ -406,6 +423,11 @@ a {
 @media (max-width: 650px) {
   .description {
     font-size: 1.5rem;
+  }
+
+  .gamemode-new::after {
+    font-size: 1.3rem;
+    padding: 0.3rem 0.7rem 0.3rem 0.5rem;
   }
 
   .gamemode__icon {
