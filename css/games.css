@@ -410,6 +410,10 @@ main {
   display: none;
 }
 
+.game-lost .correct-answer__text {
+  font-size: 3rem;
+}
+
 .correct-answer__text {
   font-size: 4rem;
   color: var(--text-color-alt);
@@ -616,7 +620,8 @@ main {
   }
 
   .correct-answer,
-  .share {
+  .share,
+  .game-lost {
     width: 90%;
   }
 
@@ -626,6 +631,13 @@ main {
 
   .next-game {
     width: 17rem;
+  }
+
+  .game-lost .next-game {
+    width: 18rem;
+  }
+  .game-lost .correct-answer__text {
+    font-size: 2rem;
   }
 }
 
