@@ -1,5 +1,6 @@
 const results = document.querySelector('.results-content');
 const lang = window.location.pathname.startsWith("/en") ? "en" : "es";
+const maxLifes = 5;
 
 let randomId = localStorage.getItem('randomId');
 if (randomId == null || randomId == -1) randomId = Math.floor(Math.random() * heroes.length);
@@ -7,7 +8,7 @@ localStorage.setItem('randomId', randomId);
 let randomHeroe = heroes[randomId];
 
 let lifes = localStorage.getItem('lifes');
-if (lifes == null) lifes = 6;
+if (lifes == null) lifes = maxLifes;
 localStorage.setItem('lifes', lifes);
 
 form.addEventListener('submit', (e) => {
@@ -42,7 +43,7 @@ const addToLocalStorage = (h) => {
 const gameLost = () => {
     const input = document.querySelector('.chr-search__input');
     input.disabled = true;
-    localStorage.setItem('lifes', 6);
+    localStorage.setItem('lifes', maxLifes);
     localStorage.setItem('hGuessedInfinite', JSON.stringify([]));
     localStorage.setItem('randomId', -1);
 
@@ -106,7 +107,7 @@ const verifyResults = (h, skipLifes = false) => {
 }
 
 const updateLifes = () => {
-    for (let i = 6; i > lifes; i--) {
+    for (let i = maxLifes; i > lifes; i--) {
         const heart = document.querySelector('#life-' + i);
         heart.classList.add('heart-lost');
         if (i == lifes + 1) {
@@ -128,7 +129,7 @@ const showResults = (h) => {
     if (JSON.stringify(answers) == JSON.stringify(["correct", "correct", "correct", "correct", "correct", "correct", "correct", "correct"])) {
         const input = document.querySelector('.chr-search__input');
         input.disabled = true;
-        localStorage.setItem('lifes', 6);
+        localStorage.setItem('lifes', maxLifes);
         localStorage.setItem('hGuessedInfinite', JSON.stringify([]));
         localStorage.setItem('randomId', -1);
         setTimeout(() => {
@@ -136,7 +137,7 @@ const showResults = (h) => {
             showCorrectAnswer();
             const correctAnswers = document.querySelector('.correct-answer');
             correctAnswers.scrollIntoView({ behavior: 'smooth', block: "start" });
-        }, 700);
+        }, 4700);
     }
 
     let year = document.createElement('div');
