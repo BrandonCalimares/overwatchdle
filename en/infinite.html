@@ -155,7 +155,7 @@
                 </div>
             </section>
             <section class="winStreak">
-                <p>Best streak: <span>0</span></p>
+                <p>Best streak: <span class="bestStreak"></span></p>
             </section>
         </article>
 
@@ -186,12 +186,12 @@
         </section>
 
         <section class="lifes-container">
-            <img src="/imgs/heart.png" alt="vida" class="heart" id="life-5">
-            <img src="/imgs/heart.png" alt="vida" class="heart" id="life-4">
-            <img src="/imgs/heart.png" alt="vida" class="heart" id="life-3">
-            <img src="/imgs/heart.png" alt="vida" class="heart" id="life-2">
-            <img src="/imgs/heart.png" alt="vida" class="heart" id="life-1">
-            <img src="/imgs/heart.png" alt="vida" class="heart" id="life-0">
+            <img src="/imgs/heart.png" alt="life" class="heart" id="life-1">
+            <img src="/imgs/heart.png" alt="life" class="heart" id="life-2">
+            <img src="/imgs/heart.png" alt="life" class="heart" id="life-3">
+            <img src="/imgs/heart.png" alt="life" class="heart" id="life-4">
+            <img src="/imgs/heart.png" alt="life" class="heart" id="life-5">
+            <img src="/imgs/heart.png" alt="life" class="heart" id="life-6">
         </section>
 
         <section class="results">
@@ -210,13 +210,25 @@
         </section>
 
         <section class="correct-answer correct-answer-hidden">
-            <p class="timer-text"> Next hero in</p>
-            <p class="timer"></p>
+            <a href="">
+                <article class="next-game next-hero">
+                    <img src="/imgs/infinite.webp" alt="Next hero" class="next-game__img">
+                    <p class="next-game__text">Next Hero</p>
+                </article>
+            </a>
+        </section>
+        <section class="game-lost game-lost-hidden">
             <hr class="correct-answer__hr">
+            <a href="">
+                <article class="next-game">
+                    <img src="/imgs/infinite.webp" alt="Try again" class="next-game__img">
+                    <p class="next-game__text">Try again</p>
+                </article>
+            </a>
             <p class="next-game-title">Next mode</p>
             <a href="classic.html">
                 <article class="next-game">
-                    <img src="/imgs/classic.webp" alt="Classic image" class="next-game__img">
+                    <img src="/imgs/classic.webp" alt="Classic Image" class="next-game__img">
                     <p class="next-game__text">Classic</p>
                 </article>
             </a>
@@ -255,7 +267,6 @@
     <script src="/js/heroes.js?v=2"></script>
     <script src="/js/search.js?v=5"></script>
     <script src="/js/infinite.js?v=1"></script>
-    <script src="/js/updateDate.js?v=2"></script>
 </body>
 
 </html>

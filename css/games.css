@@ -362,7 +362,8 @@ main {
   background-size: cover;
 }
 
-.correct-answer {
+.correct-answer,
+.game-lost {
   background: linear-gradient(
     rgb(72, 206, 72) 0%,
     rgb(42, 155, 27) 48%,
@@ -381,6 +382,19 @@ main {
   width: 30rem;
 }
 
+.game-lost {
+  background: linear-gradient(
+    rgb(255, 84, 84) 0%,
+    rgb(206, 43, 43) 48%,
+    rgb(156, 18, 18)
+  );
+  border: rgb(255, 84, 84) 0.3rem solid;
+}
+
+.game-lost > .correct-answer__hr {
+  margin-block: 3rem;
+}
+
 @keyframes correct-answer-animation {
   from {
     opacity: 0;
@@ -391,7 +405,8 @@ main {
   }
 }
 
-.correct-answer-hidden {
+.correct-answer-hidden,
+.game-lost-hidden {
   display: none;
 }
 
@@ -451,6 +466,10 @@ main {
   cursor: pointer;
   transition: ease 0.1s;
   border: 0.15rem solid var(--text-color-alt);
+}
+
+.next-hero {
+  margin-top: 4rem;
 }
 
 .next-game:hover,

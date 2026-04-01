@@ -93,9 +93,9 @@ const showCorrectAnswer = () => {
     const share = document.querySelector('.share');
     const shareText = document.querySelector('.share-text');
     if (lang == 'es') {
-        shareText.textContent = `Encontré al héroe de #Overwatchdle en el modo emoji en ${tries} intento${tries == 1 ? '' : 's'}.\n\nhttps://overwatchdle.vercel.app`;
+        shareText.textContent = `Encontré al héroe de #Overwatchdle en el modo emoji en ${tries} intento${tries == 1 ? '' : 's'}.\n\nhttps://overwatchdle.tech`;
     } else {
-        shareText.textContent = `I found the #Overwatchdle hero in emoji mode in ${tries} attempt${tries == 1 ? '' : 's'}.\n\nhttps://overwatchdle.vercel.app`;
+        shareText.textContent = `I found the #Overwatchdle hero in emoji mode in ${tries} attempt${tries == 1 ? '' : 's'}.\n\nhttps://overwatchdle.tech`;
     }
 
     container.classList.remove('correct-answer-hidden');
@@ -111,8 +111,7 @@ const addToCookies = (h) => {
     }
     hGuessed.push(heroes.indexOf(h));
 
-    document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /emoji`;
-    document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/emoji`;
+    setCookie('heroesGuessed', JSON.stringify(hGuessed), nextDate);
 }
 
 const loadGuessedHeroes = () => {

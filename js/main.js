@@ -84,3 +84,9 @@ const getCookie = (name) => {
     }
     return null;
 }
+
+const setCookie = (name, value, expires) => {
+    const path = window.location.pathname.split('/');
+    document.cookie = `${name}=${value}; expires=${expires.toUTCString()}; path=/${path[path.length - 1]}`;
+    document.cookie = `${name}=${value}; expires=${expires.toUTCString()}; path=/en/${path[path.length - 1]}`;
+}
