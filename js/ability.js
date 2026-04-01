@@ -69,9 +69,9 @@ const showCorrectAnswer = () => {
     const share = document.querySelector('.share');
     const shareText = document.querySelector('.share-text');
     if (lang == 'es') {
-        shareText.textContent = `Encontré al héroe de #Overwatchdle en el modo habilidad en ${tries} intento${tries == 1 ? '' : 's'}.\n\nhttps://overwatchdle.vercel.app`;
+        shareText.textContent = `Encontré al héroe de #Overwatchdle en el modo habilidad en ${tries} intento${tries == 1 ? '' : 's'}.\n\nhttps://overwatchdle.tech`;
     } else {
-        shareText.textContent = `I found the #Overwatchdle hero in ability mode in ${tries} attempt${tries == 1 ? '' : 's'}.\n\nhttps://overwatchdle.vercel.app`;
+        shareText.textContent = `I found the #Overwatchdle hero in ability mode in ${tries} attempt${tries == 1 ? '' : 's'}.\n\nhttps://overwatchdle.tech`;
     }
 
     container.classList.remove('correct-answer-hidden');
@@ -122,22 +122,22 @@ const eButton = document.querySelector('.e');
 const shiftButton = document.querySelector('.shift');
 
 rightClickButton.addEventListener('click', () => {
-    addToCookiesExtra('right-click');
+    setCookie('keyGuessed', 'right-click', nextDate);
     verifyExtra('right-click');
 })
 
 qButton.addEventListener('click', () => {
-    addToCookiesExtra('q');
+    setCookie('keyGuessed', 'q', nextDate);
     verifyExtra('q');
 })
 
 eButton.addEventListener('click', () => {
-    addToCookiesExtra('e');
+    setCookie('keyGuessed', 'e', nextDate);
     verifyExtra('e');
 })
 
 shiftButton.addEventListener('click', () => {
-    addToCookiesExtra('shift');
+    setCookie('keyGuessed', 'shift', nextDate);
     verifyExtra('shift');
 })
 
@@ -167,13 +167,7 @@ const addToCookies = (h) => {
     }
     hGuessed.push(heroes.indexOf(h));
 
-    document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /ability`;
-    document.cookie = `heroesGuessed = ${JSON.stringify(hGuessed)}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/ability`;
-}
-
-const addToCookiesExtra = (key) => {
-    document.cookie = `keyGuessed = ${key}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /ability`;
-    document.cookie = `keyGuessed = ${key}; expires = ${new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 1)).toUTCString()}; path= /en/ability`;
+    setCookie('heroesGuessed', JSON.stringify(hGuessed), nextDate);
 }
 
 const loadGuessedHeroes = () => {

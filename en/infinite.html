@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overwatchdle - Emoji</title>
+    <title>Overwatchdle - Infinite</title>
     <link rel="stylesheet" href="/css/style.css?v=2">
-    <link rel="stylesheet" href="/css/games.css?v=5">
+    <link rel="stylesheet" href="/css/games.css?v=6">
     <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico">
-    <meta lang="es">
-    <meta name="description" content="Guess the Overwatch hero based on the emojis">
-    <meta name="keywords" content="Overwatch, Heroes, Game, Guess, Overwatchdle, Overwatchle, Emoji">
+    <meta lang="en">
+    <meta name="description" content="Guess the Overwatch hero based on their characteristics">
+    <meta name="keywords" content="Overwatch, Heroes, Game, Guess, Overwatchdle, Overwatchle, Classic">
     <meta name="author" content="Brandon Calimares">
     <meta name="robots" content="noindex">
     <meta name="theme-color" content="#2c3e50">
-    <link rel="alternate" hreflang="es" href="https://overwatchdle.tech/emoji">
-    <link rel="alternate" hreflang="en" href="https://overwatchdle.tech/en/emoji">
-    <link rel="canonical" href="https://overwatchdle.tech/en/emoji">
+    <link rel="alternate" hreflang="es" href="https://overwatchdle.tech/infinite">
+    <link rel="alternate" hreflang="en" href="https://overwatchdle.tech/en/infinite">
+    <link rel="canonical" href="https://overwatchdle.tech/en/infinite">
 </head>
 
 <body>
@@ -99,13 +99,13 @@
                         <path d="M6 6l12 12" />
                     </svg>
                 </button>
-                <a href="/emoji.html" class="lang-option" data-lang="es">
+                <a href="/infinite.html" class="lang-option" data-lang="es">
                     <img src="/imgs/spanish.webp" alt="Español" class="lang-flag">
                     <p>
                         Español
                     </p>
                 </a>
-                <a href="emoji.html" class="lang-option" data-lang="en">
+                <a href="infinite.html" class="lang-option" data-lang="en">
                     <img src="/imgs/english.webp" alt="English" class="lang-flag">
                     <p>
                         English
@@ -134,34 +134,34 @@
                     </a>
                 </li>
                 <li>
-                    <a href="emoji.html" class="gamemode__icon gamemode__icon-alt gamemode__icon-selected">
+                    <a href="emoji.html" class="gamemode__icon gamemode__icon-alt">
                         <img src="/imgs/emoji.webp" alt="Emoji image">
                     </a>
                 </li>
                 <li>
-                    <a href="infinite.html" class="gamemode__icon gamemode__icon-alt">
+                    <a href="infinite.html" class="gamemode__icon gamemode__icon-alt gamemode__icon-selected">
                         <img src="/imgs/infinite.webp" alt="Infinite image">
                     </a>
                 </li>
             </ul>
         </nav>
 
-        <section class="winStreak">
-            <p>Win Streak: </p>
-            <div class="winStreak_container">
-                <img src="../imgs/streak.png" alt="Win Streak">
-                <span class="winStreak_number"></span>
-            </div>
-        </section>
+        <article class="winStreaks-infinite">
+            <section class="winStreak">
+                <p>Win streak: </p>
+                <div class="winStreak_container">
+                    <img src="/imgs/streak.png" alt="Win streak">
+                    <span class="winStreak_number"></span>
+                </div>
+            </section>
+            <section class="winStreak">
+                <p>Best streak: <span class="bestStreak"></span></p>
+            </section>
+        </article>
 
         <section class="game-instructions">
-            <p class="game-instructions__title">Which hero do these emojis describe?</p>
-            <p class="emojis">
-                <span class="emoji-0">❔</span>
-                <span class="emoji-1">❔</span>
-                <span class="emoji-2">❔</span>
-                <span class="emoji-3">❔</span>
-            </p>
+            <h2 class="game-instructions__title">Guess the Overwatch hero!</h2>
+            <p class="game-instructions__text">Type the name of a hero to start</p>
         </section>
 
         <section class="chr-search">
@@ -181,21 +181,54 @@
                         <path d="M6.5 12h14.5" />
                     </svg>
                 </button>
+
             </form>
         </section>
 
-        <section class="results-emoji-container">
+        <section class="lifes-container">
+            <img src="/imgs/heart.png" alt="life" class="heart" id="life-1">
+            <img src="/imgs/heart.png" alt="life" class="heart" id="life-2">
+            <img src="/imgs/heart.png" alt="life" class="heart" id="life-3">
+            <img src="/imgs/heart.png" alt="life" class="heart" id="life-4">
+            <img src="/imgs/heart.png" alt="life" class="heart" id="life-5">
+        </section>
+
+        <section class="results">
+            <header class="results-titles">
+                <p class="result-title"> Character </p>
+                <p class="result-title"> Gender </p>
+                <p class="result-title"> Role </p>
+                <p class="result-title"> Sub-Role </p>
+                <p class="result-title"> Species </p>
+                <p class="result-title"> Origin </p>
+                <p class="result-title"> Age </p>
+                <p class="result-title"> Release Year </p>
+            </header>
+            <section class="results-content">
+            </section>
         </section>
 
         <section class="correct-answer correct-answer-hidden">
-            <p class="timer-text"> Next hero in</p>
-            <p class="timer"></p>
+            <a href="">
+                <article class="next-game next-hero">
+                    <img src="/imgs/infinite.webp" alt="Next hero" class="next-game__img">
+                    <p class="next-game__text">Next Hero</p>
+                </article>
+            </a>
+        </section>
+        <section class="game-lost game-lost-hidden">
             <hr class="correct-answer__hr">
-            <p class="next-game-title">Next mode</p>
-            <a href="infinite.html">
+            <a href="">
                 <article class="next-game">
-                    <img src="/imgs/infinite.webp" alt="Infinite image" class="next-game__img">
-                    <p class="next-game__text">Infinite</p>
+                    <img src="/imgs/infinite.webp" alt="Try again" class="next-game__img">
+                    <p class="next-game__text">Try again</p>
+                </article>
+            </a>
+            <p class="next-game-title">Next mode</p>
+            <a href="classic.html">
+                <article class="next-game">
+                    <img src="/imgs/classic.webp" alt="Classic Image" class="next-game__img">
+                    <p class="next-game__text">Classic</p>
                 </article>
             </a>
         </section>
@@ -220,23 +253,19 @@
                 </button>
             </div>
         </section>
-        <p class="previousHero-text"> Yesterday's hero was <strong class="previousHero"></strong></p>
     </main>
 
     <footer>
         <p class="footer__text">Overwatchdle - 2026</p>
         <a href="https://ko-fi.com/brandoncalimares" target="_blank" class="ko-fi" title="Buy me a coffee!">
-            <img src="../imgs/ko-fi.webp"">
+            <img src="../imgs/ko-fi.webp">
         </a>
     </footer>
 
     <script src=" /js/main.js?v=2"></script>
-            <script src="/js/heroes.js?v=2"></script>
-            <script src="/js/search.js?v=5"></script>
-            <script src="/js/emojis.js?v=4"></script>
-            <script src="/js/emoji.js?v=6"></script>
-            <script src="/js/updateDate.js?v=2"></script>
-
+    <script src="/js/heroes.js?v=2"></script>
+    <script src="/js/search.js?v=5"></script>
+    <script src="/js/infinite.js?v=1"></script>
 </body>
 
 </html>

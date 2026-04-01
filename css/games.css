@@ -77,6 +77,18 @@ main {
   filter: drop-shadow(0 0 0.1rem white);
 }
 
+.winStreaks-infinite {
+  width: 40rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.winStreaks-infinite > .winStreak {
+  width: 50%;
+}
+
 .chr-search {
   background-color: var(--background-color);
   width: 40rem;
@@ -203,8 +215,22 @@ main {
 
 @media (max-width: 768px) {
   .game-instructions,
-  .winStreak {
+  .winStreak,
+  .winStreaks-infinite {
     width: 90%;
+  }
+
+  .winStreaks-infinite > .winStreak {
+    font-size: 1.7rem;
+  }
+
+  .winStreaks-infinite > .winStreak .winStreak_container img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .winStreaks-infinite > .winStreak .winStreak_container span {
+    font-size: 1.2rem;
   }
 
   .game-instructions__title {
@@ -225,6 +251,19 @@ main {
 
   .search-results__text {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .winStreaks-infinite {
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 0.5rem;
+  }
+
+  .winStreaks-infinite > .winStreak {
+    width: 100%;
+    margin: 0;
   }
 }
 
@@ -323,7 +362,8 @@ main {
   background-size: cover;
 }
 
-.correct-answer {
+.correct-answer,
+.game-lost {
   background: linear-gradient(
     rgb(72, 206, 72) 0%,
     rgb(42, 155, 27) 48%,
@@ -342,6 +382,19 @@ main {
   width: 30rem;
 }
 
+.game-lost {
+  background: linear-gradient(
+    rgb(255, 84, 84) 0%,
+    rgb(206, 43, 43) 48%,
+    rgb(156, 18, 18)
+  );
+  border: rgb(255, 84, 84) 0.3rem solid;
+}
+
+.game-lost > .correct-answer__hr {
+  margin-block: 3rem;
+}
+
 @keyframes correct-answer-animation {
   from {
     opacity: 0;
@@ -352,7 +405,8 @@ main {
   }
 }
 
-.correct-answer-hidden {
+.correct-answer-hidden,
+.game-lost-hidden {
   display: none;
 }
 
@@ -412,6 +466,10 @@ main {
   cursor: pointer;
   transition: ease 0.1s;
   border: 0.15rem solid var(--text-color-alt);
+}
+
+.next-hero {
+  margin-top: 4rem;
 }
 
 .next-game:hover,
@@ -833,6 +891,33 @@ main {
 
 .non-animated {
   animation: none;
+}
+
+/* INFINITE */
+
+.lifes-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.heart {
+  width: 2.5rem;
+  height: 2.5rem;
+  filter: drop-shadow(0 0 0.5rem rgba(255, 21, 21, 0.3));
+}
+
+.heart-lost {
+  filter: grayscale(100%);
+}
+
+@keyframes lost {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
 }
 
 /* HEROES */

@@ -1,19 +1,15 @@
 const results = document.querySelector('.results-content');
-const currentDate = new Date();
-const randomHeroe = heroes[genDailyIndex(1, heroes, currentDate)];
-
 const lang = window.location.pathname.startsWith("/en") ? "en" : "es";
+const maxLifes = 5;
 
-let resultsShare = '';
+let randomId = localStorage.getItem('randomId');
+if (randomId == null || randomId == -1) randomId = Math.floor(Math.random() * heroes.length);
+localStorage.setItem('randomId', randomId);
+let randomHeroe = heroes[randomId];
 
-let tries = 0;
-
-const prevDate = new Date(currentDate);
-prevDate.setUTCDate(prevDate.getUTCDate() - 1);
-const prevHero = heroes[genDailyIndex(1, heroes, prevDate)];
-
-const prevHeroText = document.querySelector('.previousHero');
-prevHeroText.innerHTML = prevHero.name;
+let lifes = localStorage.getItem('lifes');
+if (lifes == null) lifes = maxLifes;
+localStorage.setItem('lifes', lifes);
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -24,8 +20,7 @@ form.addEventListener('submit', (e) => {
     if (searchValue.length == 0) return;
     let hero = heroes.filter(hero => hero.name.startsWith(searchValue));
     if (hero.length > 0) {
-        tries++;
-        addToCookies(hero[0]);
+        addToLocalStorage(hero[0]);
         const index = heroes.findIndex(h => h.name == hero[0].name);
         heroes[index] = null;
         heroes.splice(index, 1);
@@ -33,14 +28,53 @@ form.addEventListener('submit', (e) => {
     }
 })
 
-const verifyResults = (h) => {
+const addToLocalStorage = (h) => {
+    let hGuessed = localStorage.getItem('hGuessedInfinite');
+    if (hGuessed == null) {
+        hGuessed = [];
+    } else {
+        hGuessed = JSON.parse(hGuessed);
+    }
+    hGuessed.push(heroes.indexOf(h));
+
+    localStorage.setItem('hGuessedInfinite', JSON.stringify(hGuessed));
+}
+
+const gameLost = () => {
+    const input = document.querySelector('.chr-search__input');
+    input.disabled = true;
+    localStorage.setItem('lifes', maxLifes);
+    localStorage.setItem('hGuessedInfinite', JSON.stringify([]));
+    localStorage.setItem('randomId', -1);
+
+    const gameLostContainer = document.querySelector('.game-lost');
+    let content;
+    if (lang == 'es') {
+        content = '<p class="correct-answer__text">El héroe era:</p>';
+    } else {
+        content = '<p class="correct-answer__text">The hero was:</p>';
+    }
+    content += '<div class="correct-answer__hero"> <div class="correct-answer__img bg-' + randomHeroe.name.toLowerCase().replaceAll(' ', '_') + '"></div> <p class="correct-answer__name">' + randomHeroe.name + '</p> </div>';
+    gameLostContainer.innerHTML = content + gameLostContainer.innerHTML;
+
+    const shareText = document.querySelector('.share-text');
+    if (lang == 'es') {
+        shareText.textContent = `Adivine ${winStreak} héroes en el modo infinito de #Overwatchdle.\n\nhttps://overwatchdle.tech`;
+    } else {
+        shareText.textContent = `I guessed ${winStreak} heroes in the infinite mode of #Overwatchdle.\n\nhttps://overwatchdle.tech`;
+    }
+    resetWinStreak();
+    const shareContainer = document.querySelector('.share');
+
+    setTimeout(() => {
+        gameLostContainer.classList.remove('game-lost-hidden');
+        shareContainer.classList.remove('share-hidden');
+        gameLostContainer.scrollIntoView({ behavior: 'smooth', block: "start" });
+    }, 1000);
+}
+
+const verifyResults = (h, skipLifes = false) => {
     if (h.name == randomHeroe.name) {
-        resultsShare = "🟩🟩🟩🟩🟩🟩🟩" + resultsShare
-        if (resultsShare.split("\n").length > 5) {
-            let lines = resultsShare.split("\n");
-            lines.pop();
-            resultsShare = lines.join("\n");
-        }
         return ["correct", "correct", "correct", "correct", "correct", "correct", "correct", "correct"];
     }
 
@@ -57,52 +91,36 @@ const verifyResults = (h) => {
     else if (h.year < randomHeroe.year) correctAnswers[6] = "higher";
     else correctAnswers[6] = "correct";
 
-    let newRow = '';
-    correctAnswers.forEach((answer, index) => {
-        if (index == 7) return;
-        if (answer == "correct") {
-            newRow += "🟩";
-        } else if (answer == "wrong") {
-            newRow += "🟥";
-        } else if (answer == "higher") {
-            newRow += "⬆️";
-        } else {
-            newRow += "⬇️";
+    if (!skipLifes) {
+        lifes--;
+        setTimeout(() => {
+            updateLifes();
+        }, 600);
+        if (lifes <= 0) {
+            gameLost();
+            return correctAnswers;
         }
-    });
-    newRow = "\n" + newRow;
-    resultsShare = newRow + resultsShare;
-    if (resultsShare.split("\n").length > 5) {
-        let lines = resultsShare.split("\n");
-        lines.pop();
-        resultsShare = lines.join("\n");
+        localStorage.setItem('lifes', lifes);
     }
 
     return correctAnswers;
 }
 
-const showCorrectAnswer = () => {
-    const container = document.querySelector('.correct-answer');
-    let content = '<p class="correct-answer__text">GG EZ</p>';
-    content += '<div class="correct-answer__hero"> <div class="correct-answer__img bg-' + randomHeroe.name.toLowerCase().replaceAll(' ', '_') + '"></div> <p class="correct-answer__name">' + randomHeroe.name + '</p> </div>';
-    if (lang == 'es')
-        content += '<p class="correct-answer__tries">Número de intentos: ' + tries + '</p>';
-    else
-        content += '<p class="correct-answer__tries">Number of attempts: ' + tries + '</p>';
-
-    container.innerHTML = content + container.innerHTML;
-
-    const shareText = document.querySelector('.share-text');
-    const share = document.querySelector('.share');
-    if (lang == 'es') {
-        shareText.textContent = `Encontré al héroe de #Overwatchdle en el modo clásico en ${tries} intento${tries == 1 ? '' : 's'}.\n${resultsShare} ${tries > 5 ? `\n+ ${tries - 5} más\n` : '\n'} \nhttps://overwatchdle.tech`;
-    } else {
-        shareText.textContent = `I found the #Overwatchdle hero in classic mode in ${tries} attempt${tries == 1 ? '' : 's'}.\n${resultsShare} ${tries > 5 ? `\n+ ${tries - 5} more\n` : '\n'} \nhttps://overwatchdle.tech`;
+const updateLifes = () => {
+    for (let i = maxLifes; i > lifes; i--) {
+        const heart = document.querySelector('#life-' + i);
+        heart.classList.add('heart-lost');
+        if (i == lifes + 1) {
+            heart.animate([
+                { transform: 'scale(1)' },
+                { transform: 'scale(1.4)' },
+                { transform: 'scale(1)' }
+            ], {
+                duration: 500,
+                easing: 'ease-in-out'
+            });
+        }
     }
-
-    container.classList.remove('correct-answer-hidden');
-    share.classList.remove('share-hidden');
-
 }
 
 const showResults = (h) => {
@@ -111,6 +129,9 @@ const showResults = (h) => {
     if (JSON.stringify(answers) == JSON.stringify(["correct", "correct", "correct", "correct", "correct", "correct", "correct", "correct"])) {
         const input = document.querySelector('.chr-search__input');
         input.disabled = true;
+        localStorage.setItem('lifes', maxLifes);
+        localStorage.setItem('hGuessedInfinite', JSON.stringify([]));
+        localStorage.setItem('randomId', -1);
         setTimeout(() => {
             addWinStreak();
             showCorrectAnswer();
@@ -181,31 +202,21 @@ const showResults = (h) => {
     }, 600);
 }
 
-const addToCookies = (h) => {
-    let hGuessed = getCookie('heroesGuessed');
-    if (hGuessed == null) {
-        hGuessed = [];
-    } else {
-        hGuessed = JSON.parse(hGuessed);
-    }
-    hGuessed.push(heroes.indexOf(h));
+const showCorrectAnswer = () => {
+    const container = document.querySelector('.correct-answer');
+    let content = '<p class="correct-answer__text">GG EZ</p>';
+    content += '<div class="correct-answer__hero"> <div class="correct-answer__img bg-' + randomHeroe.name.toLowerCase().replaceAll(' ', '_') + '"></div> <p class="correct-answer__name">' + randomHeroe.name + '</p> </div>';
 
-    setCookie('heroesGuessed', JSON.stringify(hGuessed), nextDate);
+    container.innerHTML = content + container.innerHTML;
+    container.classList.remove('correct-answer-hidden');
 }
 
 const loadGuessedHeroes = () => {
-    let hGuessed = getCookie('heroesGuessed');
+    let hGuessed = localStorage.getItem('hGuessedInfinite');
     if (hGuessed == null) hGuessed = [];
     else hGuessed = JSON.parse(hGuessed);
-    tries = hGuessed.length;
     hGuessed.forEach(h => {
-        let answers = verifyResults(heroes[h]);
-
-        if (JSON.stringify(answers) == JSON.stringify(["correct", "correct", "correct", "correct", "correct", "correct", "correct", "correct"])) {
-            const input = document.querySelector('.chr-search__input');
-            input.disabled = true;
-            showCorrectAnswer();
-        }
+        let answers = verifyResults(heroes[h], true);
 
         let year = document.createElement('div');
         year.classList.add('result-info', answers[6], 'non-animated');
@@ -249,37 +260,53 @@ const loadGuessedHeroes = () => {
 
         heroes.splice(h, 1);
     });
+    updateLifes();
 }
 
-let winStreak = localStorage.getItem('winStreakClassic');
+let winStreak = localStorage.getItem('winStreakInfinite');
 
 if (winStreak === null) {
-    winStreak = [0, null];
-    localStorage.setItem('winStreakClassic', JSON.stringify(winStreak));
-} else {
-    winStreak = JSON.parse(winStreak);
+    winStreak = 0;
+    localStorage.setItem('winStreakInfinite', winStreak);
 }
 
 const winStreakNumber = document.querySelector('.winStreak_number');
 const winStreakContainer = document.querySelector('.winStreak_container');
-if (winStreak[1] == prevDate.toDateString() || winStreak[1] == currentDate.toDateString()) {
-    winStreakNumber.textContent = winStreak[0];
+winStreakNumber.textContent = winStreak;
+
+if (winStreak > 0) {
     winStreakContainer.classList.remove('noWinStreak');
 } else {
     winStreakContainer.classList.add('noWinStreak');
-    winStreak[0] = 0;
-    winStreak[1] = null;
-    winStreakNumber.textContent = winStreak[0];
-    localStorage.setItem('winStreakClassic', JSON.stringify(winStreak));
 }
 
 addWinStreak = () => {
-    winStreak[0]++;
-    winStreak[1] = currentDate.toDateString();
-    localStorage.setItem('winStreakClassic', JSON.stringify(winStreak));
+    winStreak++;
+    localStorage.setItem('winStreakInfinite', winStreak);
     const winStreakNumber = document.querySelector('.winStreak_number');
-    winStreakNumber.textContent = winStreak[0];
+    winStreakNumber.textContent = winStreak;
     winStreakContainer.classList.remove('noWinStreak');
 };
+
+let bestStreak = localStorage.getItem('bestStreakInfinite');
+if (bestStreak === null) {
+    bestStreak = 0;
+    localStorage.setItem('bestStreakInfinite', bestStreak);
+}
+
+const bestStreakNumber = document.querySelector('.bestStreak');
+bestStreakNumber.textContent = bestStreak;
+
+resetWinStreak = () => {
+    if (winStreak > bestStreak) {
+        bestStreak = winStreak;
+        localStorage.setItem('bestStreakInfinite', bestStreak);
+        bestStreakNumber.textContent = bestStreak;
+    }
+    winStreak = 0;
+    winStreakNumber.textContent = winStreak;
+    winStreakContainer.classList.add('noWinStreak');
+    localStorage.setItem('winStreakInfinite', winStreak);
+}
 
 loadGuessedHeroes();
