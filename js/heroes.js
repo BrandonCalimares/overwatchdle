@@ -1035,8 +1035,8 @@ const heroes = [
             es: "tanque"
         },
         subRole: {
-            en: "stalwart",
-            es: "inquebrantable"
+            en: "initiator",
+            es: "iniciador"
         },
         species: {
             en: "human",
