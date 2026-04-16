@@ -198,5 +198,9 @@ const emojis = [
     {
         hero: "mizuki",
         text: ["👒", "🥷", "👘", "🟢"]
+    },
+    {
+        hero: "sierra",
+        text: ["🦅", "🩷", "🎯", "💚"]
     }
 ];

@@ -1248,5 +1248,30 @@ const heroes = [
         },
         age: 22,
         year: 2026
+    },
+    {
+        name: "sierra",
+        gender: {
+            en: "female",
+            es: "femenino"
+        },
+        role: {
+            en: "damage",
+            es: "daño"
+        },
+        subRole: {
+            en: "recon",
+            es: "reconocimiento"
+        },
+        species: {
+            en: "human",
+            es: "humano"
+        },
+        origin: {
+            en: "usa",
+            es: "eeuu"
+        },
+        age: 25,
+        year: 2026
     }
 ]

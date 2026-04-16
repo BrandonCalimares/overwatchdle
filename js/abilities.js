@@ -898,5 +898,26 @@ const abilities = [
         hero: 'mizuki',
         key: 'right-click',
         img: 'imgs/abilities/mizuki-rc.png',
-    }
+    },
+    // Sierra
+    {
+        hero: 'sierra',
+        key: 'e',
+        img: 'imgs/abilities/sierra-e.png',
+    },
+    {
+        hero: 'sierra',
+        key: 'q',
+        img: 'imgs/abilities/sierra-q.png',
+    },
+    {
+        hero: 'sierra',
+        key: 'shift',
+        img: 'imgs/abilities/sierra-shift.png',
+    },
+    {
+        hero: 'sierra',
+        key: 'right-click',
+        img: 'imgs/abilities/sierra-rc.png',
+    },
 ];

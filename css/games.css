@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap");
 
+:root {
+  --size_hero_image: 5100%;
+}
+
 main {
   gap: 1rem;
   width: 100%;
@@ -188,7 +192,7 @@ main {
 .search-results__img {
   width: 5rem;
   height: 5rem;
-  background-size: 5000% 100%;
+  background-size: var(--size_hero_image) 100%;
   background-image: url("../imgs/heroes.webp");
 }
 
@@ -336,7 +340,7 @@ main {
   height: 100%;
   object-fit: cover;
   background-color: var(--background-color);
-  background-size: 5000% 100%;
+  background-size: var(--size_hero_image) 100%;
   background-image: url("../imgs/heroes.webp");
 }
 
@@ -433,7 +437,7 @@ main {
   height: 5rem;
   border-radius: 0.7rem;
   border: var(--text-color-alt) 0.2rem solid;
-  background-size: 5000% 100%;
+  background-size: var(--size_hero_image) 100%;
   background-image: url("../imgs/heroes.webp");
 }
 
@@ -793,7 +797,7 @@ main {
   border-radius: 0.7rem;
   position: absolute;
   left: 0.5rem;
-  background-size: 5000% 100%;
+  background-size: var(--size_hero_image) 100%;
   background-image: url("../imgs/heroes.webp");
 }
 
@@ -934,31 +938,31 @@ main {
 
 /* HEROES */
 
-.bg-anran {
+.bg-ana {
   background-position: 0 0;
 }
 
-.bg-moira {
+.bg-anran {
   background-position: -100% 0;
 }
 
-.bg-illari {
+.bg-ashe {
   background-position: -200% 0;
 }
 
-.bg-mizuki {
+.bg-baptiste {
   background-position: -300% 0;
 }
 
-.bg-wuyang {
+.bg-bastion {
   background-position: -400% 0;
 }
 
-.bg-soldier76 {
+.bg-brigitte {
   background-position: -500% 0;
 }
 
-.bg-symmetra {
+.bg-cassidy {
   background-position: -600% 0;
 }
 
@@ -966,95 +970,95 @@ main {
   background-position: -700% 0;
 }
 
-.bg-sigma {
+.bg-doomfist {
   background-position: -800% 0;
 }
 
-.bg-mercy {
+.bg-dva {
   background-position: -900% 0;
 }
 
-.bg-junkrat {
+.bg-emre {
   background-position: -1000% 0;
 }
 
-.bg-orisa {
+.bg-freja {
   background-position: -1100% 0;
 }
 
-.bg-mei {
+.bg-echo {
   background-position: -1200% 0;
 }
 
-.bg-jetpack_cat {
+.bg-genji {
   background-position: -1300% 0;
 }
 
-.bg-freja {
+.bg-hazard {
   background-position: -1400% 0;
 }
 
-.bg-ramattra {
+.bg-hanzo {
   background-position: -1500% 0;
 }
 
-.bg-reinhardt {
+.bg-illari {
   background-position: -1600% 0;
 }
 
-.bg-reaper {
+.bg-jetpack_cat {
   background-position: -1700% 0;
 }
 
-.bg-vendetta {
+.bg-junkerqueen {
   background-position: -1800% 0;
 }
 
-.bg-doomfist {
+.bg-lifeweaver {
   background-position: -1900% 0;
 }
 
-.bg-ana {
+.bg-junkrat {
   background-position: -2000% 0;
 }
 
-.bg-sombra {
+.bg-juno {
   background-position: -2100% 0;
 }
 
-.bg-baptiste {
+.bg-kiriko {
   background-position: -2200% 0;
 }
 
-.bg-emre {
+.bg-lucio {
   background-position: -2300% 0;
 }
 
-.bg-bastion {
+.bg-mauga {
   background-position: -2400% 0;
 }
 
-.bg-roadhog {
+.bg-mei {
   background-position: -2500% 0;
 }
 
-.bg-echo {
+.bg-mercy {
   background-position: -2600% 0;
 }
 
-.bg-wreckingball {
+.bg-mizuki {
   background-position: -2700% 0;
 }
 
-.bg-lifeweaver {
+.bg-moira {
   background-position: -2800% 0;
 }
 
-.bg-ashe {
+.bg-orisa {
   background-position: -2900% 0;
 }
 
-.bg-lucio {
+.bg-ramattra {
   background-position: -3000% 0;
 }
 
@@ -1062,74 +1066,78 @@ main {
   background-position: -3100% 0;
 }
 
-.bg-junkerqueen {
+.bg-reaper {
   background-position: -3200% 0;
 }
 
-.bg-kiriko {
+.bg-reinhardt {
   background-position: -3300% 0;
 }
 
-.bg-zenyatta {
+.bg-sierra {
   background-position: -3400% 0;
 }
 
-.bg-hanzo {
+.bg-roadhog {
   background-position: -3500% 0;
 }
 
-.bg-torbjorn {
+.bg-sigma {
   background-position: -3600% 0;
 }
 
-.bg-juno {
+.bg-sojourn {
   background-position: -3700% 0;
 }
 
-.bg-cassidy {
+.bg-soldier76 {
   background-position: -3800% 0;
 }
 
-.bg-brigitte {
+.bg-sombra {
   background-position: -3900% 0;
 }
 
-.bg-genji {
+.bg-symmetra {
   background-position: -4000% 0;
 }
 
-.bg-mauga {
+.bg-torbjorn {
   background-position: -4100% 0;
 }
 
-.bg-tracer {
+.bg-vendetta {
   background-position: -4200% 0;
 }
 
-.bg-winston {
+.bg-tracer {
   background-position: -4300% 0;
 }
 
-.bg-sojourn {
+.bg-venture {
   background-position: -4400% 0;
 }
 
-.bg-dva {
+.bg-widowmaker {
   background-position: -4500% 0;
 }
 
-.bg-hazard {
+.bg-zarya {
   background-position: -4600% 0;
 }
 
-.bg-zarya {
+.bg-wreckingball {
   background-position: -4700% 0;
 }
 
-.bg-venture {
+.bg-winston {
   background-position: -4800% 0;
 }
 
-.bg-widowmaker {
+.bg-zenyatta {
   background-position: -4900% 0;
+}
+
+.bg-wuyang {
+  background-position: -5000% 0;
 }
