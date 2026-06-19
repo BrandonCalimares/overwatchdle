@@ -920,4 +920,25 @@ const abilities = [
         key: 'right-click',
         img: 'imgs/abilities/sierra-rc.png',
     },
+    // Shion
+    {
+        hero: 'shion',
+        key: 'e',
+        img: 'imgs/abilities/shion-e.png',
+    },
+    {
+        hero: 'shion',
+        key: 'q',
+        img: 'imgs/abilities/shion-q.png',
+    },
+    {
+        hero: 'shion',
+        key: 'shift',
+        img: 'imgs/abilities/shion-shift.png',
+    },
+    {
+        hero: 'shion',
+        key: 'right-click',
+        img: 'imgs/abilities/shion-rc.png',
+    },
 ];

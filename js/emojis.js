@@ -202,5 +202,9 @@ const emojis = [
     {
         hero: "sierra",
         text: ["🦅", "🩷", "🎯", "💚"]
+    },
+    {
+        hero: "shion",
+        text: ["😈", "🏍", "🤖", "🇯🇵"]
     }
 ];

@@ -1273,5 +1273,30 @@ const heroes = [
         },
         age: 25,
         year: 2026
+    },
+    {
+        name: "shion",
+        gender: {
+            en: "female",
+            es: "femenino"
+        },
+        role: {
+            en: "damage",
+            es: "daño"
+        },
+        subRole: {
+            en: "flanker",
+            es: "flanqueador"
+        },
+        species: {
+            en: "omnic",
+            es: "omnico"
+        },
+        origin: {
+            en: "japan",
+            es: "japón"
+        },
+        age: 28,
+        year: 2026
     }
 ]
